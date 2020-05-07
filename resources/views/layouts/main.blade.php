@@ -11,7 +11,16 @@
     <link href="{{asset('admin/vendors/jquery-toggles/css/themes/toggles-light.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('admin/vendors/jquery-toast-plugin/dist/jquery.toast.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('admin/vendors/morris.js/morris.css')}}" rel="stylesheet" type="text/css" />
+
+    <!-- Data Table CSS -->
+    <link href="{{asset('admin/vendors/datatables.net-dt/css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+
+    <!-- Toggles CSS -->
+    <link href="{{asset('admin/vendors/jquery-toggles/css/toggles.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('admin/vendors/jquery-toggles/css/themes/toggles-light.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('admin/dist/css/style.css')}}" rel="stylesheet" type="text/css">
+
 </head>
 <body>
     <!-- HK Wrapper -->
@@ -27,19 +36,27 @@
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown show-on-hover active">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Dashboard
+								Master Data
 							</a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <a class="dropdown-item" href="dashboard1.html">CRM</a>
-							<a class="dropdown-item" href="dashboard2.html">Project</a>
-							<a class="dropdown-item" href="dashboard3.html">Statistics</a>
-							<a class="dropdown-item active" href="dashboard4.html">classic</a>
-							<a class="dropdown-item" href="dashboard5.html">Analytics</a>
+                            <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
+                            <a class="dropdown-item" href="dashboard3.html">Posisi</a>
+							<a class="dropdown-item" href="dashboard3.html">Berita</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown show-on-hover active">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Manajemen Ujian
+							</a>
+                        <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <a class="dropdown-item" href="dashboard3.html">Kategori Soal</a>
+                            <a class="dropdown-item" href="dashboard1.html">Manajemen Soal</a>
+							<a class="dropdown-item" href="dashboard2.html">Hasil Ujian</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Pages
+								Rekrutmen
 							</a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <div class="sub-dropdown-menu show-on-hover">
@@ -51,44 +68,10 @@
                                     <a class="dropdown-item" href="file-manager.html">File Manager</a>
                                 </div>
                             </div>
-                            <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item">Authentication</a>
-                                <div class="dropdown-menu open-right-side">
-                                    <div class="sub-dropdown-menu show-on-hover">
-                                        <a href="#" class="dropdown-toggle dropdown-item">Sign Up</a>
-                                        <div class="dropdown-menu open-right-side">
-                                            <a class="dropdown-item" href="signup.html">Cover</a>
-                                            <a class="dropdown-item" href="signup-simple.html">Simple</a>
-                                        </div>
-                                    </div>
-                                    <div class="sub-dropdown-menu show-on-hover">
-                                        <a href="#" class="dropdown-toggle dropdown-item">Login</a>
-                                        <div class="dropdown-menu open-right-side">
-                                            <a class="dropdown-item" href="login.html">Cover</a>
-                                            <a class="dropdown-item" href="login-simple.html">Simple</a>
-                                        </div>
-                                    </div>
-                                    <div class="sub-dropdown-menu show-on-hover">
-                                        <a href="#" class="dropdown-toggle dropdown-item">Recover Pwd</a>
-                                        <div class="dropdown-menu open-right-side">
-                                            <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-                                            <a class="dropdown-item" href="reset-password.html">Reset Password</a>
-                                        </div>
-                                    </div>
-                                    <a class="dropdown-item" href="lock-screen.html">Lock Screen</a>
-                                    <a class="dropdown-item" href="404.html">Error 404</a>
-                                    <a class="dropdown-item" href="maintenance.html">Maintenance</a>
-                                </div>
-                            </div>
-                            <a class="dropdown-item" href="profile.html">Profile</a>
-                            <a class="dropdown-item" href="invoice.html">Invoice</a>
-                            <a class="dropdown-item" href="gallery.html">Gallery</a>
-                            <a class="dropdown-item" href="activity.html">Activity</a>
-                            <a class="dropdown-item" href="faq.html">Faq</a>
+                            <a class="dropdown-item" href="profile.html">Peserta</a>
+                            <a class="dropdown-item" href="gallery.html">Rekrutmen</a>
+                            <a class="dropdown-item" href="activity.html">Hasil Seleksi</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Log<span class="badge badge-green badge-sm badge-pill ml-10">v 1.0</span></a>
                     </li>
                 </ul>
             </div>
@@ -134,9 +117,6 @@
     <!-- Slimscroll JavaScript -->
     <script src="{{asset('admin/dist/js/jquery.slimscroll.js')}}"></script>
 
-    <!-- Fancy Dropdown JS -->
-    <script src="{{asset('admin/dist/js/dropdown-bootstrap-extended.js')}}"></script>
-
     <!-- FeatherIcons JavaScript -->
     <script src="{{asset('admin/dist/js/feather.min.js')}}"></script>
 
@@ -150,10 +130,6 @@
     
     <!-- Easy pie chart JS -->
     <script src="{{asset('admin/vendors/easy-pie-chart/dist/jquery.easypiechart.min.js')}}"></script>
-
-	<!-- Morris Charts JavaScript -->
-    <script src="{{asset('admin/vendors/raphael/raphael.min.js')}}"></script>
-    <script src="{{asset('admin/vendors/morris.js/morris.min.js')}}"></script>
 	
 	<!-- EChartJS JavaScript -->
     <script src="{{asset('admin/vendors/echarts/dist/echarts-en.min.js')}}"></script>
@@ -163,11 +139,23 @@
 	
 	<!-- Toastr JS -->
     <script src="{{asset('admin/vendors/jquery-toast-plugin/dist/jquery.toast.min.js')}}"></script>
-    
-    <!-- Init JavaScript -->
+
+    <!-- Data Table JavaScript -->
+    <script src="{{asset('admin/vendors/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('admin/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('admin/vendors/datatables.net-dt/js/dataTables.dataTables.min.js')}}"></script>
+    <script src="{{asset('admin/vendors/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('admin/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('admin/vendors/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
+    <script src="{{asset('admin/vendors/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('admin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('admin/dist/js/dataTables-data.js')}}"></script>
+	
+    <!-- Fancy Dropdown JS -->
+    <script src="{{asset('admin/dist/js/dropdown-bootstrap-extended.js')}}"></script>
+        <!-- Init JavaScript -->
     <script src="{{asset('admin/dist/js/init.js')}}"></script>
 	<script src="{{asset('admin/dist/js/dashboard4-data.js')}}"></script>
-	
+    @yield('scripts')
 </body>
-
 </html>
