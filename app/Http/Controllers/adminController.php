@@ -15,4 +15,14 @@ class adminController extends Controller
 
         return view('admin.user.index');
     }
+
+    public function posisiIndex(){
+
+        return view('admin.posisi.index');
+    }
+
+    public function beritaIndex(){
+
+        return view('admin.berita.index');
+    }
 }

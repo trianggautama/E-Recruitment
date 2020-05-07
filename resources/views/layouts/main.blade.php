@@ -40,8 +40,8 @@
 							</a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
-                            <a class="dropdown-item" href="dashboard3.html">Posisi</a>
-							<a class="dropdown-item" href="dashboard3.html">Berita</a>
+                            <a class="dropdown-item" href="{{Route('posisiIndex')}}">Posisi</a>
+							<a class="dropdown-item" href="{{Route('beritaIndex')}}">Berita</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">
@@ -49,9 +49,7 @@
 								Manajemen Ujian
 							</a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <a class="dropdown-item" href="dashboard3.html">Kategori Soal</a>
                             <a class="dropdown-item" href="dashboard1.html">Manajemen Soal</a>
-							<a class="dropdown-item" href="dashboard2.html">Hasil Ujian</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover">
@@ -64,8 +62,6 @@
                                 <div class="dropdown-menu open-right-side">
                                     <a class="dropdown-item" href="chats.html">Chat</a>
                                     <a class="dropdown-item" href="calendar.html">Calendar</a>
-                                    <a class="dropdown-item" href="email.html">Email</a>
-                                    <a class="dropdown-item" href="file-manager.html">File Manager</a>
                                 </div>
                             </div>
                             <a class="dropdown-item" href="profile.html">Peserta</a>
