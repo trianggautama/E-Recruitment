@@ -78,32 +78,14 @@
 					<nav class="navbar">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
-							<a class="navbar-brand" href="home-1.html"><img src="{{asset('depan/assets/img/logo.png')}}" alt="image"></a>
+							<a class="navbar-brand" href="home-1.html"><img src="{{asset('depan/assets/img/logo.png')}}" alt="image" width="50%"></a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.html">Home</a></li>
-								<li><a href="cause.html">Causes</a>
-									<ul class="menu-dropdown">
-										<li><a href="cause.html">Causes</a></li>
-										<li><a href="cause-single.html">Causes Details</a></li>
-									</ul>
-								</li>
-								<li><a href="event.html">Events</a>
-									<ul class="menu-dropdown">
-										<li><a href="event.html">Events</a></li>
-										<li><a href="event-single.html">Events Details</a></li>
-									</ul>
-								</li>
-								<li><a href="blog-archive.html">Blog</a>
-									<ul class="menu-dropdown">
-										<li><a href="blog-archive.html">Blog Archive</a></li>
-										<li><a href="blog-single.html">Blog Details</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Pages</a>
+								<li><a href="#">rekrutmen</a>
 									<ul class="menu-dropdown">
 										<li><a href="contact.html">Contact</a></li>
 										<li><a href="404.html">404</a></li>
@@ -113,7 +95,7 @@
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<div class="home-donate donate-btn-1 text-uppercase">
-							<a href="donation.html">donate now</a>
+							<a href="{{Route('login')}}">Login</a>
 						</div>
 						<div id="sb-search" class="sb-search " >
 							    <form action="#" method="post">
@@ -247,9 +229,9 @@
 				style="z-index: 8; min-width: 150px; max-width: 150px; max-width: 45px; max-width: 45px; white-space: normal; font-size: 14px; line-height: 22px; font-weight: 500; color: rgba(255, 255, 255, 1.00);font-family:'Merriweather Sans', sans-serif;text-align:center;background-color:rgba(215, 6, 44, 0.75);padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">DONATE NOW </div>
 			</li>
 			<!-- /slide -->
-			<li data-index="rs-15" data-transition="slidingoverlayup" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('depan/rev-slider/img/slider-bg.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+			<li data-index="rs-15" data-transition="slidingoverlayup" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{asset('depan/rev-slider/img/slider-bg2.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 		<!-- MAIN IMAGE -->
-		<img src="{{asset('depan/rev-slider/img/slider-bg.jpg')}}"  alt="" title="slider-bg"  width="1920" height="750" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+		<img src="{{asset('depan/rev-slider/img/slider-bg2.jpg')}}"  alt="" title="slider-bg"  width="1920" height="750" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 		<!-- LAYERS -->
 
 		<!-- LAYER NR. 1 -->
@@ -345,10 +327,10 @@
 			<div class="row section-content">
 				<div class="section-title text-center">
 					<div class="section-title-text text-uppercase">
-						<p>YOUR SUPPORT APPRECIATED</p>
+						<p>Visi  dan Misi</p>
 					</div>
 					<div class="section-title-text">
-						<h2>Some Ways To Help</h2>
+						<h2>PT. Telkom Akses</h2>
 					</div>
 				</div>
 				<!-- /section-title -->
@@ -490,39 +472,18 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="left-countdown colmd6">
-								<div id="countdown">
-									<div id='tiles'></div>
-									<ul class="labels text-uppercase">
-										<li>Days</li>
-										<li>Hr</li>
-										<li>Min</li>
-										<li>Sec</li>
-									</ul>
-								</div>
 								<div class="countdown-text-head  mt40 pb70">
 									<div class="countdown-head">
-										<h2 class="black">Excepteur sint occaecat cupidatat non</h2>
+										<h2 class="black">Tentang Kami</h2>
 									</div>
 									<div class="countdown-text mt25">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-									</div>
-								</div>
-								<div class="progress">
-									<div class="progress-bar wow Rx-width-85 animated" role="progressbar" data-wow-duration="0.5s" data-wow-delay=".5s" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: Rx-width-85;">
-										<span>85%</span>
-									</div>
-								</div>
-								<div class="count-reached-goal clearfix pb30 mt10">
-									<div class="count-reached pull-left">
-										<p>Reached:  $45, 669 </p>
-									</div>
-									<div class="count-reached pull-right">
-										<p>Goal:  $65, 669 </p>
+										<p class="text-justify">Kami membangun jaringan serat optik dan membawa koneksi internet ke properti Anda dengan menyebarkan 30 rute rute terra dan sekitar 8,500+ km kabel serat optik.</p>
+										<p>Kami mendukung serat Anda ke koneksi rumah serta jaringan backbone untuk koneksi nirkabel broadband Anda.</p>
 									</div>
 								</div>
 								<div class="donate-now-btn">
 									<div class="donate-btn text-uppercase">
-										<a  href="#">donate now</a>
+										<a  href="#">Tentang Kami</a>
 									</div>
 								</div>
 							</div>
@@ -541,437 +502,6 @@
 	<!-- End of Count Down  
 	============================================= -->
 
-	<!-- Start of Recent Causes  
-	============================================= -->
-	<section id="recent-causes" class="recent-causes-section">
-		<div class="container">
-			<div class="row section-content">
-				<div class="section-title text-center">
-					<div class="section-title-text text-uppercase">
-						<p>YOU MIGHT INTEREST</p>
-					</div>
-					<div class="section-title-text">
-						<h2>Recent Causes</h2>
-					</div>
-				</div>
-				<!-- /section-title -->
-				<div class="recent-causes-content">
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-1.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<!-- /piechart -->
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<!-- /gola-reach -->
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<!-- /cause-head -->
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-								<!-- /donate-now-btn -->
-							</div>
-						</div><!--/recent-causes-pic-text -->
-					</div>
-					<!-- /cause-item -->
-
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-2.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<!-- /donate-piechart -->
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<!-- /gola-reach -->
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<!-- /tea=xt-head -->
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-								<!-- /donate-now-btn -->
-							</div>
-						</div>
-						<!-- recent-causes-pic-text -->
-					</div>
-					<!-- /cause-item -->
-
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-3.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<!-- /donate-piechart -->
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<!-- /gola-reach -->
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<!-- /text-head -->
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-								<!-- /doante-now-btn -->
-							</div>
-						</div>
-						<!-- /recent-causes-pic -->
-					</div>
-					<!-- /cause-item -->
-
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-4.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /cause-item -->
-
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-5.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /cause-item -->
-
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-6.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /cause-item -->
-
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-7.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /cause-item -->
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-9.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /cause-item -->
-
-
-
-					<div class="cause-item">
-						<div class="recent-causes-pic-text">
-							<div class="recent-causes-pic">
-								<img src="{{asset('depan/assets/img/cause-6.jpg')}}" alt="image">
-							</div>
-							<!-- /img -->
-							<div class="cause-text pt75 pb50">
-								<div class="donate-piechart">
-									<div class="second circle"><canvas width="80" height="80"></canvas>
-										<strong>85<i>%</i></strong>
-									</div>
-								</div>
-								<div class="gola-reach">
-									<ul class="gola-reach-list">
-										<li class="black">Raised:<span class="red">$78 256</span></li>
-										<li class="black">Goal:<span class="red">$178 256</span></li>
-									</ul>
-								</div>
-								<div class="cause-text-head pt15 pb20">
-									<h3><a href="#">Nemo enim ipsam voluptatem quia vo-luptas sit aspernatur aut </a> </h3>
-								</div>
-								<div class="donate-now-btn">
-									<div class="donate-btn margin0 text-uppercase">
-										<a href="donation.html">donate now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /cause-item -->
-				</div>
-			</div><!-- /row -->
-		</div><!-- /container -->
-	</section>
-	<!-- End of Recent Causes   
-	============================================= -->
-
-	<!-- Start of Our Impact   
-	============================================= -->
-	<section id="our-impact" class="our-impact-section">
-		<div class="container">
-			<div class="row section-content">
-				<div class="our-impact-section-content">
-					<div class="row">
-						<div class="col-sm-8">
-							<div class="section-title text-center pull-left">
-								<div class="section-title-text text-uppercase text-left">
-									<p>HAVE A LOOK</p>
-								</div>
-								<div class="section-title-text text-left pb35">
-									<h2>Our Impact</h2>
-								</div>
-								<div class="section-title-text-1 text-left">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
-								</div>
-							</div>
-							<!-- /section-title -->
-							<div class="impact-achieve">
-								<div class="row">
-									<div class="col-sm-4 col-xs-6">
-										<div class="impact-achieve-content clearfix">
-											<div class="impact-achievet-icon-text text-left">
-												<div class="impact-achieve-icon">
-													<span class="red ti-gift"></span>
-												</div>
-												<div class="impact-achieve-text text-uppercase">
-													<span class="dolor">$</span><span class="count">695437</span>
-													<p>RAISED</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /1st-count -->
-
-									<div class="col-sm-4 col-xs-6">
-										<div class="impact-achieve-content">
-											<div class="impact-achievet-icon-text text-left">
-												<div class="impact-achieve-icon">
-													<span class="red ti-receipt"></span>
-												</div>
-												<div class="impact-achieve-text text-uppercase">
-													<span class="count">2569</span>
-													<p>events</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /1st-count -->
-
-									<div class="col-sm-4 col-xs-12">
-										<div class="impact-achieve-content">
-											<div class="impact-achievet-icon-text text-left">
-												<div class="impact-achieve-icon">
-													<span class="red ti-crown"></span>
-												</div>
-												<div class="impact-achieve-text text-uppercase">
-													<span class="count">3750</span>
-													<p>doner</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /1st-count -->
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-8 -->
-						<div class="col-sm-4">
-							<div class="impact-left-content">
-								<div class="top-border">
-									<span class="border-1"></span>
-									<span class="border-2"></span>
-									<span class="border-3"></span>
-								</div>
-								<div class="become-member">
-									<div class="become-member-head pb30">
-										<h3 class="black">Become a Part Of the World</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
-									</div>
-									<div class="become-member-form">
-										<form action="#" method="post">
-											<div class="contact-info mb20">
-												<input class="name" name="name" type="text" placeholder="Name">
-											</div>
-											<div class="contact-info mb20">
-												<input class="name" name="name" type="text" placeholder="Email">
-											</div>
-											<div class="contact-select pb40">
-												<select>
-													<option value="volvo">Subject</option>
-													<option value="saab">Issue</option>
-													<option value="mercedes">Events</option>
-													<option value="audi">Occation</option>
-												</select>
-											</div>
-											<div class="become-member-button text-center">
-												<button type="submit" value="Submit">BECOME  A VOLuNTeER</button>
-											</div>
-										</form>
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div><!-- /our-impact-section-content -->
-			</div><!-- /row -->
-		</div><!-- /container -->
-	</section>
-	<!-- End of Our Impact 
-	============================================= -->
 
 	<!-- Start of can we do section 
 	============================================= -->
@@ -980,10 +510,10 @@
 			<div class="row section-content">
 				<div class="section-title text-center">
 					<div class="section-title-text text-uppercase">
-						<p>YOU MIGHT INTEREST</p>
+						<p>JABATAN </p>
 					</div>
 					<div class="section-title-text">
-						<h2>What Can We Do</h2>
+						<h2>Sub text</h2>
 					</div>
 				</div>
 				<!-- /section-title -->
@@ -1152,10 +682,10 @@
 						<div class="col-sm-7">
 							<div class="section-title">
 								<div class="section-title-text text-uppercase text-left">
-									<p>YOU MIGHT INTEREST</p>
+									<p>Rekrutmen terbuka</p>
 								</div>
 								<div class="section-title-text text-left">
-									<h2>Latest News</h2>
+									<h2>Jadwal</h2>
 								</div>
 							</div>
 							<!-- /section-title -->
@@ -1250,7 +780,7 @@
 							<div class="latest-news-slide-content">
 								<div class="latest-news-slide text-center">
 									<div class="slide-quate-pic pb60">
-										<img src="assets/img/quate.png" alt="image">
+										<img src="{{asset('depan/assets/img/quate.png')}}" alt="image">
 									</div>
 									<!-- /slide-quate-pic -->
 									<div class="slide-text pb60">
@@ -1261,7 +791,7 @@
 									<div class="quate-client-pic-text">
 										<div class="quate-client-pic pb60">
 											<div class="author-pic">
-												<img src="assets/img/quate-pic.jpg" alt="image">
+												<img src="{{asset('depan/assets/img/quate-pic.jpg')}}" alt="image">
 											</div>
 										</div>
 										<div class="quate-client-text pb30">
@@ -1275,7 +805,7 @@
 
 								<div class="latest-news-slide text-center">
 									<div class="slide-quate-pic pb60">
-										<img src="assets/img/quate.png" alt="image">
+										<img src="{{asset('depan/assets/img/quate.png')}}" alt="image">
 									</div>
 									<!-- /slide-quate-pic -->
 									<div class="slide-text pb60">
@@ -1286,7 +816,7 @@
 									<div class="quate-client-pic-text">
 										<div class="quate-client-pic pb60">
 											<div class="author-pic">
-												<img src="assets/img/quate-pic.jpg" alt="image">
+												<img src="{{asset('depan/assets/img/quate-pic.jpg')}}" alt="image">
 											</div>
 										</div>
 										<div class="quate-client-text pb30">
@@ -1300,7 +830,7 @@
 
 								<div class="latest-news-slide text-center">
 									<div class="slide-quate-pic pb60">
-										<img src="assets/img/quate.png" alt="image">
+										<img src="{{asset('depan/assets/img/quate.png')}}" alt="image">
 									</div>
 									<!-- /slide-quate-pic -->
 									<div class="slide-text pb60">
@@ -1311,7 +841,7 @@
 									<div class="quate-client-pic-text">
 										<div class="quate-client-pic pb60">
 											<div class="author-pic">
-												<img src="assets/img/quate-pic.jpg" alt="image">
+												<img src="{{asset('depan/assets/img/quate-pic.jpg')}}" alt="image">
 											</div>
 										</div>
 										<div class="quate-client-text pb30">
@@ -1332,49 +862,6 @@
 		</div>
 	</section>
 	<!-- End of Latest news
-	============================================= -->
-
-	<!-- Start of partner section
-	============================================= -->
-	<section id="partner" class="partner-section">
-		<div class="container">
-			<div class="row">
-				<div class="partner-section-slider">
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-1.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-2.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-3.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-4.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-2.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-3.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-4.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-2.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-4.png')}}" alt="image"></a>
-					</div>
-					<div class="partner-pic">
-						<a href=""><img src="{{asset('depan/assets/img/partner-1.png')}}" alt="image"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End of partner section
 	============================================= -->
 
 
