@@ -43,8 +43,7 @@
                                                     <td>Tiger Nixon</td>
                                                     <td>System Architect</td>
                                                     <td>						
-                                                        <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button>
-                                                        <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></button>
+                                                        <a href="{{Route('userEdit','safsayg')}}" class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light  "><span class="icon-label"><i class="fa fa-trash"></i> </span><span class="btn-text"> </span></button>
                                                     </td>
                                                 </tr>
@@ -96,6 +95,10 @@
                             <div class="form-group">
                                 <label for="exampleDropdownFormPassword1">Password</label>
                                 <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleDropdownFormPassword1">Foto</label>
+                                <input type="file" class="form-control" id="foto">
                             </div>
                             <div class="text-right">
                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
