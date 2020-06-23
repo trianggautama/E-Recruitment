@@ -146,7 +146,14 @@
     <script src="{{asset('admin/vendors/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
     <script src="{{asset('admin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('admin/dist/js/dataTables-data.js')}}"></script>
-	
+    
+    
+    <!-- Tinymce JavaScript -->
+    <script src="{{asset('admin/vendors/tinymce/tinymce.min.js')}}"></script>
+
+    <!-- Tinymce Wysuhtml5 Init JavaScript -->
+    <script src="{{asset('admin/dist/js/tinymce-data.js')}}"></script>
+    
     <!-- Fancy Dropdown JS -->
     <script src="{{asset('admin/dist/js/dropdown-bootstrap-extended.js')}}"></script>
         <!-- Init JavaScript -->

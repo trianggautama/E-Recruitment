@@ -43,8 +43,8 @@
                                                     <td>Pembukaan Lowongan Pegawai</td>
                                                     <td>12 juli 2020</td>
                                                     <td>						
-                                                        <button class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button>
-                                                        <button class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></button>
+                                                        <a href="{{Route('beritaShow','xalsialn')}}" class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></a>
+                                                        <a href="{{Route('beritaEdit','gdjkagu')}}" class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-trash"></i> </span><span class="btn-text"> </span></button>
                                                     </td>
                                                 </tr>
@@ -75,7 +75,7 @@
 
     <!-- Modal forms-->
         <div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                      <div class="modal-header">
                         <h5 class="modal-title" id="status">Modal title</h5>
@@ -90,8 +90,8 @@
                                 <input type="text" class="form-control" id="nama" placeholder="nama">
                             </div>
                             <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Isi</label>
-                                <textarea name="" id="" class="form-control"></textarea>
+                                <label for="exampleDropdownFormEmail1">Isi </label>
+                                <textarea name="isi" id="isi" rows="10" class="tinymce" ></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">Thumbnail</label>

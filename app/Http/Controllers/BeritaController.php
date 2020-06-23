@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PosisiController extends Controller
+class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PosisiController extends Controller
      */
     public function index()
     {
-        return view('admin.posisi.index');
+        return view('admin.berita.index');
     }
 
     /**
@@ -45,7 +45,7 @@ class PosisiController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.berita.show');
     }
 
     /**
@@ -54,9 +54,9 @@ class PosisiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($uuid)
     {
-        return view('admin.posisi.edit');
+        return view('admin.berita.edit');
     }
 
     /**

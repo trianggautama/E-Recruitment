@@ -16,5 +16,9 @@ Route::get('/user/index', 'UserController@index')->name('userIndex');
 Route::get('/user/edit/{uuid}', 'UserController@edit')->name('userEdit');
 
 Route::get('/posisi/index', 'PosisiController@index')->name('posisiIndex');
+Route::get('/posisi/edit/{uuid}', 'PosisiController@edit')->name('posisiEdit');
 
-Route::get('/berita/index', 'adminController@beritaIndex')->name('beritaIndex');
+
+Route::get('/berita/index', 'BeritaController@index')->name('beritaIndex');
+Route::get('/berita/edit/{uuid}', 'BeritaController@edit')->name('beritaEdit');
+Route::get('/berita/detail/{uuid}', 'BeritaController@show')->name('beritaShow');

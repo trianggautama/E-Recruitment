@@ -43,8 +43,7 @@
                                                     <td>Teknisi Jaringan</td>
                                                     <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit modi omnis necessitatibus voluptas maiores voluptatibus quo tempora! Eum</td>
                                                     <td>						
-                                                        <button class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-eye"></i> </span><span class="btn-text"> </span></button>
-                                                        <button class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></button>
+                                                        <a href="{{Route('posisiEdit','hdiahdiah')}}" class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-trash"></i> </span><span class="btn-text"> </span></button>
                                                     </td>
                                                 </tr>
