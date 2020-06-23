@@ -45,7 +45,7 @@ class SoalController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.soal.show');
     }
 
     /**

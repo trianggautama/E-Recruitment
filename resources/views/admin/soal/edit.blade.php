@@ -67,7 +67,8 @@
                                             <input type="file" class="form-control " id="gambar" name="gambar">
                                         </div>
                                         <div class="text-right">
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
+                                            <a href="{{Route('soalIndex')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Kembali</a>
+                                            <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Edit Data</button>
                                         </div>
                                 </form>
                                     </div>

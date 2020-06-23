@@ -12,6 +12,9 @@
     <link href="{{asset('admin/vendors/jquery-toast-plugin/dist/jquery.toast.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('admin/vendors/morris.js/morris.css')}}" rel="stylesheet" type="text/css" />
 
+    <!-- select2 CSS -->
+    <link href="{{asset('admin/vendors/select2/dist/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+
     <!-- Data Table CSS -->
     <link href="{{asset('admin/vendors/datatables.net-dt/css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('admin/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
@@ -41,7 +44,7 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
                             <a class="dropdown-item" href="{{Route('posisiIndex')}}">Posisi</a>
-							<a class="dropdown-item" href="{{Route('beritaIndex')}}">Berita</a>
+							<a class="dropdown-item" href="{{Route('beritaIndex')}}">Informasi Recrutment</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">
@@ -85,7 +88,7 @@
                                 <span class="badge badge-success badge-indicator"></span>
                             </div>
                             <div class="media-body">
-                                <span>Aash Bill<i class="zmdi zmdi-chevron-down"></i></span>
+                                <span>Admin<i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
                     </a>
@@ -147,6 +150,9 @@
     <script src="{{asset('admin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('admin/dist/js/dataTables-data.js')}}"></script>
     
+    <!-- Select2 JavaScript -->
+    <script src="{{asset('admin/vendors/select2/dist/js/select2.full.min.js')}}"></script>
+    <script src="{{asset('admin/dist/js/select2-data.js')}}"></script>
     
     <!-- Tinymce JavaScript -->
     <script src="{{asset('admin/vendors/tinymce/tinymce.min.js')}}"></script>

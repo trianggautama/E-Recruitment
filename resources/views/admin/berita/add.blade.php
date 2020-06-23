@@ -8,7 +8,7 @@
 				<!-- Title -->
 				<div class="hk-pg-header align-items-top">
 					<div>
-						<h2 class="hk-pg-title font-weight-600 mb-10">Halaman Edit Informasi Lowongan</h2>
+						<h2 class="hk-pg-title font-weight-600 mb-10">Halaman Tambah Informasi Lowongan</h2>
 					</div>
 				</div>
 				<!-- /Title -->
@@ -19,7 +19,7 @@
 							<div class="col-lg-12">
 								
                             <section class="hk-sec-wrapper">
-                            <h5 class="hk-sec-title">Edit Informasi Lowongan</h5>
+                            <h5 class="hk-sec-title">Tambah Informasi Lowongan</h5>
                             <br>
                             <div class="row">
                                 <div class="col-sm">

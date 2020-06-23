@@ -44,7 +44,8 @@
                                                     <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit modi omnis necessitatibus voluptas maiores voluptatibus quo tempora! Eum</td>
                                                     <td><img src="{{asset('admin/dist/img/avatar1.jpg')}}" class="avatar-img rounded-circle" width="45"></td>
                                                     <td>A</td>
-                                                    <td>						
+                                                    <td>				
+                                                        <a href="{{Route('soalShow','hdiahdiah')}}" class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-info-circle"></i> </span><span class="btn-text"> </span></a>		
                                                         <a href="{{Route('soalEdit','hdiahdiah')}}" class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light  mb-1"><span class="icon-label"><i class="fa fa-trash"></i> </span><span class="btn-text"> </span></button>
                                                     </td>

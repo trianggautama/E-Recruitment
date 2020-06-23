@@ -43,6 +43,7 @@
                                                 <p class="text-danger"> Isi Jika ingin merubah foto</p>
                                             </div>
                                             <div class="text-right">
+                                                <a href="{{Route('userIndex')}}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Kembali</a>
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Ubah Data</button>
                                             </div>
                                     </form>

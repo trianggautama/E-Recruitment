@@ -20,6 +20,7 @@ Route::get('/posisi/edit/{uuid}', 'PosisiController@edit')->name('posisiEdit');
 
 
 Route::get('/berita/index', 'BeritaController@index')->name('beritaIndex');
+Route::get('/berita/tambah', 'BeritaController@create')->name('beritaAdd');
 Route::get('/berita/edit/{uuid}', 'BeritaController@edit')->name('beritaEdit');
 Route::get('/berita/detail/{uuid}', 'BeritaController@show')->name('beritaShow');
 
