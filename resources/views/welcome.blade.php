@@ -2,7 +2,7 @@
 <html lang="zxx">
 <head>
 	<meta charset="utf-8">
-	<title>Home Page</title>
+	<title>E-Recruitment</title>
 	<link rel="shortcut icon" href="{{asset('depan/assets/img/icon.png')}}">
 
 	<meta name="description" content="FundMe - is a Premium HTML Responsive Templeate by HTMLmate Team. You can use this for anykind of Nonprofit website">
@@ -78,7 +78,7 @@
 					<nav class="navbar">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
-							<a class="navbar-brand" href="home-1.html"><img src="{{asset('depan/assets/img/logo.png')}}" alt="image" width="50%"></a>
+							<a class="navbar-brand" href="/"><img src="{{asset('depan/assets/img/logo.png')}}" alt="image" width="50%"></a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
@@ -694,7 +694,7 @@
 									<div class="latest-news-date pull-left mr45">
 										<span class="date pull-left">15</span>
 										<span class="month text-uppercase pull-left">january</span>
-										<span class="year">2017</span>
+										<span class="year">2020</span>
 									</div>
 									<!-- /latest-news-date-text -->
 									<div class="latest-news-text">
@@ -705,74 +705,22 @@
 										<!-- /latest-news-text -->
 										<div class="latest-news-meta mt10">
 											<div class="meta">
-												<ul class="meta-list">
-													<li><a class="black" href="#"><span class="mr5 ti-pencil"></span> Tonmoy</a></li>
-													<li><a href="#"><span class="mr5 ti-comment-alt"></span>45</a></li>
-												</ul>
+												Tanggal Update 1 juli 2020
 											</div>
 										</div>
 										<div class="latest-news-text-details mt10">
-											<p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit an...</p>
-										</div>
+											<p class="text-justify">Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit an Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquam quos distinctio maiores. Maxime natus amet molestias cupiditate quos ea rem. Quasi sed nihil harum aut nam illum consequuntur adipisci? ...</p>
+											<div class="donate-now-btn">
+												<br>
+									<div class="donate-btn text-uppercase">
+										<a  href="{{Route('lowonganDetail','najgudah')}}">Detail Lowongan</a>
+									</div>
+								</div>										
+							</div>
 									</div>
 								</div>
 								<!-- /latest-news-date-text -->
 
-								<div class="latest-news-date-text pb10 mt25">
-									<div class="latest-news-date pull-left mr45">
-										<span class="date pull-left">20</span>
-										<span class="month text-uppercase pull-left">january</span>
-										<span class="year">2017</span>
-									</div>
-									<!-- /latest-news-date-text -->
-									<div class="latest-news-text">
-										<div class="latest-news-head">
-											<h3><a href="#">Consectetur adipisicing elit sed</a></h3>
-										</div>
-
-										<!-- /latest-news-text -->
-										<div class="latest-news-meta mt10">
-											<div class="meta">
-												<ul class="meta-list">
-													<li><a class="black" href="#"><span class="mr5 ti-pencil"></span> Tonmoy</a></li>
-													<li><a href="#"><span class="mr5 ti-comment-alt"></span>45</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="latest-news-text-details mt10">
-											<p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit an...</p>
-										</div>
-									</div>
-								</div>
-								<!-- /latest-news-date-text -->
-
-								<div class="latest-news-date-text pb10 mt25">
-									<div class="latest-news-date pull-left mr45">
-										<span class="date pull-left">26</span>
-										<span class="month text-uppercase pull-left">january</span>
-										<span class="year">2017</span>
-									</div>
-									<!-- /latest-news-date-text -->
-									<div class="latest-news-text">
-										<div class="latest-news-head">
-											<h3><a href="#">Consectetur adipisicing elit sed</a></h3>
-										</div>
-
-										<!-- /latest-news-text -->
-										<div class="latest-news-meta mt10">
-											<div class="meta">
-												<ul class="meta-list">
-													<li><a class="black" href="#"><span class="mr5 ti-pencil"></span> Tonmoy</a></li>
-													<li><a href="#"><span class="mr5 ti-comment-alt"></span>45</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="latest-news-text-details mt10">
-											<p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit an...</p>
-										</div>
-									</div>
-								</div>
-								<!-- /latest-news-date-text -->
 							</div>
 						</div>
 						<!-- /col-md-7 -->

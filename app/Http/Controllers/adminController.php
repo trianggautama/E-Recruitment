@@ -11,18 +11,13 @@ class adminController extends Controller
         return view('admin.index');
     }
 
-    public function userIndex(){
+    public function lowonganDetail($uuid){
 
-        return view('admin.user.index');
+        return view('lowonganDetail');
     }
 
-    public function posisiIndex(){
+    public function lowonganInput($uuid){
 
-        return view('admin.posisi.index');
-    }
-
-    public function beritaIndex(){
-
-        return view('admin.berita.index');
+        return view('lowonganInput');
     }
 }

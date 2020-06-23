@@ -9,6 +9,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/lowongan/detail/{uuid}', 'adminController@lowonganDetail')->name('lowonganDetail');
+Route::get('/lowongan/input/{uuid}', 'adminController@lowonganInput')->name('lowonganInput');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index', 'adminController@index')->name('index');
 
