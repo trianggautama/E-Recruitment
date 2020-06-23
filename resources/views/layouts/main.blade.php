@@ -61,15 +61,20 @@
 							</a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item">Application</a>
+                                <a href="#" class="dropdown-toggle dropdown-item">Lamaran</a>
                                 <div class="dropdown-menu open-right-side">
-                                    <a class="dropdown-item" href="chats.html">Chat</a>
-                                    <a class="dropdown-item" href="calendar.html">Calendar</a>
+                                    <a class="dropdown-item" href="chats.html">Pelamar</a>
                                 </div>
                             </div>
-                            <a class="dropdown-item" href="profile.html">Peserta</a>
-                            <a class="dropdown-item" href="#">Rekrutmen</a>
-                            <a class="dropdown-item" href="activity.html">Hasil Seleksi</a>
+                            <div class="sub-dropdown-menu show-on-hover">
+                                <a href="#" class="dropdown-toggle dropdown-item">Rekrutment</a>
+                                <div class="dropdown-menu open-right-side">
+                                    <a class="dropdown-item" href="chats.html">Seleksi Berkas</a>
+                                    <a class="dropdown-item" href="chats.html">Tes Kompetensi</a>
+                                    <a class="dropdown-item" href="chats.html">Tes Kesehatan</a>
+                                    <a class="dropdown-item" href="chats.html">Tes Wawancara</a>
+                                </div>
+                            </div>
                         </div>
                     </li>
                 </ul>
