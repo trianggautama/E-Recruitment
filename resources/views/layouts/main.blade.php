@@ -49,7 +49,7 @@
 								Manajemen Ujian
 							</a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <a class="dropdown-item" href="dashboard1.html">Manajemen Soal</a>
+                            <a class="dropdown-item" href="{{Route('soalIndex')}}">Manajemen Soal</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover">
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <a class="dropdown-item" href="profile.html">Peserta</a>
-                            <a class="dropdown-item" href="gallery.html">Rekrutmen</a>
+                            <a class="dropdown-item" href="#">Rekrutmen</a>
                             <a class="dropdown-item" href="activity.html">Hasil Seleksi</a>
                         </div>
                     </li>

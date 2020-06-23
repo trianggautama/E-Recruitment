@@ -33,14 +33,15 @@
 						<div class="col-xl-12 pa-0">
 							<div class="auth-form-wrap pt-xl-0 pt-70">
 								<div class="auth-form w-xl-35 w-lg-55 w-sm-75 w-100">
-									<a class="font-24 font-weight-500 auth-brand text-center d-block mb-20" href="#">
-									Scrooge
-									</a>
 									<form>
-										<h1 class="display-5 text-center mb-10">Welcome Back :)</h1>
-										<p class="text-center mb-30">Sign in to your account and enjoy unlimited perks.</p> 
+										<div class="text-center">
+										<a class="navbar-brand" href="#"><img src="{{asset('depan/assets/img/logo.png')}}" alt="image" width="50%"></a>
+										</div>
+										<br>
+										<h1 class="display-5 text-center mb-10">Halaman Login</h1>
+										<p class="text-center mb-30">Aplikasi E-recruitment Telkjom Akses</p> 
 										<div class="form-group">
-											<input class="form-control" placeholder="Email" type="email">
+											<input class="form-control" placeholder="username" type="text">
 										</div>
 										<div class="form-group">
 											<div class="input-group">
@@ -55,14 +56,7 @@
 											<label class="custom-control-label font-14" for="same-address">Keep me logged in</label>
 										</div>
 										<button class="btn btn-danger btn-block" type="submit">Login</button>
-										<p class="font-14 text-center mt-15">Having trouble logging in?</p>
-										<div class="option-sep">or</div>
-										<div class="form-row">
-											<div class="col-sm-6 mb-20"><button class="btn btn-indigo btn-block btn-wth-icon"> <span class="icon-label"><i class="fa fa-facebook"></i> </span><span class="btn-text">Login with facebook</span></button></div>
-											<div class="col-sm-6 mb-20"><button class="btn btn-sky btn-block btn-wth-icon"> <span class="icon-label"><i class="fa fa-twitter"></i> </span><span class="btn-text">Login with Twitter</span></button></div>
-										</div>
-										<p class="text-center">Do have an account yet? <a href="signup-simple.html">Sign Up</a></p>
-									</form>
+											</form>
 								</div>
 							</div>
 						</div>
