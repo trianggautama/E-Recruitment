@@ -19,13 +19,13 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/user/index/create', 'UserController@store')->name('userCreate');
     Route::get('/user/edit/{uuid}', 'UserController@edit')->name('userEdit');
     Route::put('/user/edit/{uuid}', 'UserController@update')->name('userUpdate');
-    Route::delete('/user/delete/{uuid}', 'UserController@destroy')->name('userDestroy');
+    Route::get('/user/delete/{uuid}', 'UserController@destroy')->name('userDestroy');
 
     Route::get('/posisi/index', 'PosisiController@index')->name('posisiIndex');
     Route::post('/posisi/index/create', 'PosisiController@store')->name('posisiCreate');
     Route::get('/posisi/edit/{uuid}', 'PosisiController@edit')->name('posisiEdit');
     Route::put('/posisi/edit/{uuid}', 'PosisiController@update')->name('posisiUpdate');
-    Route::delete('/posisi/delete/{uuid}', 'PosisiController@destroy')->name('posisiDestroy');
+    Route::get('/posisi/delete/{uuid}', 'PosisiController@destroy')->name('posisiDestroy');
 
     Route::get('/berita/index', 'BeritaController@index')->name('beritaIndex');
     Route::get('/berita/tambah', 'BeritaController@create')->name('beritaAdd');
@@ -33,6 +33,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/berita/edit/{uuid}', 'BeritaController@edit')->name('beritaEdit');
     Route::put('/berita/edit/{uuid}', 'BeritaController@update')->name('beritaUpdate');
     Route::get('/berita/detail/{uuid}', 'BeritaController@show')->name('beritaShow');
+    Route::get('/berita/delete/{uuid}', 'BeritaController@destroy')->name('beritaDestroy');
+
 
     Route::get('/lowongan/index', 'LowonganController@index')->name('lowonganIndex');
 

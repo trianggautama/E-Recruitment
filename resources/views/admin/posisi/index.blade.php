@@ -52,9 +52,7 @@
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></button>
+                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('{{$d->uuid}}','{{$d->nama}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -121,5 +119,23 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
+
+        function Hapus(uuid, nama) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus Data Posisi '" + nama ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("posisiDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection

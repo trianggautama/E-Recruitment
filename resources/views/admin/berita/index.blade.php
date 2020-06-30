@@ -73,9 +73,7 @@
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></button>
+                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('{{$d->uuid}}','{{$d->judul}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -109,5 +107,22 @@
 @endsection
 @section('scripts')
 <script>
+     function Hapus(uuid, judul) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus Data Lowongan '" + judul ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("beritaDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection
