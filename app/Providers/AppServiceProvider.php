@@ -13,7 +13,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        config(['app.locale' => 'id']);
+
+        \Carbon\Carbon::setLocale('id');
+
+        date_default_timezone_set('Asia/Jakarta');
+
     }
 
     /**
