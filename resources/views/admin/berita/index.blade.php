@@ -71,7 +71,7 @@
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-eye"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('beritaEdit','gdjkagu')}}"
+                                                        <a href="{{Route('beritaEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>

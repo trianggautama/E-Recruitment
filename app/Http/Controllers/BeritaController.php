@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Berita;
+use App\Lowongan;
 use App\Posisi;
+use File;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -16,12 +18,6 @@ class BeritaController extends Controller
     public function index()
     {
         $data = Berita::orderBy('id', 'desc')->get();
-        // foreach ($data as $d) {
-        //     foreach ($d->lowongan->posisi as $posisi) {
-
-        //         dd($posisi);
-        //     }
-        // }
         $posisi = Posisi::orderBy('nama', 'asc')->get();
         return view('admin.berita.index', compact('data', 'posisi'));
     }
@@ -56,6 +52,8 @@ class BeritaController extends Controller
             $berita->foto = $foto;
 
         }
+
+        $berita->update();
         $lowongan = $berita->lowongan()->create($req->all());
 
         return redirect()->route('beritaIndex')->withSuccess('Data berhasil disimpan');
@@ -81,7 +79,10 @@ class BeritaController extends Controller
      */
     public function edit($uuid)
     {
-        return view('admin.berita.edit');
+        $data = Berita::where('uuid', $uuid)->first();
+        $posisi = Posisi::orderBy('nama', 'asc')->get();
+
+        return view('admin.berita.edit', compact('data', 'posisi'));
     }
 
     /**
@@ -93,7 +94,23 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $berita = Berita::where('uuid', $uuid)->first();
+        $berita->fill($req->all())->save();
+
+        if ($req->foto != null) {
+            $img = $req->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $berita->id;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/berita', $foto);
+            $berita->foto = $foto;
+
+        }
+        $berita->update();
+        $lowongan = Lowongan::where('berita_id', $berita->id)->first();
+        $lowongan->fill($req->all())->save();
+
+        return redirect()->route('beritaIndex')->withSuccess('Data berhasil diubah');
     }
 
     /**
@@ -104,6 +121,8 @@ class BeritaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $berita = Berita::where('uuid', $uuid)->first();
+        File::delete('images/berita/' . $berita->foto);
+        $berita->delete();
     }
 }

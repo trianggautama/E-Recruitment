@@ -19,7 +19,7 @@ class CreateLowongansTable extends Migration
             $table->unsignedBigInteger('berita_id');
             // $table->unsignedBigInteger('posisi_id');
             $table->json('posisi');
-            $table->string('keterangan', 100);
+            $table->text('keterangan');
             $table->double('ipk_min')->nullable();
             $table->string('pendidikan_terakhir', 20);
             $table->date('tgl_mulai');
