@@ -75,7 +75,7 @@
                             <div class="sub-dropdown-menu show-on-hover">
                                 <a href="#" class="dropdown-toggle dropdown-item">Lamaran</a>
                                 <div class="dropdown-menu open-right-side">
-                                    <a class="dropdown-item" href="chats.html">Pelamar</a>
+                                    <a class="dropdown-item" href="{{Route('lowonganIndex')}}">Pelamar</a>
                                 </div>
                             </div>
                             <div class="sub-dropdown-menu show-on-hover">

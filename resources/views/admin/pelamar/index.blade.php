@@ -8,15 +8,12 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Informasi Lowongan</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Pelamar Pada Lwongan {{$lowongan->berita->judul}}</h2>
             </div>
-            <div class="d-flex">
+            <div class="d-flex text-right">
                 <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
                         class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
                     </span></button>
-                <a href="{{Route('beritaAdd')}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15"><span
-                        class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
-                    </span></a>
             </div>
         </div>
         <!-- /Title -->
@@ -36,56 +33,48 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Judul</th>
-                                                    <th>tanggal Pendaftaran</th>
-                                                    <th>posisi</th>
+                                                    <th>NIK</th>
+                                                    <th>Nama</th>
+                                                    <th>Tempat Tanggal Lahir</th>
+                                                    <th>Nomor Hp</th>
+                                                    <th>Email</th>
                                                     <th>Status</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($data as $d)
-                                                <tr>
-                                                    <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->judul}}</td>
-                                                    <td>{{carbon\carbon::parse($d->tgl_mulai)->translatedFormat('d F Y')}}
-                                                        -
-                                                        {{carbon\carbon::parse($d->tgl_selesai)->translatedFormat('d F Y')}}
-                                                    </td>
-                                                    <td>
-                                                      @foreach(collect($d->lowongan->posisi) as $p)
-                                                      {{$p}} <br>
-                                                      @endforeach
-                                                    </td>
-                                                    <td>
-                                                        @if($d->lowongan->status == 1)
-                                                            <p class="text-info">Sedang Berlangsung</p>
-                                                        @else
-                                                        <p class="text-success">Sudah Selesai</p>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{Route('beritaShow','xalsialn')}}"
+                                               <tr>
+                                                   <td>1</td>
+                                                   <td>1213141515141</td>
+                                                   <td>Pelamar 1</td>
+                                                   <td>Banjarbaru , 02 Februari 1999</td>
+                                                   <td>08591321341</td>
+                                                   <td>Pelamar@gmail.com</td>
+                                                   <td>Belum di verifikasi</td>
+                                                   <td>
+                                                   <a href="{{Route('pelamarShow','xaxa')}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-eye"></i>
+                                                               class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('beritaEdit',['uuid' => $d->uuid])}}"
+                                                   <a href="{{Route('pelamarEdit','xaxa')}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-outline-light  mb-1"><span
+                                                    <a href="{{Route('pelamarDestroy','xaxa')}}"
+                                                            class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></button>
-                                                    </td>
-                                                </tr>
-                                                @endforeach
+                                                            </span><span class="btn-text"> </span></a>
+                                                   </td>
+                                               </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Judul</th>
-                                                    <th>tanggal Pendaftaran</th>
-                                                    <th>posisi</th>
+                                                    <th>Posisi</th>
+                                                    <th>IPK minimal</th>
+                                                    <th>Pendidikan Terakhir</th>
+                                                    <th>Tanggal Pendaftaran</th>
                                                     <th>Status</th>
                                                     <th>Aksi</th>
                                                 </tr>
