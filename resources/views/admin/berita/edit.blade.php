@@ -45,15 +45,13 @@
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Posisi</label>
                                                 <select name="posisi[]" id="id"
-                                                    class=" form-control select2 select2-multiple" multiple="multiple"
+                                                    class=" form-control " multiple="multiple"
                                                     data-placeholder="Choose">
-                                                    {{-- @foreach($posisi as $p) --}}
-                                                    @foreach(collect($data->lowongan->posisi) as $d)
-                                                    <option value="{{$d}}">
-                                                        {{$d}}
+                                                    @foreach($posisi as $p) 
+                                                    <option value="{{$p->nama}}">
+                                                        {{$p->nama}}
                                                     </option>
-                                                    @endforeach
-                                                    {{-- @endforeach --}}
+                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
@@ -97,6 +95,7 @@
                                                     <option value="2"> Sudah Terlaksana </option>
                                                 </select>
                                             </div>
+                                            <input type="text" value="" class="form-control">
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>
                                                     Tambah Data</button>
@@ -125,8 +124,7 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
-        var value = $('#id').val();
-        $('#id').val(value);
-        $('#id').trigger('change');
+    $("#id").select2().val({!! $posisi2 !!});
+    $('#id').trigger('change');
 </script>
 @endsection

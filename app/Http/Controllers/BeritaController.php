@@ -81,8 +81,9 @@ class BeritaController extends Controller
     {
         $data = Berita::where('uuid', $uuid)->first();
         $posisi = Posisi::orderBy('nama', 'asc')->get();
+        $posisi2 = json_encode($data->lowongan->posisi);        
 
-        return view('admin.berita.edit', compact('data', 'posisi'));
+        return view('admin.berita.edit', compact('data', 'posisi','posisi2'));
     }
 
     /**
