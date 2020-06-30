@@ -33,6 +33,15 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/berita/edit/{uuid}', 'BeritaController@edit')->name('beritaEdit');
     Route::get('/berita/detail/{uuid}', 'BeritaController@show')->name('beritaShow');
 
+    Route::get('/lowongan/index', 'LowonganController@index')->name('lowonganIndex');
+
+    Route::get('/pelamar/index/{uuid}', 'PelamarController@index')->name('pelamarIndex');
+    Route::post('/pelamar/tambah', 'PelamarController@store')->name('pelamarStore');
+    Route::get('/pelamar/edit/{uuid}', 'PelamarController@edit')->name('pelamarEdit');
+    Route::get('/pelamar/detail/{uuid}', 'PelamarController@show')->name('pelamarShow');
+    Route::get('/pelamar/delete/{uuid}', 'PelamarController@delete')->name('pelamarDestroy');
+
+
     Route::get('/soal/index', 'SoalController@index')->name('soalIndex');
     Route::get('/soal/edit/{uuid}', 'SoalController@edit')->name('soalEdit');
     Route::get('/soal/detail/{uuid}', 'SoalController@show')->name('soalShow');

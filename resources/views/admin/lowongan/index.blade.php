@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Informasi Lowongan</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Informasi Pelamar</h2>
             </div>
             <div class="d-flex">
                 <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
@@ -37,8 +37,10 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Judul</th>
-                                                    <th>tanggal Pendaftaran</th>
-                                                    <th>posisi</th>
+                                                    <th>Posisi</th>
+                                                    <th>IPK minimal</th>
+                                                    <th>Pendidikan Terakhir</th>
+                                                    <th>Tanggal Pendaftaran</th>
                                                     <th>Status</th>
                                                     <th>Aksi</th>
                                                 </tr>
@@ -47,36 +49,29 @@
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->judul}}</td>
+                                                    <td>{{$d->berita->judul}}</td>
+                                                    <td> @foreach(collect($d->posisi) as $p)
+                                                      {{$p}} <br>
+                                                      @endforeach
+                                                    </td>
+                                                    <td>3.8</td>
+                                                    <td>S1</td>
                                                     <td>{{carbon\carbon::parse($d->tgl_mulai)->translatedFormat('d F Y')}}
                                                         -
                                                         {{carbon\carbon::parse($d->tgl_selesai)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>
-                                                      @foreach(collect($d->lowongan->posisi) as $p)
-                                                      {{$p}} <br>
-                                                      @endforeach
-                                                    </td>
-                                                    <td>
-                                                        @if($d->lowongan->status == 1)
+                                                        @if($d->status == 1)
                                                             <p class="text-info">Sedang Berlangsung</p>
                                                         @else
                                                         <p class="text-success">Sudah Selesai</p>
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        <a href="{{Route('beritaShow','xalsialn')}}"
+                                                        <a href="{{Route('pelamarIndex',['uuid'=>$d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-eye"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('beritaEdit','gdjkagu')}}"
-                                                            class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-edit"></i>
-                                                            </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></button>
-                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
@@ -84,8 +79,10 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Judul</th>
-                                                    <th>tanggal Pendaftaran</th>
-                                                    <th>posisi</th>
+                                                    <th>Posisi</th>
+                                                    <th>IPK minimal</th>
+                                                    <th>Pendidikan Terakhir</th>
+                                                    <th>Tanggal Pendaftaran</th>
                                                     <th>Status</th>
                                                     <th>Aksi</th>
                                                 </tr>
