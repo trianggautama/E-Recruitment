@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    
+
     public function index()
     {
-        return view('admin.user.index');
+        $data = User::where('role', 2)->orderBy('id', 'desc')->get();
+        return view('admin.user.index', compact('data'));
     }
 
     /**
@@ -28,9 +32,25 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+
+        $data = User::create($req->all());
+        $data->password = Hash::make($req->password);
+        if ($req->foto != null) {
+            $img = $req->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $data->id;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/user', $foto);
+            $data->foto = $foto;
+        }
+
+        $data->status = 1;
+        $data->role = 2;
+        $data->update();
+
+        return back()->withSuccess('Data berhasil disimpan');
     }
 
     /**
@@ -50,10 +70,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($uuid)
+    public function edit(Request $req, $uuid)
     {
+        $data = User::where('uuid', $uuid)->first();
 
-        return view('admin.user.edit');
+        return view('admin.user.edit', compact('data'));
     }
 
     /**
@@ -63,9 +84,28 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req, $uuid)
     {
-        //
+        $data = User::where('uuid', $uuid)->first();
+        $data->fill($req->all())->save();
+        if ($req->foto != null) {
+            $img = $req->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $data->id;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/user', $foto);
+            $data->foto = $foto;
+
+        }
+        if (isset($req->password)) {
+            $data->password = Hash::make($req->password);
+        }
+        if (isset($req->status)) {
+            $data->status = $req->status;
+        }
+        $data->update();
+
+        return redirect()->route('userIndex')->withSuccess('Data berhasil diubah');
     }
 
     /**
@@ -74,8 +114,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($uuid)
     {
-        //
+        $data = User::where('uuid', $uuid)->first();
+        File::delete('images/user' . $data->foto);
+
+        return back()->withSuccess('Data berhasil dihapus');
     }
 }
