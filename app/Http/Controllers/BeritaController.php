@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Berita;
+use App\Posisi;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -13,7 +15,15 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        return view('admin.berita.index');
+        $data = Berita::orderBy('id', 'desc')->get();
+        // foreach ($data as $d) {
+        //     foreach ($d->lowongan->posisi as $posisi) {
+
+        //         dd($posisi);
+        //     }
+        // }
+        $posisi = Posisi::orderBy('nama', 'asc')->get();
+        return view('admin.berita.index', compact('data', 'posisi'));
     }
 
     /**
@@ -23,7 +33,9 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view('admin.berita.add');
+        $posisi = Posisi::orderBy('nama', 'asc')->get();
+
+        return view('admin.berita.add', compact('posisi'));
     }
 
     /**
@@ -32,9 +44,21 @@ class BeritaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        $berita = Berita::create($req->all());
+        if ($req->foto != null) {
+            $img = $req->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $berita->id;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/berita', $foto);
+            $berita->foto = $foto;
+
+        }
+        $lowongan = $berita->lowongan()->create($req->all());
+
+        return redirect()->route('beritaIndex')->withSuccess('Data berhasil disimpan');
     }
 
     /**
@@ -43,9 +67,10 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        return view('admin.berita.show');
+        $data = Berita::where('uuid', $uuid)->first();
+        return view('admin.berita.show', compact('data'));
     }
 
     /**
