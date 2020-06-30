@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Posisi;
 use Illuminate\Http\Request;
 
 class PosisiController extends Controller
@@ -13,7 +14,8 @@ class PosisiController extends Controller
      */
     public function index()
     {
-        return view('admin.posisi.index');
+        $data = Posisi::orderBy('id', 'desc')->get();
+        return view('admin.posisi.index', compact('data'));
     }
 
     /**
@@ -21,7 +23,7 @@ class PosisiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
         //
     }
@@ -32,9 +34,11 @@ class PosisiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        $data = Posisi::create($req->all());
+
+        return back()->withSuccess('Data berhasil disimpan');
     }
 
     /**
@@ -54,9 +58,10 @@ class PosisiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($uuid)
     {
-        return view('admin.posisi.edit');
+        $data = Posisi::where('uuid', $uuid)->first();
+        return view('admin.posisi.edit', compact('data'));
     }
 
     /**
@@ -66,9 +71,12 @@ class PosisiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req, $uuid)
     {
-        //
+        $data = Posisi::where('uuid', $uuid)->first();
+        $data->fill($req->all())->save();
+
+        return redirect()->route('posisiIndex')->withSuccess('Data berhasil diubah');
     }
 
     /**
@@ -77,8 +85,11 @@ class PosisiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($uuid)
     {
-        //
+        $data = Posisi::where('uuid', $uuid)->first();
+        $data->delete();
+
+        return back()->withSuccess('Data berhasil dihapus');
     }
 }
