@@ -43,7 +43,9 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/pelamar/delete/{uuid}', 'PelamarController@delete')->name('pelamarDestroy');
 
     Route::get('/soal/index', 'SoalController@index')->name('soalIndex');
+    Route::post('/soal/index/create', 'SoalController@store')->name('soalStore');
     Route::get('/soal/edit/{uuid}', 'SoalController@edit')->name('soalEdit');
+    Route::put('/soal/edit/{uuid}', 'SoalController@update')->name('soalUpdate');
     Route::get('/soal/detail/{uuid}', 'SoalController@show')->name('soalShow');
 });
 Route::group(['middleware' => ['pelamar']], function () {

@@ -110,7 +110,6 @@
                                                         Sudah Terlaksana </option>
                                                 </select>
                                             </div>
-                                            <input type="text" value="" class="form-control">
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>
                                                     Tambah Data</button>

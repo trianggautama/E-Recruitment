@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Soal;
+use File;
 use Illuminate\Http\Request;
 
 class SoalController extends Controller
@@ -13,7 +15,8 @@ class SoalController extends Controller
      */
     public function index()
     {
-        return view('admin.soal.index');
+        $data = Soal::latest()->get();
+        return view('admin.soal.index', compact('data'));
     }
 
     /**
@@ -21,9 +24,9 @@ class SoalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        //
+
     }
 
     /**
@@ -32,9 +35,22 @@ class SoalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        $data = Soal::create($req->all());
+        if ($req->foto != null) {
+            $img = $req->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $data->id;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/soal', $foto);
+            $data->foto = $foto;
+
+        }
+
+        $data->update();
+
+        return back()->withSuccess('Data berhasil disimpan');
     }
 
     /**
@@ -54,9 +70,10 @@ class SoalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($uuid)
     {
-        return view('admin.soal.edit');
+        $data = Soal::where('uuid', $uuid)->first();
+        return view('admin.soal.edit', compact('data'));
     }
 
     /**
@@ -66,9 +83,24 @@ class SoalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req, $uuid)
     {
-        //
+        $data = Soal::where('uuid', $uuid)->first();
+        $data->fill($req->all())->save();
+        if ($req->foto != null) {
+            $img = $req->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $data->id;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/soal', $foto);
+            $data->foto = $foto;
+
+        }
+
+        $data->update();
+
+        return redirect()->route('soalIndex')->withSuccess('Data berhasil diubah');
+
     }
 
     /**
@@ -77,8 +109,12 @@ class SoalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($uuid)
     {
-        //
+        $data = Soal::where('uuid', $uuid)->first();
+        File::delete('images/soal/' . $data->foto);
+        $data->delete();
+
+        return back();
     }
 }
