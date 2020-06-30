@@ -676,134 +676,51 @@
 	============================================= -->
 	<section id="latest-news" class="latest-news-section">
 		<div class="container">
+		<div class="section-title text-center">
+					<div class="section-title-text">
+						<h2>Lowongan Pekerjaan</h2>
+					</div>
+				</div>
 			<div class="row section-content">
 				<div class="latest-news-content">
-					<div class="row">
-						<div class="col-sm-7">
-							<div class="section-title">
-								<div class="section-title-text text-uppercase text-left">
-									<p>Rekrutmen terbuka</p>
-								</div>
-								<div class="section-title-text text-left">
-									<h2>Jadwal</h2>
-								</div>
-							</div>
-							<!-- /section-title -->
-							<div class="latest-news-date-text-content">
-								<div class="latest-news-date-text pb20">
-									<div class="latest-news-date pull-left mr45">
-										<span class="date pull-left">15</span>
-										<span class="month text-uppercase pull-left">january</span>
-										<span class="year">2020</span>
-									</div>
-									<!-- /latest-news-date-text -->
-									<div class="latest-news-text">
-										<div class="latest-news-head">
-											<h3><a href="#">Consectetur adipisicing elit sed</a> </h3>
-										</div>
-
-										<!-- /latest-news-text -->
-										<div class="latest-news-meta mt10">
-											<div class="meta">
-												Tanggal Update 1 juli 2020
-											</div>
-										</div>
-										<div class="latest-news-text-details mt10">
-											<p class="text-justify">Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit an Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquam quos distinctio maiores. Maxime natus amet molestias cupiditate quos ea rem. Quasi sed nihil harum aut nam illum consequuntur adipisci? ...</p>
-											<div class="donate-now-btn">
-												<br>
-									<div class="donate-btn text-uppercase">
-										<a  href="{{Route('lowonganDetail','najgudah')}}">Detail Lowongan</a>
-									</div>
-								</div>										
-							</div>
-									</div>
-								</div>
-								<!-- /latest-news-date-text -->
-
-							</div>
-						</div>
-						<!-- /col-md-7 -->
-						<div class="col-sm-5">
+				<div class="row">
+				@foreach($berita as $b)
+						<div class="col-sm-4">
 							<div class="latest-news-slide-content">
 								<div class="latest-news-slide text-center">
-									<div class="slide-quate-pic pb60">
+									<div class="slide-quate-pic pb30">
 										<img src="{{asset('depan/assets/img/quate.png')}}" alt="image">
 									</div>
 									<!-- /slide-quate-pic -->
-									<div class="slide-text pb60">
-										<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperia eaque ipsa quae ab illo.
-										</p>
+									<div class="slide-text pb30">
+										<h2>{{$b->judul}}
+</h2>
 									</div>
 									<!-- /slide-text -->
 									<div class="quate-client-pic-text">
 										<div class="quate-client-pic pb60">
-											<div class="author-pic">
-												<img src="{{asset('depan/assets/img/quate-pic.jpg')}}" alt="image">
+											<div class="">
+												<img src="{{asset('images/berita/'.$b->foto)}}" alt="image">
 											</div>
+											<br>
+											<h4>{{carbon\carbon::parse($b->tgl_mulai)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($b->tgl_selesai)->translatedFormat('d F Y')}}</h4>
+											<h4>(  @foreach(collect($b->lowongan->posisi) as $p)
+                                                      {{$p}},
+                                                      @endforeach)</h4>
 										</div>
-										<div class="quate-client-text pb30">
-											<span class="client-name"><a href="#">Tamanna</a></span>
-											<span class="designation">CEO, CodexPond</span>
+										<div class="text-center">
+											<div class="text-uppercase ">
+												<a href="{{Route('lowonganDetail',['uuid'=>$b->uuid])}}" class="btn btn-danger " style="width: 100%; color:white;" href="#">Tentang Kami</a>
+											</div>
 										</div>
 									</div>
 									<!-- /quate-client-pic-text -->
 								</div>
 								<!-- latest-news-slide -->
-
-								<div class="latest-news-slide text-center">
-									<div class="slide-quate-pic pb60">
-										<img src="{{asset('depan/assets/img/quate.png')}}" alt="image">
-									</div>
-									<!-- /slide-quate-pic -->
-									<div class="slide-text pb60">
-										<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperia eaque ipsa quae ab illo.
-										</p>
-									</div>
-									<!-- /slide-text -->
-									<div class="quate-client-pic-text">
-										<div class="quate-client-pic pb60">
-											<div class="author-pic">
-												<img src="{{asset('depan/assets/img/quate-pic.jpg')}}" alt="image">
-											</div>
-										</div>
-										<div class="quate-client-text pb30">
-											<span class="client-name"><a href="#">Tamanna</a></span>
-											<span class="designation">CEO, CodexPond</span>
-										</div>
-									</div>
-									<!-- /quate-client-pic-text -->
-								</div>
-								<!-- latest-news-slide -->
-
-								<div class="latest-news-slide text-center">
-									<div class="slide-quate-pic pb60">
-										<img src="{{asset('depan/assets/img/quate.png')}}" alt="image">
-									</div>
-									<!-- /slide-quate-pic -->
-									<div class="slide-text pb60">
-										<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperia eaque ipsa quae ab illo.
-										</p>
-									</div>
-									<!-- /slide-text -->
-									<div class="quate-client-pic-text">
-										<div class="quate-client-pic pb60">
-											<div class="author-pic">
-												<img src="{{asset('depan/assets/img/quate-pic.jpg')}}" alt="image">
-											</div>
-										</div>
-										<div class="quate-client-text pb30">
-											<span class="client-name"><a href="#">Tamanna</a></span>
-											<span class="designation">CEO, CodexPond</span>
-										</div>
-									</div>
-									<!-- /quate-client-pic-text -->
-								</div>
-								<!-- latest-news-slide -->
-
 							</div>
 						</div>
 						<!-- /col-md-5 -->
+						@endforeach
 					</div>
 				</div>
 			</div>

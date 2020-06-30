@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'adminController@depan')->name('depan');
 
 Auth::routes();
 
@@ -49,6 +47,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/soal/edit/{uuid}', 'SoalController@edit')->name('soalEdit');
     Route::put('/soal/edit/{uuid}', 'SoalController@update')->name('soalUpdate');
     Route::get('/soal/detail/{uuid}', 'SoalController@show')->name('soalShow');
+    Route::get('/soal/delete/{uuid}', 'SoalController@destroy')->name('soalDestroy');
 });
 Route::group(['middleware' => ['pelamar']], function () {
     //halaman pelamar

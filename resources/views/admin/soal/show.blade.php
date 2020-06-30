@@ -33,19 +33,23 @@
                                     <div class="table-wrap">
                                         <div class="row">
                                             <div class="col-md-6">
+                                            @if($data->foto)
+                                            <img src="{{asset('images/soal/'. $data->foto)}}" alt="" width="100%">
+                                            @else
                                             <img src="{{asset('admin/dist/img/landing-pg/calenderapp.png')}}" alt="" width="100%">
-                                            </div>
+                                            @endif    
+                                        </div>
                                             <div class="col-md-6">
-                                                <p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit ipsam iure voluptatibus vel? Magnam delectus eligendi fugit ducimus quae, error sit eum minima temporibus, architecto non minus animi? Quisquam, doloribus?</p>
+                                                <p class="text-justify">{!! $data->soal !!}</p>
                                                 <hr>
                                                 <p><b>pilihan jawaban :</b></p><br>
-                                                <p> A. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                                <p> B. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                                <p> C. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                                <p> D. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                                <p> A. {{$data->a}}</p>
+                                                <p> B. {{$data->b}}</p>
+                                                <p> C. {{$data->c}}</p>
+                                                <p> D. {{$data->d}}</p>
                                                 <br>
                                                 <p><b>Kunci Jawaban :</b></p>
-                                                <p>B</p>
+                                                <p>{{$data->kunci }}</p>
                                             </div>
                                         </div>
                                     </div>

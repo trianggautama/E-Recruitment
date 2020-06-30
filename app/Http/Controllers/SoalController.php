@@ -59,9 +59,10 @@ class SoalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        return view('admin.soal.show');
+        $data = Soal::where('uuid',$uuid)->first();
+        return view('admin.soal.show',compact('data'));
     }
 
     /**

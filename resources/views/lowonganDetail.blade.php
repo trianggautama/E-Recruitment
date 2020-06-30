@@ -183,24 +183,25 @@
                         <div class="text-center">
                             <h2>Detail Lowongan Pekerjaan</h2> <br>
                                 <div class="col-md-6">
-                                <img src="{{asset('admin/dist/img/landing-pg/calenderapp.png')}}" alt="" width="100%">
+                                <img src="{{asset('images/berita/'. $berita->foto)}}" alt="" width="100%">
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam suscipit tempora est eligendi, quisquam maiores libero adipisci mollitia, enim sed itaque quos deleniti eaque ipsum cum! Illum cupiditate nam natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto voluptates a obcaecati labore quasi ducimus itaque sed illum corrupti dolorum neque amet expedita eos, modi impedit fuga facere perferendis atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dignissimos eligendi esse unde sit hic libero ratione, natus voluptatibus quas facere non est ex iusto nihil, autem vero sint ipsa?</p>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam suscipit tempora est eligendi, quisquam maiores libero adipisci mollitia,</p>
+									{!! $berita->isi !!}
                                     <br>
                                     <table class="text-left">
                                             <tr>
                                                 <td width="50%">Posisi</td>
-                                                <td>: Jaringan, Programmer</td>
+                                                <td>:  @foreach(collect($berita->lowongan->posisi) as $p)
+                                                      {{$p}},
+                                                      @endforeach</td>
                                             </tr>
                                             <tr>
                                                 <td>Tanggal Pendaftaran</td>
-                                                <td>: 1 Juli 2020 - 25 Juli 2020</td>
+                                                <td>:{{carbon\carbon::parse($berita->tgl_mulai)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($berita->tgl_selesai)->translatedFormat('d F Y')}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Pendidikan Minimal</td>
-                                                <td>: SMA</td>
+                                                <td>:{{$berita->lowongan->pendidikan_terakhir}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Status</td>
@@ -209,7 +210,7 @@
                                         </table>
                                         <br>
                                         <div class="donate-btn text-uppercase">
-										<a  href="{{Route('lowonganInput','najgudah')}}">Input Lamaran</a>
+										<a  href="{{Route('lowonganInput',['uuid'=>$berita->lowongan->uuid])}}">Input Lamaran</a>
 									</div>
                                 </div>
                             </div>

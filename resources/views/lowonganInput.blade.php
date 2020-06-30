@@ -145,6 +145,7 @@
                 <hr>
 					<div class="row">
                       <form action="">
+					  		<input type="text" class="form-control" id="lowongan_id" placeholder="lowongan_id" name="lowongan_id" value="{{$lowongan->id}}">
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">NIK</label>
                                 <input type="text" class="form-control" id="nik" placeholder="nik" name="nik">
