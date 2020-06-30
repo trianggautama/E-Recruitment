@@ -81,9 +81,9 @@ class BeritaController extends Controller
     {
         $data = Berita::where('uuid', $uuid)->first();
         $posisi = Posisi::orderBy('nama', 'asc')->get();
-        $posisi2 = json_encode($data->lowongan->posisi);        
+        $posisi2 = json_encode($data->lowongan->posisi);
 
-        return view('admin.berita.edit', compact('data', 'posisi','posisi2'));
+        return view('admin.berita.edit', compact('data', 'posisi', 'posisi2'));
     }
 
     /**
@@ -93,7 +93,7 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req, $uuid)
     {
         $berita = Berita::where('uuid', $uuid)->first();
         $berita->fill($req->all())->save();
