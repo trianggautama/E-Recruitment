@@ -120,10 +120,11 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($uuid)
     {
         $berita = Berita::where('uuid', $uuid)->first();
         File::delete('images/berita/' . $berita->foto);
         $berita->delete();
+        return redirect()->route('beritaIndex')->withSuccess('Data berhasil dihapus');
     }
 }

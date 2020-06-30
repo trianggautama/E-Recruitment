@@ -52,9 +52,8 @@
                                                             class="btn btn-sm btn-outline-light  "><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <button class="btn btn-sm btn-outline-light  "><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></button>
+                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('{{$d->uuid}}','{{$d->name}}')"> <i class="fa fa-trash"></i></button>
+
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -130,5 +129,23 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
+
+        function Hapus(uuid, name) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus Data User '" + name ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("userDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection

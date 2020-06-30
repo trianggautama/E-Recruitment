@@ -190,6 +190,8 @@
 
     <!-- Tinymce Wysuhtml5 Init JavaScript -->
     <script src="{{asset('admin/dist/js/tinymce-data.js')}}"></script>
+    <script src="{{asset('vendor/sweetalert/sweetalert.all.js')}}"></script>
+
 
     <!-- Fancy Dropdown JS -->
     <script src="{{asset('admin/dist/js/dropdown-bootstrap-extended.js')}}"></script>

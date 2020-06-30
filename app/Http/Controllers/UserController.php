@@ -118,7 +118,7 @@ class UserController extends Controller
     {
         $data = User::where('uuid', $uuid)->first();
         File::delete('images/user' . $data->foto);
-
+        $data->delete();
         return back()->withSuccess('Data berhasil dihapus');
     }
 }
