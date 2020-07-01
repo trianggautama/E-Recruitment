@@ -35,6 +35,10 @@ Route::group(['middleware' => ['admin']], function () {
 
 
     Route::get('/lowongan/index', 'LowonganController@index')->name('lowonganIndex');
+    
+    Route::get('/seleksiBerkas/index', 'PelamarController@lulusSeleksi')->name('seleksiBerkasIndex');
+    Route::get('/seleksiBerkas/detail/{uuid}', 'PelamarController@lulusSeleksiShow')->name('seleksiBerkasShow');
+
 
     Route::get('/pelamar/index/{uuid}', 'PelamarController@index')->name('pelamarIndex');
     Route::post('/pelamar/tambah', 'PelamarController@store')->name('pelamarStore');

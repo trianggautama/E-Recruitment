@@ -81,7 +81,7 @@
                             <div class="sub-dropdown-menu show-on-hover">
                                 <a href="#" class="dropdown-toggle dropdown-item">Rekrutment</a>
                                 <div class="dropdown-menu open-right-side">
-                                    <a class="dropdown-item" href="chats.html">Seleksi Berkas</a>
+                                    <a class="dropdown-item" href="{{Route('seleksiBerkasIndex')}}">Seleksi Berkas</a>
                                     <a class="dropdown-item" href="chats.html">Tes Kompetensi</a>
                                     <a class="dropdown-item" href="chats.html">Tes Kesehatan</a>
                                     <a class="dropdown-item" href="chats.html">Tes Wawancara</a>

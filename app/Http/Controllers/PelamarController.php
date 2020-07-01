@@ -19,4 +19,14 @@ class PelamarController extends Controller
     public function edit($uuid){
         return view('admin.pelamar.edit');
     }
+
+    public function lulusSeleksi(){
+        $data = Lowongan::latest()->get();
+        return view('admin.pelamar.seleksiBerkas',compact('data'));
+    }
+
+    public function lulusSeleksiShow($uuid){
+        $lowongan = Lowongan::where('uuid',$uuid)->first();
+        return view('admin.pelamar.seleksiBerkasShow',compact('lowongan'));
+    }
 }
