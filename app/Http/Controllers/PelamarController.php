@@ -15,4 +15,8 @@ class PelamarController extends Controller
     public function show($uuid){
         return view('admin.pelamar.show');
     }
+
+    public function edit($uuid){
+        return view('admin.pelamar.edit');
+    }
 }
