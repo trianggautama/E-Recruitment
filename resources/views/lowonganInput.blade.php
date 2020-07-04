@@ -159,11 +159,13 @@
 								name="lowongan_id" value="{{$lowongan->id}}" required>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">NIK</label>
-								<input type="number" class="form-control" id="NIK" placeholder="NIK" name="NIK" required>
+								<input type="number" class="form-control" id="NIK" placeholder="NIK" name="NIK"
+									required>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Nama</label>
-								<input type="text" class="form-control" id="nama" placeholder="nama" name="name" required>
+								<input type="text" class="form-control" id="nama" placeholder="nama" name="name"
+									required>
 							</div>
 							<br>
 							<div class="row">
@@ -188,7 +190,7 @@
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Tempat Lahir</label>
 										<input type="text" class="form-control" id="tempat_lahir"
-											placeholder="tempat_lahir" name="tempat_lahir"required >
+											placeholder="tempat_lahir" name="tempat_lahir" required>
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -218,7 +220,8 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Alamat Sekarang</label>
-								<textarea name="alamat_sekarang" id="alamat_sekarang" class="form-control" required></textarea>
+								<textarea name="alamat_sekarang" id="alamat_sekarang" class="form-control"
+									required></textarea>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Alamat KTP</label>
@@ -242,7 +245,8 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Hobi</label>
-								<input type="text" class="form-control" id="hobi" placeholder="hobi" name="hobi" required>
+								<input type="text" class="form-control" id="hobi" placeholder="hobi" name="hobi"
+									required>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Transportasi Sehari hari</label>
@@ -255,7 +259,8 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">E-mail</label>
-								<input type="text" class="form-control" id="email" placeholder="email" name="email" required>
+								<input type="text" class="form-control" id="email" placeholder="email" name="email"
+									required>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Pas Foto</label>
@@ -265,7 +270,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Ijazah Terakhir</label>
-										<select name="ijazah_terakhir" id="agama" class="form-control" required >
+										<select name="ijazah_terakhir" id="agama" class="form-control" required>
 											<option value="SMA">SMA</option>
 											<option value="SMK">SMK</option>
 											<option value="D2">D2</option>
@@ -279,7 +284,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Scan Ijazah</label>
-										<input type="file" class="form-control" id="ijazah" name="ijazah" required>
+										<input type="file" class="form-control" id="ijazah" name="doc_ijazah" required>
 									</div>
 								</div>
 							</div>
@@ -287,7 +292,8 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Tahun Lulus</label>
-										<input type="number" class="form-control" id="tahun_lulus" name="tahun_lulus" required>
+										<input type="number" class="form-control" id="tahun_lulus" name="tahun_lulus"
+											required>
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -314,19 +320,20 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Scan Ktp</label>
-										<input type="file" class="form-control" id="ktp" name="ktp" required>
+										<input type="file" class="form-control" id="ktp" name="foto_ktp" required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Raport / Transkip Nilai</label>
-										<input type="file" class="form-control" id="transkip" name="transkip" required>
+										<input type="file" class="form-control" id="transkip" name="doc_transkip"
+											required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">NPWP</label>
-										<input type="file" class="form-control" id="npwp" name="npwp">
+										<input type="file" class="form-control" id="npwp" name="doc_npwp">
 										<small class="text-primary">Isi jika ada </small>
 									</div>
 								</div>
