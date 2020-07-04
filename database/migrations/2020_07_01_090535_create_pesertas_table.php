@@ -26,7 +26,7 @@ class CreatePesertasTable extends Migration
             $table->string('warga_negara', 50);
             $table->text('alamat_sekarang');
             $table->text('alamat_ktp');
-            $table->string('tlp_rumah', 14);
+            $table->string('tlp_rumah', 14)->nullable();
             $table->string('tlp_hp', 14);
             $table->string('hobi', 50);
             $table->string('transportasi', 50);
