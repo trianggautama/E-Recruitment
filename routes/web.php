@@ -52,7 +52,20 @@ Route::group(['middleware' => ['admin']], function () {
     Route::put('/soal/edit/{uuid}', 'SoalController@update')->name('soalUpdate');
     Route::get('/soal/detail/{uuid}', 'SoalController@show')->name('soalShow');
     Route::get('/soal/delete/{uuid}', 'SoalController@destroy')->name('soalDestroy');
+
+    Route::get('/ujiKompetensi/index', 'ujiKompetensiController@index')->name('ujiKompetensiIndex');
+    Route::post('/ujiKompetensi/create', 'ujiKompetensiController@store')->name('ujiKompetensiStore');
+    Route::get('/ujiKompetensi/edit/{uuid}', 'ujiKompetensiController@edit')->name('ujiKompetensiEdit');
+    Route::put('/ujiKompetensi/edit/{uuid}', 'ujiKompetensiController@update')->name('ujiKompetensiUpdate');
+    Route::get('/ujiKompetensi/detail/{uuid}', 'ujiKompetensiController@show')->name('ujiKompetensiShow');
+    Route::get('/ujiKompetensi/delete/{uuid}', 'ujiKompetensiController@destroy')->name('ujiKompetensiDestroy');
 });
 Route::group(['middleware' => ['pelamar']], function () {
+
     //halaman pelamar
+    Route::get('/pelamar/index', 'UserController@pelamarIndex')->name('pelamarIndex');
+    Route::get('/pelamar/profil', 'UserController@pelamarProfil')->name('profilUser');
+    Route::get('/ujiKompetensi/input', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
+    Route::get('/ujiKompetensi/hasil', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
+
 });

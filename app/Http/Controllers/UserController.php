@@ -121,4 +121,14 @@ class UserController extends Controller
         $data->delete();
         return back()->withSuccess('Data berhasil dihapus');
     }
+
+    public function pelamarIndex()
+    {
+        return view('user.index');
+    }
+
+    public function pelamarProfil()
+    {
+        return view('user.profil');
+    }
 }

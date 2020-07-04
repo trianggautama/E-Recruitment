@@ -21,8 +21,7 @@ class Admin
         }
 
         if (Auth::user()->role == 1) {
-            return 'Halaman user';
-            // return redirect()->route('userIndex');
+            return redirect()->route('pelamarIndex');
         }
 
         if (Auth::user()->role == 2) {
