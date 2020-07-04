@@ -43,6 +43,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/pelamar/tambah', 'PelamarController@store')->name('pelamarStore');
     Route::get('/pelamar/edit/{uuid}', 'PelamarController@edit')->name('pelamarEdit');
     Route::get('/pelamar/detail/{uuid}', 'PelamarController@show')->name('pelamarShow');
+    Route::post('/pelamar/verif/{uuid}', 'PelamarController@verifPeserta')->name('verifPeserta');
     Route::get('/pelamar/delete/{uuid}', 'PelamarController@delete')->name('pelamarDestroy');
 
     Route::get('/soal/index', 'SoalController@index')->name('soalIndex');
