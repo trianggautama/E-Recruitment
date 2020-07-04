@@ -8,7 +8,8 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h3 class="hk-pg-title font-weight-600 mb-10">Halaman Pelamar Lulus Pemberkasan Pada Lowongan {{$lowongan->berita->judul}}</h3>
+                <h3 class="hk-pg-title font-weight-600 mb-10">Halaman Pelamar Lulus Pemberkasan Pada Lowongan
+                    {{$lowongan->berita->judul}}</h3>
             </div>
             <div class="d-flex text-right">
                 <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
@@ -42,28 +43,33 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                               <tr>
-                                                   <td>1</td>
-                                                   <td>1213141515141</td>
-                                                   <td>Pelamar 1</td>
-                                                   <td>Banjarbaru , 02 Februari 1999</td>
-                                                   <td>08591321341</td>
-                                                   <td>Pelamar@gmail.com</td>
-                                                   <td>
-                                                   <a href="{{Route('pelamarShow','xaxa')}}"
+                                                @foreach($data as $d)
+                                                <tr>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->NIK}}</td>
+                                                    <td>{{$d->user->name}}</td>
+                                                    <td>{{$d->tempat_lahir}},
+                                                        {{carbon\carbon::parse($d->tgl_lahir)->translatedFormat('d F Y')}}
+                                                    </td>
+                                                    <td>{{$d->tlp_hp}}</td>
+                                                    <td>{{$d->email}}</td>
+
+                                                    <td>
+                                                        <a href="{{Route('pelamarShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
-                                                               class="icon-label"><i class="fa fa-info-circle"></i>
+                                                                class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                   <a href="{{Route('pelamarEdit','xaxa')}}"
+                                                        <a href="{{Route('pelamarEdit','xaxa')}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                    <a href="{{Route('pelamarDestroy','xaxa')}}"
+                                                        <a href="{{Route('pelamarDestroy','xaxa')}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-trash"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                   </td>
-                                               </tr>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
