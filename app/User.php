@@ -42,4 +42,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Berita::class);
     }
+
+    public function peserta()
+    {
+        return $this->hasOne(Peserta::class);
+    }
+
 }
