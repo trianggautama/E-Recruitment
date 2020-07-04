@@ -46,7 +46,7 @@
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->soal}}</td>
+                                                    <td>{!!$d->soal!!}</td>
                                                     <td><img src="{{asset('images/soal/'.$d->foto)}}"
                                                             class="avatar-img rounded-circle" width="45"></td>
                                                     <td>{{strtoupper($d->kunci)}}</td>
@@ -59,7 +59,9 @@
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('{{$d->uuid}}','{{$d->soal}}')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-outline-light"
+                                                            onclick="Hapus('{{$d->uuid}}','{{$d->soal}}')"> <i
+                                                                class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
