@@ -48,4 +48,9 @@ class User extends Authenticatable
         return $this->hasOne(Peserta::class);
     }
 
+    public function lampiran()
+    {
+        return $this->hasOne(Lampiran::class);
+    }
+
 }
