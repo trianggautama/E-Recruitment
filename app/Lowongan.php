@@ -35,9 +35,9 @@ class Lowongan extends Model
         return $this->belongsTo(Berita::class);
     }
 
-    // public function posisi()
-    // {
-    //     return $this->belongsTo(Posisi::class);
-    // }
+    public function peserta()
+    {
+        return $this->hasMany(Peserta::class);
+    }
 
 }
