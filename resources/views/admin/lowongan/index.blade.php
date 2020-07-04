@@ -51,18 +51,24 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->berita->judul}}</td>
                                                     <td> @foreach(collect($d->posisi) as $p)
-                                                      {{$p}} <br>
-                                                      @endforeach
+                                                        {{$p}} <br>
+                                                        @endforeach
                                                     </td>
-                                                    <td>3.8</td>
-                                                    <td>S1</td>
+                                                    <td>
+                                                        @if(!$d->ipk_min)
+                                                        -
+                                                        @else
+                                                        {{$d->ipk_min}}
+                                                        @endif
+                                                    </td>
+                                                    <td>{{$d->pendidikan_terakhir}}</td>
                                                     <td>{{carbon\carbon::parse($d->tgl_mulai)->translatedFormat('d F Y')}}
                                                         -
                                                         {{carbon\carbon::parse($d->tgl_selesai)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>
                                                         @if($d->status == 1)
-                                                            <p class="text-info">Sedang Berlangsung</p>
+                                                        <p class="text-info">Sedang Berlangsung</p>
                                                         @else
                                                         <p class="text-success">Sudah Selesai</p>
                                                         @endif
