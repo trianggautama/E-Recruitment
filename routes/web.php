@@ -8,6 +8,7 @@ Auth::routes();
 
 Route::get('/lowongan/detail/{uuid}', 'adminController@lowonganDetail')->name('lowonganDetail');
 Route::get('/lowongan/input/{uuid}', 'adminController@lowonganInput')->name('lowonganInput');
+Route::post('/lowongan/input/create', 'PelamarController@store')->name('lowonganInputStore');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['admin']], function () {
@@ -33,12 +34,10 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/berita/detail/{uuid}', 'BeritaController@show')->name('beritaShow');
     Route::get('/berita/delete/{uuid}', 'BeritaController@destroy')->name('beritaDestroy');
 
-
     Route::get('/lowongan/index', 'LowonganController@index')->name('lowonganIndex');
-    
+
     Route::get('/seleksiBerkas/index', 'PelamarController@lulusSeleksi')->name('seleksiBerkasIndex');
     Route::get('/seleksiBerkas/detail/{uuid}', 'PelamarController@lulusSeleksiShow')->name('seleksiBerkasShow');
-
 
     Route::get('/pelamar/index/{uuid}', 'PelamarController@index')->name('pelamarIndex');
     Route::post('/pelamar/tambah', 'PelamarController@store')->name('pelamarStore');
