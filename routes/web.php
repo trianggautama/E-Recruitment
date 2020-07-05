@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//
+
 Route::get('/', 'adminController@depan')->name('depan');
 
 Auth::routes();
