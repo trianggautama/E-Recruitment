@@ -65,6 +65,7 @@ Route::group(['middleware' => ['pelamar']], function () {
     //halaman pelamar
     Route::get('/pelamar/index', 'UserController@pelamarIndex')->name('pelamarIndex');
     Route::get('/pelamar/profil', 'UserController@pelamarProfil')->name('profilUser');
+    Route::put('/pelamar/profilUpdate/{uuid}', 'UserController@pelamarProfilUpdate')->name('pelamarProfilUpdate');
     Route::get('/ujiKompetensi/input', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
     Route::get('/ujiKompetensi/hasil', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
 

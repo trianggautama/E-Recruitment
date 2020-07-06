@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Peserta;
 use App\User;
 use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -129,6 +131,37 @@ class UserController extends Controller
 
     public function pelamarProfil()
     {
-        return view('user.profil');
+        $data = Auth::user();
+        return view('user.profil', compact('data'));
+    }
+
+    public function pelamarProfilUpdate(Request $req, $uuid)
+    {
+        $data = User::findOrFail($uuid);
+
+        $data->fill($req->all())->save();
+        if ($req->foto != null) {
+            $img = $req->file('foto');
+            $FotoExt = $img->getClientOriginalExtension();
+            $FotoName = $data->id;
+            $foto = $FotoName . '.' . $FotoExt;
+            $img->move('images/user', $foto);
+            $data->foto = $foto;
+
+        }
+        if (isset($req->password)) {
+            $data->password = Hash::make($req->password);
+        }
+        if (isset($req->status)) {
+            $data->status = $req->status;
+        }
+        $data->update();
+
+        $peserta = Peserta::findOrFail($data->peserta->id);
+
+        $peserta->fill($req->all())->save();
+
+        return redirect()->route('pelamarIndex')->withSuccess('Profil berhasil diupdate');
+
     }
 }
