@@ -11,11 +11,11 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Uji Kompetensi</h2>
             </div>
             <div class="d-flex">
-            <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
+                <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
             </div>
-</div>
+        </div>
         <div class="row">
             <div class="col-xl-12">
                 <div class="hk-row">
@@ -38,25 +38,35 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>lowongan 1</td>
-                                                <td>2 Juli 2020</td>
-                                                <td>Sudah Lewat</td>
-                                                <td>
-                                                    <a href="{{Route('ujiKompetensiShow','vsbdvhdb')}}"
+                                                @foreach($data as $d)
+                                                <tr>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->berita->judul}}</td>
+                                                    <td>{{carbon\carbon::parse($d->tgl_ujian)->translatedFormat('d F Y')}}
+                                                    </td>
+                                                    <td>
+                                                        @if(carbon\carbon::now() == $d->tgl_ujian)
+                                                        Hari uji kompetensi
+                                                        @elseif(carbon\carbon::now() > $d->tgl_ujian)
+                                                        Sudah lewat
+                                                        @else
+                                                        Belum dimulai
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{Route('ujiKompetensiShow','vsbdvhdb')}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                    <a href="{{Route('ujiKompetensiEdit','vsbdvhdb')}}"
+                                                        <a href="{{Route('ujiKompetensiEdit','vsbdvhdb')}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-outline-light"
-                                                            onclick="Hapus('')"> <i
-                                                                class="fa fa-trash"></i></button>
-                                                </td>
-                                              </tr>
+                                                        <button class="btn btn-sm btn-outline-light"
+                                                            onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -100,8 +110,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Lowongan</label>
-                        <select name="kunci" id="" class="form-control">
-                            <option value="a">-- pilih lowongan --</option>
+                        <select name="lowongan_id" id="" class="form-control">
+                            <option value="">-- pilih lowongan --</option>
+                            @foreach($lowongan as $d)
+                            <option value="{{$d->id}}">{{$d->berita->judul}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
@@ -120,7 +133,7 @@
 @endsection
 @section('scripts')
 <script>
-        $("#tambah").click(function(){
+    $("#tambah").click(function(){
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
