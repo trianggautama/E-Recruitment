@@ -83,7 +83,7 @@
                                 <div class="dropdown-menu open-right-side">
                                     <a class="dropdown-item" href="{{Route('seleksiBerkasIndex')}}">Seleksi Berkas</a>
                                     <a class="dropdown-item" href="{{Route('ujiKompetensiIndex')}}">Tes Kompetensi</a>
-                                    <a class="dropdown-item" href="chats.html">Tes Kesehatan</a>
+                                    <a class="dropdown-item" href="{{Route('ujiKesehatanIndex')}}">Tes Kesehatan</a>
                                     <a class="dropdown-item" href="chats.html">Tes Wawancara</a>
                                 </div>
                             </div>
