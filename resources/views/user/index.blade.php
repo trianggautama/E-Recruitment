@@ -198,11 +198,19 @@
 						<p>Aplikasi Rekrutmen Pegawai PT.Telkom Akses<a href="#"> Learn more.</a></p>
 					</div>
 					<div class="d-flex">
-						<a href="{{Route('profilUser')}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15"><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text">Ubah Profil </span></a>
+                    @if(Auth::user()->status == 1)
+                        <a href="{{Route('profilUser')}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15"><span class="icon-label"><i class="fa fa-edit"></i> </span><span class="btn-text">Ubah Profil </span></a>
+                    @endif
 					</div>
 				</div>
 				<!-- /Title -->
-				<!-- Row -->
+                <!-- Row -->
+                @if(Auth::user()->status == 1)
+                <div class="alert alert-danger">
+                <h4>Peringatan</h4>
+                <p>Pastikan untuk mengganti password anda untuk keamanan akun </p>
+                </div>
+                <br>
                 <div class="row">
                     <div class="col-xl-12">
                     <ul class="timeline">
@@ -255,7 +263,13 @@
                     </div>
                     </li>
                 </ul>
-					</div>
+                    </div>
+                @else
+                <div class="alert alert-danger">
+                <h4>Akun anda belum aktif</h4>
+                <p>Silahkan menunggu verifikasi dari admin</p>
+                </div>
+                @endif
                 </div>
                 <!-- /Row -->
             </div>

@@ -60,7 +60,7 @@
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light"
-                                                            onclick="Hapus('{{$d->uuid}}','{{$d->soal}}')"> <i
+                                                            onclick="Hapus('{{$d->uuid}}')"> <i
                                                                 class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
@@ -163,10 +163,10 @@
             $('#exampleModalForms').modal('show');
         });
 
-        function Hapus(uuid, soal) {
+        function Hapus(uuid) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Posisi '" + soal ,        
+			text: " Menghapus Data Soal" ,        
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',

@@ -178,6 +178,16 @@
 											<label for="exampleDropdownFormEmail1">Pas Foto</label>
 											<input type="file" class="form-control" id="foto" name="foto">
 										</div>
+										<div class="form-group">
+											<label for="exampleDropdownFormEmail1">Username</label>
+											<input type="text" class="form-control" id="username" name="username">
+											<p class="text-danger">Isi jika ingin merubah username</p>
+										</div>
+										<div class="form-group">
+											<label for="exampleDropdownFormEmail1">Password</label>
+											<input type="text" class="form-control" id="password" name="password">
+											<p class="text-danger">Isi jika ingin merubah password</p>
+										</div>
 										<div class="text-right">
 											<button type="submit" class="btn btn-danger "><i class="ti-save"></i> Ubah
 												Data

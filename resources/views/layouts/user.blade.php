@@ -41,7 +41,7 @@
             <a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse"
                 data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
-            <a class="navbar-brand text-red" href="dashboard1.html">
+            <a class="navbar-brand text-red" href="{{Route('pelamarIndex')}}">
                 E-Recruitment
             </a>
             <div class="collapse navbar-collapse" id="navbarCollapseAlt">
@@ -52,9 +52,13 @@
                             Master Data
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                        @if(Auth::user()->status == 1)
                             <a class="dropdown-item" href="{{Route('userIndex')}}">Hasil Uji Kompetensi</a>
                             <a class="dropdown-item" href="{{Route('posisiIndex')}}">Hasil Tes Kesehatan</a>
                             <a class="dropdown-item" href="{{Route('beritaIndex')}}">Hasil Tes Wawancara</a>
+                        @else
+                            <a class="dropdown-item" href="#">Akun anda belum aktif</a>
+                        @endif
                         </div>
                     </li>
                 </ul>

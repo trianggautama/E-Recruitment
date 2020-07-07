@@ -73,8 +73,8 @@
                                                         <p class="text-success">Sudah Selesai</p>
                                                         @endif
                                                     </td>
-                                                    <td>
-                                                        <a href="{{Route('pelamarIndex',['uuid'=>$d->uuid])}}"
+                                                    <td> 
+                                                        <a href="{{Route('dataPelamarIndex',['uuid'=>$d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-eye"></i>
                                                             </span><span class="btn-text"> </span></a>
