@@ -63,11 +63,17 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/ujiKesehatan/index', 'ujiKesehatanController@index')->name('ujiKesehatanIndex');
     Route::post('/ujiKesehatan/create', 'ujiKesehatanController@store')->name('ujiKesehatanStore');
     Route::get('/ujiKesehatan/edit/{uuid}', 'ujiKesehatanController@edit')->name('ujiKesehatanEdit');
-    Route::get('/ujiKesehatan/edit/rincian/{uuid}', 'ujiKesehatanController@rincianEdit')->name('ujiKesehatanRincianEdit');
     Route::put('/ujiKesehatan/edit/{uuid}', 'ujiKesehatanController@update')->name('ujiKesehatanUpdate');
     Route::get('/ujiKesehatan/detail/{uuid}', 'ujiKesehatanController@show')->name('ujiKesehatanShow');
     Route::get('/ujiKesehatan/delete/{uuid}', 'ujiKesehatanController@destroy')->name('ujiKesehatanDestroy');
+
+    // uji kesehatan peserta
+    Route::post('/ujiKesehatan/detail/create', 'ujiKesehatanController@pesertaStore')->name('ujiKesehatanPesertaStore');
+    Route::get('/ujiKesehatan/detail/edit/{uuid}', 'ujiKesehatanController@rincianEdit')->name('ujiKesehatanRincianEdit');
+    Route::put('/ujiKesehatan/detail/edit/{uuid}', 'ujiKesehatanController@rincianUpdate')->name('ujiKesehatanRincianUpdate');
+    Route::get('/ujiKesehatan/detail/delete/{uuid}', 'ujiKesehatanController@rincianDestroy')->name('ujiKesehatanRincianDestroy');
 });
+
 Route::group(['middleware' => ['pelamar']], function () {
 
     //halaman pelamar
@@ -75,6 +81,7 @@ Route::group(['middleware' => ['pelamar']], function () {
     Route::get('/pelamar/profil', 'UserController@pelamarProfil')->name('profilUser');
     Route::put('/pelamar/profilUpdate/{uuid}', 'UserController@pelamarProfilUpdate')->name('pelamarProfilUpdate');
     Route::get('/ujiKompetensi/input', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
+    Route::post('/ujiKompetensi/input', 'ujiKompetensiController@inputStore')->name('ujiKompetensiStore');
     Route::get('/ujiKompetensi/hasil', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
 
 });
