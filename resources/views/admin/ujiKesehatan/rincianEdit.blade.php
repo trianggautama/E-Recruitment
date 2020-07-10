@@ -24,30 +24,40 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
-                                        <form method="POST" enctype="multipart/form-data">
+                                        <form method="POST" enctype="multipart/form-data" enctype="multipart/form-data">
                                             @method('PUT')
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1"> Peserta</label>
-                                                <select name="" id="" class="form-control">
-                                                    <option value="">-- pilih peserta --</option>
+                                                <select name="peserta_id" id="" class="form-control"
+                                                    aria-readonly="true">
+                                                    @foreach($peserta as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$data->peserta_id == $d->id ? 'selected' : ''}}>
+                                                        {{$d->user->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Surat Kesahatan dan Tidak Buta Warna</label>
-                                                <input type="file" class="form-control " id="Surat_kesehatan" name="Surat_kesehatan">
+                                                <label for="exampleDropdownFormEmail1">Surat Kesahatan dan Tidak Buta
+                                                    Warna</label>
+                                                <input type="file" class="form-control " id="Surat_kesehatan"
+                                                    name="Surat_kesehatan">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Surat Bebas Narkoba</label>
-                                                <input type="file" class="form-control " id="Surat_Narkoba" name="Surat_Narkoba">
+                                                <input type="file" class="form-control " id="Surat_Narkoba"
+                                                    name="Surat_narkoba">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Detak Jantung (Bpm)</label>
-                                                <input type="text" class="form-control " id="detak_jantung" name="detak_jantung">
+                                                <input type="text" class="form-control " id="detak_jantung"
+                                                    value="{{$data->detak_jantung}}" name="detak_jantung">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Hasil Tes Lari</label>
-                                                <input type="text" class="form-control " id="tes_lari" name="tes_lari">
+                                                <input type="text" class="form-control " id="tes_lari"
+                                                    value="{{$data->tes_lari}}" name="tes_lari">
                                             </div>
                                             <div class="text-right">
                                                 <a href="{{Route('soalIndex')}}" class="btn btn-secondary"><i
