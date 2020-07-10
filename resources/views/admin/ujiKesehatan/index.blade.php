@@ -38,20 +38,28 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Lowongan 1</td>
-                                                    <td>2 juni 2020
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->lowongan->berita->judul}}</td>
+                                                    <td>{{carbon\carbon::parse($d->tgl_uji)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>
-                                                        Belum dimulai
+                                                        @if($now == carbon\carbon::parse($d->tgl_uji)->format('Ymd'))
+                                                        Hari uji Kesehatan
+                                                        @elseif($now < carbon\carbon::parse($d->tgl_uji)->format('Ymd'))
+                                                            Belum dimulai
+                                                            @elseif($now >
+                                                            carbon\carbon::parse($d->tgl_uji)->format('Ymd'))
+                                                            Sudah lewat
+                                                            @endif
                                                     </td>
                                                     <td>
-                                                        <a href="{{Route('ujiKesehatanShow','vsbdvhdb')}}"
+                                                        <a href="{{Route('ujiKesehatanShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('ujiKesehatanEdit','vsbdvhdb')}}"
+                                                        <a href="{{Route('ujiKesehatanEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -59,6 +67,7 @@
                                                             onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -98,7 +107,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('soalStore')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{Route('ujiKesehatanStore')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Lowongan</label>
@@ -111,7 +120,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal uji Kesehatan</label>
-                        <input type="date" class="form-control " id="tanggal_ujian" name="tanggal_ujian">
+                        <input type="date" class="form-control " id="tgl_uji" name="tgl_uji">
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
