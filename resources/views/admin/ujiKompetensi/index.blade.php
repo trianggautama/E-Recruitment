@@ -41,24 +41,26 @@
                                                 @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{$d->berita->judul}}</td>
+                                                    <td>{{$d->lowongan->berita->judul}}</td>
                                                     <td>{{carbon\carbon::parse($d->tgl_ujian)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>
-                                                        @if(carbon\carbon::now() == $d->tgl_ujian)
+                                                        @if($now == carbon\carbon::parse($d->tgl_ujian)->format('Ymd'))
                                                         Hari uji kompetensi
-                                                        @elseif(carbon\carbon::now() > $d->tgl_ujian)
-                                                        Sudah lewat
-                                                        @else
-                                                        Belum dimulai
-                                                        @endif
+                                                        @elseif($now < carbon\carbon::parse($d->
+                                                            tgl_ujian)->format('Ymd'))
+                                                            Belum dimulai
+                                                            @elseif($now >
+                                                            carbon\carbon::parse($d->tgl_ujian)->format('Ymd'))
+                                                            Sudah lewat
+                                                            @endif
                                                     </td>
                                                     <td>
-                                                        <a href="{{Route('ujiKompetensiShow','vsbdvhdb')}}"
+                                                        <a href="{{Route('ujiKompetensiShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('ujiKompetensiEdit','vsbdvhdb')}}"
+                                                        <a href="{{Route('ujiKompetensiEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -106,7 +108,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('soalStore')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{Route('ujiKompetensiStore')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Lowongan</label>
@@ -119,7 +121,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal Ujian</label>
-                        <input type="date" class="form-control " id="tanggal_ujian" name="tanggal_ujian">
+                        <input type="date" class="form-control " id="tgl_ujian" name="tgl_ujian">
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
