@@ -8,7 +8,8 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Uji Kesehatan Lowngan A</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Uji Kesehatan
+                    {{$ujiKesehatan->lowongan->berita->judul}}</h2>
             </div>
             <div class="d-flex">
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
@@ -40,15 +41,20 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Peserta 1</td>
-                                                    <td><a href="#" class="btn btn-sm btn-warning  mb-1"><span class="icon-label"><i class="fa fa-download"></i> </span><span class="btn-text"> </span></a></td>
-                                                    <td><a href="#" class="btn btn-sm btn-warning  mb-1"><span class="icon-label"><i class="fa fa-download"></i> </span><span class="btn-text"> </span></a></td>
-                                                    <td>70 Bpm</td>
-                                                    <td>20km/jam</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->peserta->user->name}}</td>
+                                                    <td><a href="#" class="btn btn-sm btn-warning  mb-1"><span
+                                                                class="icon-label"><i class="fa fa-download"></i>
+                                                            </span><span class="btn-text"> </span></a></td>
+                                                    <td><a href="#" class="btn btn-sm btn-warning  mb-1"><span
+                                                                class="icon-label"><i class="fa fa-download"></i>
+                                                            </span><span class="btn-text"> </span></a></td>
+                                                    <td>{{$d->detak_jantung}} Bpm</td>
+                                                    <td>{{$d->tes_lari}} km/jam</td>
                                                     <td>
-                                                        <a href="{{Route('ujiKesehatanRincianEdit','vsbdvhdb')}}"
+                                                        <a href="{{Route('ujiKesehatanRincianEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -56,9 +62,10 @@
                                                             onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
-                                            <tr>
+                                                <tr>
                                                     <th>No</th>
                                                     <th>Nama Peserta</th>
                                                     <th>Surat Keterangan Sehat </th>
@@ -97,21 +104,25 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('soalStore')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{Route('ujiKesehatanPesertaStore')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="uji_kesehatan_id" value="{{$ujiKesehatan->id}}" id="">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1"> Peserta</label>
-                        <select name="" id="" class="form-control">
+                        <select name="peserta_id" id="" class="form-control">
                             <option value="">-- pilih peserta --</option>
+                            @foreach($peserta as $d)
+                            <option value="{{$d->id}}">{{$d->user->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Surat Kesahatan dan Tidak Buta Warna</label>
-                        <input type="file" class="form-control " id="Surat_kesehatan" name="Surat_kesehatan">
+                        <input type="file" class="form-control " id="Surat_kesehatan" name="surat_kesehatan">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Surat Bebas Narkoba</label>
-                        <input type="file" class="form-control " id="Surat_Narkoba" name="Surat_Narkoba">
+                        <input type="file" class="form-control " id="Surat_Narkoba" name="surat_narkoba">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Detak Jantung (Bpm)</label>
