@@ -29,16 +29,22 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Lowongan</label>
-                                                <select name="kunci" id="" class="form-control">
-                                                    <option value="a">-- pilih lowongan --</option>
+                                                <select name="lowongan_id" id="" class="form-control">
+                                                    <option value="">-- pilih lowongan --</option>
+                                                    @foreach($lowongan as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$data->lowongan_id == $d->id ? 'selected' : ''}}>
+                                                        {{$d->berita->judul}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tanggal Ujian</label>
-                                                <input type="date" class="form-control " id="tanggal_ujian" name="tanggal_ujian">
+                                                <input type="date" value="{{$data->tgl_ujian}}" class="form-control "
+                                                    id="tgl_ujian" name="tgl_ujian">
                                             </div>
                                             <div class="text-right">
-                                                <a href="{{Route('posisiIndex')}}" class="btn btn-secondary"><i
+                                                <a href="{{Route('ujiKompetensiIndex')}}" class="btn btn-secondary"><i
                                                         class="fa fa-arrow-left"></i> Kembali</a>
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>
                                                     Ubah Data</button>
