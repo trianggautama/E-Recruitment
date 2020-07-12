@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                             <br>
-                            <form action="{{Route('ujiKompetensiStore')}}" method="POST">
+                            <form action="{{Route('ujiKompetensiPesertaStore')}}" method="POST">
                                 @csrf
                                 @foreach($soals as $soal)
                                 <div class="row">

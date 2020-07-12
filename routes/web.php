@@ -80,8 +80,8 @@ Route::group(['middleware' => ['pelamar']], function () {
     Route::get('/pelamar/index', 'UserController@pelamarIndex')->name('pelamarIndex');
     Route::get('/pelamar/profil', 'UserController@pelamarProfil')->name('profilUser');
     Route::put('/pelamar/profilUpdate/{uuid}', 'UserController@pelamarProfilUpdate')->name('pelamarProfilUpdate');
-    Route::get('/ujiKompetensi/input/{uuid}', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
-    Route::post('/ujiKompetensi/input', 'ujiKompetensiController@inputStore')->name('ujiKompetensiStore');
+    Route::get('/ujiKompetensi/input', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
+    Route::post('/ujiKompetensi/input', 'ujiKompetensiController@inputStore')->name('ujiKompetensiPesertaStore');
     Route::get('/ujiKompetensi/hasil', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
 
 });
