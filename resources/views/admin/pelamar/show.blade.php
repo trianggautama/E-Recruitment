@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Detail Berita</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Detail Pelamar</h2>
             </div>
         </div>
         <!-- /Title -->
@@ -21,9 +21,11 @@
                         <section class="hk-sec-wrapper">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h5 class="hk-sec-title">Detail Peserta</h5>
+                                    <h5 class="hk-sec-title">Detail Pelamar</h5>
                                 </div>
                                 <div class="col-md-6 text-right">
+                                <a href="{{Route('biodataCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger mb-15" target="_blank"><i
+                                            class="fa fa-print"></i> Cetak Biodata</a>
                                     <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15"
                                         id="tambah"><span class="icon-label"><i class="fa fa-check-circle"></i>
                                         </span><span class="btn-text">Verifikasi</span></button>

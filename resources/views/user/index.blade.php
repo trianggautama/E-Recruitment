@@ -229,16 +229,22 @@
                     </div>
                     </li>
                     <li class="timeline-inverted">
-                    <div class="timeline-badge danger"><i class="glyphicon glyphicon-hourglass"></i></div>
+                    <div class="timeline-badge danger"><i class="glyphicon glyphicon-hourglass"></i></div> 
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                         <h4 class="timeline-title">Uji Kompetensi</h4>
                         </div>
                         <div class="timeline-body">
-                            <p>3 Juni 2020 -10 juni 2020</p>
+                            @if(Auth::user()->peserta->lowongan)
+                            <p>{{carbon\carbon::parse(Auth::user()->peserta->lowongan->uji_kompetensi->first()->tgl_ujian)->translatedFormat('d F Y')}}</p>
                             <br>
+                            @if(carbon\carbon::parse(Auth::user()->peserta->lowongan->uji_kompetensi->first()->tgl_ujian)->translatedFormat('d F Y') == carbon\carbon::now()->translatedFormat('d F Y'))
                             <a href="{{Route('ujiKompetensiInput',['uuid'=>Auth::user()->peserta->lowongan->uuid])}}" class="btn btn-sm btn-danger"> <i class="fa fa-play"></i> Mulai uji Kompensi</a>
-                            <a href="{{Route('ujiKompetensiHasil')}}" class="btn btn-sm btn-danger"> <i class="fa fa-database"></i> Lihat Hasil Tes</a>
+                            @endif
+                            <a href="{{Route('ujiKompetensiHasil',['uuid'=>Auth::user()->peserta->lowongan->uuid])}}" class="btn btn-sm btn-danger"> <i class="fa fa-database"></i> Lihat Hasil Tes</a>
+                            @else
+                            uji Kompetensi belum diinput
+                            @endif
                         </div>
                     </div>
                     </li>

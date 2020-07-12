@@ -12,9 +12,12 @@
                 </h2>
             </div>
             <div class="d-flex text-right">
-                <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
-                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
-                    </span></button>
+            <a href="{{Route('pelamarFilter',['uuid'=>$lowongan->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                        class="icon-label"><i class="fa fa-filter"></i> </span><span class="btn-text">Filter Data
+                    </span></a>
+                <a href="{{Route('pelamarCetak',['uuid'=>$lowongan->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15" target="_blank"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak Data
+                    </span></a>
             </div>
         </div>
         <!-- /Title -->
@@ -48,7 +51,7 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->NIK}}</td>
-                                                    <td>{{$d->nama}}</td>
+                                                    <td>{{$d->user->name}}</td>
                                                     <td>{{$d->tempat_lahir}}, {{$d->tgl_lahir}}</td>
                                                     <td>{{$d->tlp_hp}}</td>
                                                     <td>{{$d->email}}</td>
@@ -67,10 +70,6 @@
                                                         <a href="{{Route('pelamarEdit','xaxa')}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
-                                                            </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('pelamarDestroy','xaxa')}}"
-                                                            class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                     </td>
                                                 </tr>
@@ -100,7 +99,6 @@
         <!-- /Row -->
     </div>
     <!-- /Container -->
-
 </div>
 <!-- /Main Content -->
 

@@ -113,4 +113,10 @@ class PelamarController extends Controller
         })->with('user')->get();
         return view('admin.pelamar.seleksiBerkasShow', compact('lowongan', 'data'));
     }
+
+    public function filter($uuid)
+    {
+        $lowongan = Lowongan::where('uuid', $uuid)->first();
+        return view('admin.pelamar.filter', compact('lowongan'));
+    }
 }

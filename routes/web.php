@@ -45,6 +45,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/pelamar/detail/{uuid}', 'PelamarController@show')->name('pelamarShow');
     Route::post('/pelamar/verif/{uuid}', 'PelamarController@verifPeserta')->name('verifPeserta');
     Route::get('/pelamar/delete/{uuid}', 'PelamarController@delete')->name('pelamarDestroy');
+    Route::get('/pelamar/filter/{uuid}', 'PelamarController@filter')->name('pelamarFilter');
+
 
     Route::get('/soal/index', 'SoalController@index')->name('soalIndex');
     Route::post('/soal/index/create', 'SoalController@store')->name('soalStore');
@@ -72,6 +74,12 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/ujiKesehatan/detail/edit/{uuid}', 'ujiKesehatanController@rincianEdit')->name('ujiKesehatanRincianEdit');
     Route::put('/ujiKesehatan/detail/edit/{uuid}', 'ujiKesehatanController@rincianUpdate')->name('ujiKesehatanRincianUpdate');
     Route::get('/ujiKesehatan/detail/delete/{uuid}', 'ujiKesehatanController@rincianDestroy')->name('ujiKesehatanRincianDestroy');
+
+    //Report
+    Route::get('/pelamar/biodata/cetak/{uuid}', 'reportController@biodatapelamar')->name('biodataCetak');
+    Route::get('/pelamar/cetak/{uuid}', 'reportController@pelamar')->name('pelamarCetak');
+    Route::post('/pelamar/filter/{uuid}', 'reportController@filterPelamar')->name('pelamarFilterCetak');
+
 });
 
 Route::group(['middleware' => ['pelamar']], function () {
@@ -82,6 +90,6 @@ Route::group(['middleware' => ['pelamar']], function () {
     Route::put('/pelamar/profilUpdate/{uuid}', 'UserController@pelamarProfilUpdate')->name('pelamarProfilUpdate');
     Route::get('/ujiKompetensi/input/{uuid}', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
     Route::post('/ujiKompetensi/input', 'ujiKompetensiController@inputStore')->name('ujiKompetensiPesertaStore');
-    Route::get('/ujiKompetensi/hasil', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
+    Route::get('/ujiKompetensi/hasil/{uuid}', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
 
 });

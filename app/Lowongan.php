@@ -40,4 +40,9 @@ class Lowongan extends Model
         return $this->hasMany(Peserta::class);
     }
 
+    public function uji_kompetensi()
+    {
+        return $this->hasMany(Uji_kompetensi::class);
+    }
+
 }
