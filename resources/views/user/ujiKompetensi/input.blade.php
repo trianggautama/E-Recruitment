@@ -31,6 +31,7 @@
                             <br>
                             <form action="{{Route('ujiKompetensiPesertaStore')}}" method="POST">
                                 @csrf
+                                <input type="text" name="uji_id" value="{{$data->id}}">
                                 @foreach($soals as $soal)
                                 <div class="row">
                                     <div class="col-sm">

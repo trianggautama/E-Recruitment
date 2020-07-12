@@ -23,9 +23,7 @@ class ujiKompetensiController extends Controller
     }
 
     public function store(Request $req)
-    {
-        dd($req);
-        $data = Uji_kompetensi::create($req->all());
+    {        $data = Uji_kompetensi::create($req->all());
 
         return back()->withSuccess('Data berhasil disimpan');
     }
@@ -69,7 +67,7 @@ class ujiKompetensiController extends Controller
 
             $soalData = Soal::all();
             $soals = $soalData->shuffle()->take(20);
-            return view('user.ujiKompetensi.input', compact('soals'));
+            return view('user.ujiKompetensi.input', compact('soals','data'));
         } else {
 
             return back()->withWarning('Anda sudah melakukan uji kompetensi');
@@ -79,7 +77,8 @@ class ujiKompetensiController extends Controller
     public function inputStore(Request $req)
     {
         $peserta_id = Auth::user()->peserta->id;
-        $data = Uji_kompetensi::orderBy('id', 'desc')->first();
+
+        $data = Uji_kompetensi::findOrFail($req->uji_id);
         $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id)->where('uji_kompetensi_id', $data->id)->first();
         $soal = collect($req->soal_id)->filter();
         $pilihan = collect($req->pilihan)->filter();
