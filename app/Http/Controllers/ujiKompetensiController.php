@@ -24,6 +24,7 @@ class ujiKompetensiController extends Controller
 
     public function store(Request $req)
     {
+        dd($req);
         $data = Uji_kompetensi::create($req->all());
 
         return back()->withSuccess('Data berhasil disimpan');
@@ -50,13 +51,14 @@ class ujiKompetensiController extends Controller
         $peserta = Uji_kompetensi_peserta::where('uji_kompetensi_id', $data->id)->get();
 
         return view('admin.ujiKompetensi.show', compact('data', 'peserta'));
-    }
+    } 
 
-    public function input()
+    public function input($uuid)
     {
 
         $peserta_id = Auth::user()->peserta->id;
-        $data = Uji_kompetensi::orderBy('id', 'desc')->first();
+        $lowongan = Lowongan::where('uuid',$uuid)->first();
+        $data = Uji_kompetensi::where('lowongan_id', $lowongan->id)->first();
         $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id)->where('uji_kompetensi_id', $data->id)->first();
 
         if (!$tesPeserta) {

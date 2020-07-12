@@ -25,4 +25,9 @@ class Peserta extends Model
         return $this->hasOne(Uji_kompetensi_peserta::class);
     }
 
+    public function lowongan()
+    {
+        return $this->belongsTo(Lowongan::class);
+    }
+
 }

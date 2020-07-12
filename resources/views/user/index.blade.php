@@ -213,6 +213,9 @@
                 <br>
                 <div class="row">
                     <div class="col-xl-12">
+                    <div class="text-center">
+                        <h2>Timeline Pendaftaran </h2>
+                    </div>
                     <ul class="timeline">
                     <li>
                     <div class="timeline-badge"><i class="glyphicon glyphicon-hourglass"></i></div>
@@ -234,7 +237,7 @@
                         <div class="timeline-body">
                             <p>3 Juni 2020 -10 juni 2020</p>
                             <br>
-                            <a href="{{Route('ujiKompetensiInput')}}" class="btn btn-sm btn-danger"> <i class="fa fa-play"></i> Mulai uji Kompensi</a>
+                            <a href="{{Route('ujiKompetensiInput',['uuid'=>Auth::user()->peserta->lowongan->uuid])}}" class="btn btn-sm btn-danger"> <i class="fa fa-play"></i> Mulai uji Kompensi</a>
                             <a href="{{Route('ujiKompetensiHasil')}}" class="btn btn-sm btn-danger"> <i class="fa fa-database"></i> Lihat Hasil Tes</a>
                         </div>
                     </div>
