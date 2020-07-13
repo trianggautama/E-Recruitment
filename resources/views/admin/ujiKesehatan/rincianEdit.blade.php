@@ -55,9 +55,16 @@
                                                     value="{{$data->detak_jantung}}" name="detak_jantung">
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Hasil Tes Lari</label>
+                                                <label for="exampleDropdownFormEmail1">Hasil Tes Lari (km/jam)</label>
                                                 <input type="text" class="form-control " id="tes_lari"
                                                     value="{{$data->tes_lari}}" name="tes_lari">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Status</label>
+                                                <select name="status" id="" class="form-control">
+                                                    <option value="0">Lulus</option>
+                                                    <option value="1">tidak Lulus</option>
+                                                </select>
                                             </div>
                                             <div class="text-right">
                                                 <a href="{{Route('soalIndex')}}" class="btn btn-secondary"><i

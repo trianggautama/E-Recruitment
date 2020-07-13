@@ -75,6 +75,19 @@ Route::group(['middleware' => ['admin']], function () {
     Route::put('/ujiKesehatan/detail/edit/{uuid}', 'ujiKesehatanController@rincianUpdate')->name('ujiKesehatanRincianUpdate');
     Route::get('/ujiKesehatan/detail/delete/{uuid}', 'ujiKesehatanController@rincianDestroy')->name('ujiKesehatanRincianDestroy');
 
+    // uji wawancara peserta
+    Route::get('/ujiWawancara/index', 'ujiWawancaraController@index')->name('ujiWawancaraIndex');
+    Route::post('/ujiWawancara/create', 'ujiWawancaraController@store')->name('ujiWawancaraPesertaStore');
+    Route::get('/ujiWawancara/show/{uuid}', 'ujiWawancaraController@show')->name('ujiWawancaraShow');
+    Route::get('/ujiWawancara/edit/{uuid}', 'ujiWawancaraController@edit')->name('ujiWawancaraEdit');
+    Route::put('/ujiWawancara/edit/{uuid}', 'ujiWawancaraController@update')->name('ujiWawancaraUpdate');
+    Route::get('/ujiWawancara/delete/{uuid}', 'ujiWawancaraController@destroy')->name('ujiWawancaraDestroy');
+
+    // uji kesehatan peserta
+    Route::post('/ujiWawancara/detail/create', 'ujiWawancaraController@pesertaStore')->name('ujiWawancaraPesertaStore');
+    Route::get('/ujiWawancara/detail/edit/{uuid}', 'ujiWawancaraController@rincianEdit')->name('ujiWawancaraRincianEdit');
+    Route::put('/ujiWawancara/detail/edit/{uuid}', 'ujiWawancaraController@rincianUpdate')->name('ujiWawancaraRincianUpdate');
+    Route::get('/ujiWawancara/detail/delete/{uuid}', 'ujiWawancaraController@rincianDestroy')->name('ujiWawancaraRincianDestroy');
     //Report
     Route::get('/pelamar/biodata/cetak/{uuid}', 'reportController@biodatapelamar')->name('biodataCetak');
     Route::get('/pelamar/cetak/{uuid}', 'reportController@pelamar')->name('pelamarCetak');
