@@ -112,4 +112,11 @@ class ujiKompetensiController extends Controller
         }
         return view('user.ujiKompetensi.hasil');
     }
+
+    public function filter($uuid)
+    {
+        $data = Uji_kompetensi::where('uuid', $uuid)->first();
+
+        return view('admin.ujiKompetensi.filter', compact('data'));
+    } 
 }

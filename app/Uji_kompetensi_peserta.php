@@ -13,4 +13,9 @@ class Uji_kompetensi_peserta extends Model
     {
         return $this->belongsTo(Peserta::class);
     }
+
+    public function uji_kompetensi()
+    {
+        return $this->belongsTo(uji_kompetensi::class);
+    }
 }

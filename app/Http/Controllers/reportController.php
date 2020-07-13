@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Lowongan;
 use App\Peserta;
+use App\Uji_kompetensi;
+use App\Uji_kompetensi_peserta;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -39,6 +41,31 @@ class reportController extends Controller
         $pdf->setPaper('a4', 'landscape');
 
         return $pdf->stream('Laporan Pelamar Filter.pdf');
+    }
+
+    public function ujiKompetensi($uuid)
+    {
+        $uji_kompetensi = Uji_kompetensi::where('uuid',$uuid)->first();
+        $data     = Uji_kompetensi_peserta::where('uji_kompetensi_id',$uji_kompetensi->id)->get();
+        $pdf      = PDF::loadView('formCetak.dataUjiKompetensi', ['data'=>$data, 'uji_kompetensi'=>$uji_kompetensi]);
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Uji Kompetensi.pdf');
+    }
+
+    public function ujiKompetensiFilter()
+    {
+        $uji_kompetensi = Uji_kompetensi::findOrFail(request()->uji_id);
+        if(request()->status == 1){
+            $data     = Uji_kompetensi_peserta::where('uji_kompetensi_id',$uji_kompetensi->id)->where('nilai','>=', 75)->get();
+        }else{
+            $data     = Uji_kompetensi_peserta::where('uji_kompetensi_id',$uji_kompetensi->id)->where('nilai','<=', 75)->get();
+        }
+        $status = request()->status;
+        $pdf      = PDF::loadView('formCetak.dataUjiKompetensiFilter', ['data'=>$data, 'uji_kompetensi'=>$uji_kompetensi, 'status'=>$status]);
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Uji Kompetensi Filter .pdf');
     }
 
 }
