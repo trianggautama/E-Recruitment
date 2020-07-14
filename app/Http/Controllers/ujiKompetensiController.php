@@ -23,7 +23,8 @@ class ujiKompetensiController extends Controller
     }
 
     public function store(Request $req)
-    {        $data = Uji_kompetensi::create($req->all());
+    {
+        $data = Uji_kompetensi::create($req->all());
 
         return back()->withSuccess('Data berhasil disimpan');
     }
@@ -49,13 +50,13 @@ class ujiKompetensiController extends Controller
         $peserta = Uji_kompetensi_peserta::where('uji_kompetensi_id', $data->id)->get();
 
         return view('admin.ujiKompetensi.show', compact('data', 'peserta'));
-    } 
+    }
 
     public function input($uuid)
     {
 
         $peserta_id = Auth::user()->peserta->id;
-        $lowongan = Lowongan::where('uuid',$uuid)->first();
+        $lowongan = Lowongan::where('uuid', $uuid)->first();
         $data = Uji_kompetensi::where('lowongan_id', $lowongan->id)->first();
         $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id)->where('uji_kompetensi_id', $data->id)->first();
 
@@ -67,7 +68,7 @@ class ujiKompetensiController extends Controller
 
             $soalData = Soal::all();
             $soals = $soalData->shuffle()->take(20);
-            return view('user.ujiKompetensi.input', compact('soals','data'));
+            return view('user.ujiKompetensi.input', compact('soals', 'data'));
         } else {
 
             return back()->withWarning('Anda sudah melakukan uji kompetensi');
@@ -105,11 +106,12 @@ class ujiKompetensiController extends Controller
 
     public function hasil()
     {
-        $peserta_id = Auth::user()->peserta->id;
-        $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id)->first();
+        $peserta_id = Auth::user()->peserta;
+        $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id->id)->first();
         if (!$tesPeserta) {
-            return back()->withWarning('Anda belu');
+            return back()->withWarning('Anda belum melakukan ujian');
         }
-        return view('user.ujiKompetensi.hasil');
+        $data = Uji_kompetensi::where('lowongan_id', $peserta_id->lowongan_id)->first();
+        return view('user.ujiKompetensi.hasil', compact('data'));
     }
 }
