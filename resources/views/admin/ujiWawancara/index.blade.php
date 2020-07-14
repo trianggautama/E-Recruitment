@@ -38,27 +38,37 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>lowongan 1</td>
-                                                    <td>2 Juli 2020
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->lowongan->berita->judul}}</td>
+                                                    <td>{{carbon\carbon::parse($d->tgl_uji)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>
-                                                     Belum Dimulai
+                                                        @if($now == carbon\carbon::parse($d->tgl_uji)->format('Ymd'))
+                                                        Hari uji Wawancara
+                                                        @elseif($now < carbon\carbon::parse($d->tgl_uji)->format('Ymd'))
+                                                            Belum dimulai
+                                                            @elseif($now >
+                                                            carbon\carbon::parse($d->tgl_uji)->format('Ymd'))
+                                                            Sudah lewat
+                                                            @endif
                                                     </td>
                                                     <td>
-                                                        <a href="{{Route('ujiWawancaraShow','hbhgg')}}"
+                                                        <a href="{{Route('ujiWawancaraShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('ujiWawancaraEdit','bhcbsuhh')}}"
+                                                        <a href="{{Route('ujiWawancaraEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light"
-                                                            onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                            onclick="Hapus('{{$d->uuid}}')"> <i
+                                                                class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -98,7 +108,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('ujiKesehatanStore')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{Route('ujiWawancaraStore')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Lowongan</label>
