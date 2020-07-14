@@ -32,19 +32,26 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Peserta</th>
-                                                    <th>catatan Wawancara</th>
+                                                    <th>Catatan Wawancara</th>
                                                     <th>Hasil</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Nama Peserta</td>
-                                                    <td>Catatan Wawancara</td>
-                                                    <td>Lulus</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->peserta->user->name}}</td>
+                                                    <td>{{$d->catatan}}</td>
                                                     <td>
-                                                        <a href="{{Route('ujiWawancaraRincianEdit','cksbjgkj')}}"
+                                                        @if($d->status == 0 )
+                                                        Tidak Lulus
+                                                        @else
+                                                        Lulus
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{Route('ujiWawancaraRincianEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
@@ -52,6 +59,7 @@
                                                             onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -91,23 +99,27 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('ujiKesehatanPesertaStore')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{Route('ujiWawancaraPesertaStore')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="uji_wawancara_id" value="{{$ujiWawancara->id}}" id="">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1"> Peserta</label>
                         <select name="peserta_id" id="" class="form-control">
                             <option value="">-- pilih peserta --</option>
+                            @foreach($peserta as $d)
+                            <option value="{{$d->id}}">{{$d->user->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Catatan Wawancara</label>
-                        <textarea name="catatan" class="form-control " id="catatan" ></textarea>
+                        <textarea name="catatan" class="form-control " id="catatan"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Status</label>
                         <select name="status" id="" class="form-control">
-                            <option value="0">Lulus</option>
-                            <option value="1">tidak Lulus</option>
+                            <option value="1">Lulus</option>
+                            <option value="0">tidak Lulus</option>
                         </select>
                     </div>
                     <div class="text-right">
