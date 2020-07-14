@@ -19,8 +19,16 @@
                     <div class="col-lg-12">
 
                         <section class="hk-sec-wrapper">
-                            <h5 class="hk-sec-title">Tabel Data</h5>
-                            <br>
+                            <div class="row">
+                                <div class="col-md">
+                                    <h5 class="hk-sec-title">Tabel Data</h5>
+                                </div>
+                                <div class="col-md text-right">
+                                    <a href="{{Route('ujiKompetensiFilter',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger mb-15"><i class="fa fa-filter"></i> Filter Data</a>
+                                    <a href="{{Route('ujiKompetensiCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger mb-15" target="_blank"><i class="fa fa-print"></i> Cetak Data</a>
+                                </div>
+                            </div>
+                            <br> 
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">

@@ -114,4 +114,11 @@ class ujiKompetensiController extends Controller
         $data = Uji_kompetensi::where('lowongan_id', $peserta_id->lowongan_id)->first();
         return view('user.ujiKompetensi.hasil', compact('data'));
     }
+
+    public function filter($uuid)
+    {
+        $data = Uji_kompetensi::where('uuid', $uuid)->first();
+
+        return view('admin.ujiKompetensi.filter', compact('data'));
+    } 
 }
