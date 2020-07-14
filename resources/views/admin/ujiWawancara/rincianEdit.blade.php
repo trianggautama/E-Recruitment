@@ -29,19 +29,27 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1"> Peserta</label>
-                                                <select name="peserta_id" id="" class="form-control">
-                                                    <option value="">-- pilih peserta --</option>
+                                                <select name="peserta_id" id="" class="form-control"
+                                                    aria-readonly="true">
+                                                    @foreach($peserta as $d)
+                                                    <option value="{{$d->id}}"
+                                                        {{$data->peserta_id == $d->id ? 'selected' : ''}}>
+                                                        {{$d->user->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Catatan Wawancara</label>
-                                                <textarea name="catatan" class="form-control " id="catatan" ></textarea>
+                                                <textarea name="catatan" class="form-control "
+                                                    id="catatan">{{$data->catatan}}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Status</label>
                                                 <select name="status" id="" class="form-control">
-                                                    <option value="0">Lulus</option>
-                                                    <option value="1">tidak Lulus</option>
+                                                    <option value="1" {{$data->status == 1 ? 'selected' : ''}}>Lulus
+                                                    </option>
+                                                    <option value="0" {{$data->status == 0 ? 'selected' : ''}}>Tidak
+                                                        Lulus</option>
                                                 </select>
                                             </div>
                                             <div class="text-right">
