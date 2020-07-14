@@ -22,6 +22,7 @@ class CreateUjiKesehatanPesertasTable extends Migration
             $table->string('surat_narkoba', 100)->nullable();
             $table->string('detak_jantung', 100);
             $table->string('tes_lari', 100);
+            $table->tinyInteger('status');
             $table->foreign('uji_kesehatan_id')->references('id')->on('uji_kesehatans')->onDelete('cascade');
             $table->foreign('peserta_id')->references('id')->on('pesertas')->onDelete('cascade');
             $table->timestamps();
