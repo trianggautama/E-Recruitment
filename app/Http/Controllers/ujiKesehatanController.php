@@ -55,8 +55,8 @@ class ujiKesehatanController extends Controller
     {
         $ujiKesehatan = Uji_kesehatan::where('uuid', $uuid)->first();
         $data = Uji_kesehatan_peserta::where('uji_kesehatan_id', $ujiKesehatan->id)->latest()->get();
-        $peserta = Peserta::whereHas('uji_kompetensi_peserta', function ($query) {
-            $query->where('nilai', '<=', 75);
+        $peserta = Peserta::where('lowongan_id', $ujiKesehatan->lowongan_id)->whereHas('uji_kompetensi_peserta', function ($query) {
+            $query->where('nilai', '>=', 75);
         })->with('uji_kompetensi_peserta')->get();
         return view('admin.ujiKesehatan.show', compact('data', 'peserta', 'ujiKesehatan'));
     }
@@ -69,6 +69,7 @@ class ujiKesehatanController extends Controller
         $data->peserta_id = $req->peserta_id;
         $data->detak_jantung = $req->detak_jantung;
         $data->tes_lari = $req->tes_lari;
+        $data->status = $req->status;
         $data->save();
 
         if ($req->surat_kesehatan != null) {
@@ -98,7 +99,7 @@ class ujiKesehatanController extends Controller
     {
         $data = Uji_kesehatan_peserta::where('uuid', $uuid)->first();
         $peserta = Peserta::whereHas('uji_kompetensi_peserta', function ($query) {
-            $query->where('nilai', '<=', 75);
+            $query->where('nilai', '>=', 75);
         })->with('uji_kompetensi_peserta')->get();
 
         return view('admin.ujiKesehatan.rincianEdit', compact('data', 'peserta'));
@@ -110,6 +111,7 @@ class ujiKesehatanController extends Controller
 
         $data->detak_jantung = $req->detak_jantung;
         $data->tes_lari = $req->tes_lari;
+        $data->status = $req->status;
 
         if ($req->surat_kesehatan != null) {
             $img = $req->file('surat_kesehatan');
@@ -151,7 +153,15 @@ class ujiKesehatanController extends Controller
 
     public function hasil()
     {
+        // $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id->id)->first();
+        // $data = Uji_kesehatan_peserta::where('uji_kesehatan_id', $ujiKesehatan->id)->latest()->get();
+        // $peserta = Peserta::whereHas('uji_kompetensi_peserta', function ($query) {
+        //     $query->where('nilai', '>=', 75);
+        // })->with('uji_kompetensi_peserta')->get();
 
+        // if (!$tesPeserta) {
+        //     return back()->withWarning('Anda belum melakukan ujian');
+        // }
         return view('user.ujiKompetensi.hasil');
     }
 }
