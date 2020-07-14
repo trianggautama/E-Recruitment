@@ -47,7 +47,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/pelamar/delete/{uuid}', 'PelamarController@delete')->name('pelamarDestroy');
     Route::get('/pelamar/filter/{uuid}', 'PelamarController@filter')->name('pelamarFilter');
 
-
     Route::get('/soal/index', 'SoalController@index')->name('soalIndex');
     Route::post('/soal/index/create', 'SoalController@store')->name('soalStore');
     Route::get('/soal/edit/{uuid}', 'SoalController@edit')->name('soalEdit');
@@ -77,7 +76,7 @@ Route::group(['middleware' => ['admin']], function () {
 
     // uji wawancara peserta
     Route::get('/ujiWawancara/index', 'ujiWawancaraController@index')->name('ujiWawancaraIndex');
-    Route::post('/ujiWawancara/create', 'ujiWawancaraController@store')->name('ujiWawancaraPesertaStore');
+    Route::post('/ujiWawancara/create', 'ujiWawancaraController@store')->name('ujiWawancaraStore');
     Route::get('/ujiWawancara/show/{uuid}', 'ujiWawancaraController@show')->name('ujiWawancaraShow');
     Route::get('/ujiWawancara/edit/{uuid}', 'ujiWawancaraController@edit')->name('ujiWawancaraEdit');
     Route::put('/ujiWawancara/edit/{uuid}', 'ujiWawancaraController@update')->name('ujiWawancaraUpdate');
