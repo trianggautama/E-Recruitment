@@ -12,7 +12,7 @@
             </div>
             <div class="d-flex">
             </div>
-</div>
+        </div>
         <div class="row">
             <div class="col-xl-12">
                 <div class="hk-row">
@@ -35,13 +35,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              <tr>
-                                                <td>1</td>
-                                                <td>Peserta 1</td>
-                                                <td>17536175</td>
-                                                <td>85</td>
-                                                <td>Lulus</td>
-                                              </tr>
+                                                @foreach($data->uji_kompetensi_peserta as $d)
+                                                <tr>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->peserta->user->name}}</td>
+                                                    <td>{{$d->peserta->NIK}}</td>
+                                                    <td>{{$d->nilai}}</td>
+                                                    <td>
+                                                        @if($d->nilai >= 75)
+                                                        Lulus
+                                                        @else
+                                                        Tidak Lulus
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
