@@ -37,6 +37,7 @@
                                                     <th>Surat Bebas Narkoba </th>
                                                     <th>Detak Jantung</th>
                                                     <th>Tes Lari</th>
+                                                    <th>Keterangan Lulus</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -53,6 +54,13 @@
                                                             </span><span class="btn-text"> </span></a></td>
                                                     <td>{{$d->detak_jantung}} Bpm</td>
                                                     <td>{{$d->tes_lari}} km/jam</td>
+                                                    <td>
+                                                        @if($d->status == 0 )
+                                                        Tidak Lulus
+                                                        @else
+                                                        Lulus
+                                                        @endif
+                                                    </td>
                                                     <td>
                                                         <a href="{{Route('ujiKesehatanRincianEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
@@ -72,6 +80,7 @@
                                                     <th>Surat Bebas Narkoba </th>
                                                     <th>Detak Jantung</th>
                                                     <th>Tes Lari</th>
+                                                    <th>Keterangan Lulus</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </tfoot>
@@ -135,8 +144,8 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Status</label>
                         <select name="status" id="" class="form-control">
-                            <option value="0">Lulus</option>
-                            <option value="1">tidak Lulus</option>
+                            <option value="1">Lulus</option>
+                            <option value="0">Tidak Lulus</option>
                         </select>
                     </div>
                     <div class="text-right">
