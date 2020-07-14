@@ -62,8 +62,10 @@
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Status</label>
                                                 <select name="status" id="" class="form-control">
-                                                    <option value="0">Lulus</option>
-                                                    <option value="1">tidak Lulus</option>
+                                                    <option value="1" {{$data->status == 1 ? 'selected' : ''}}>Lulus
+                                                    </option>
+                                                    <option value="0" {{$data->status == 0 ? 'selected' : ''}}>Tidak
+                                                        Lulus</option>
                                                 </select>
                                             </div>
                                             <div class="text-right">
