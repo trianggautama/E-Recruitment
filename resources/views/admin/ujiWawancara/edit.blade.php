@@ -32,13 +32,16 @@
                                                 <select name="lowongan_id" id="" class="form-control">
                                                     <option value="">-- pilih lowongan --</option>
                                                     @foreach($lowongan as $d)
-                                                    <option value="{{$d->id}}">{{$d->berita->judul}}</option>
+                                                    <option value="{{$d->id}}"
+                                                        {{$d->id == $data->lowongan_id ? 'selected' : ''}}>
+                                                        {{$d->berita->judul}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tanggal uji Wawancara</label>
-                                                <input type="date" class="form-control " id="tgl_uji" name="tgl_uji">
+                                                <input type="date" class="form-control " value="{{$data->tgl_uji}}"
+                                                    id="tgl_uji" name="tgl_uji">
                                             </div>
                                             <div class="text-right">
                                                 <a href="{{Route('posisiIndex')}}" class="btn btn-secondary"><i
