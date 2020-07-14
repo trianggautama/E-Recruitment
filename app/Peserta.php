@@ -25,6 +25,16 @@ class Peserta extends Model
         return $this->hasOne(Uji_kompetensi_peserta::class);
     }
 
+    public function uji_kesehatan_peserta()
+    {
+        return $this->hasOne(Uji_kesehatan_peserta::class);
+    }
+
+    public function uji_wawancara_peserta()
+    {
+        return $this->hasOne(Uji_wawancara_peserta::class);
+    }
+
     public function lowongan()
     {
         return $this->belongsTo(Lowongan::class);
