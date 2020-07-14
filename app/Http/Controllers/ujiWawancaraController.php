@@ -3,33 +3,93 @@
 namespace App\Http\Controllers;
 
 use App\Lowongan;
+use App\Peserta;
+use App\Uji_wawancara;
+use App\Uji_wawancara_peserta;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ujiWawancaraController extends Controller
 {
-    public function index() 
+    public function index()
     {
         $now = Carbon::now()->format('Ymd');
         $lowongan = Lowongan::latest()->get();
-        $data = [];
+        $data = Uji_wawancara::latest()->get();
         return view('admin.ujiWawancara.index', compact('lowongan', 'now', 'data'));
     }
 
-    public function edit() 
+    public function store(Request $req)
     {
+        $data = Uji_wawancara::create($req->all());
+
+        return back()->withSuccess('Data berhasil disimpan');
+    }
+
+    public function edit($uuid)
+    {
+        $data = Uji_wawancara::where('uuid', $uuid)->first();
         $lowongan = Lowongan::latest()->get();
-        return view('admin.ujiWawancara.edit',compact('lowongan'));
+
+        return view('admin.ujiWawancara.edit', compact('data', 'lowongan'));
     }
 
-    public function show() 
+    public function update(Request $req, $uuid)
     {
+        $data = Uji_wawancara::where('uuid', $uuid)->first();
 
-        return view('admin.ujiWawancara.show');
+        $data->fill($req->all())->save();
+
+        return redirect()->route('ujiWawancaraIndex')->withSuccess('Data berhasil diubah');
     }
 
-    public function rincianEdit() 
+    public function destroy($uuid)
     {
-        return view('admin.ujiWawancara.rincianEdit');
+        $data = Uji_wawancara::where('uuid', $uuid)->first()->delete();
+
+        return back();
+
+    }
+
+    public function show($uuid)
+    {
+        $ujiWawancara = Uji_wawancara::where('uuid', $uuid)->first();
+        $data = Uji_wawancara_peserta::where('uji_wawancara_id', $ujiWawancara->id)->latest()->get();
+        $peserta = Peserta::where('lowongan_id', $ujiWawancara->lowongan_id)->whereHas('uji_kesehatan_peserta', function ($query) {
+            $query->where('status', 1);
+        })->with('uji_kesehatan_peserta')->get();
+        return view('admin.ujiWawancara.show', compact('data', 'peserta', 'ujiWawancara'));
+    }
+
+    public function pesertaStore(Request $req)
+    {
+        $data = Uji_wawancara_peserta::create($req->all());
+
+        return back()->withSuccess('Data berhasil disimpan');
+    }
+
+    public function rincianEdit($uuid)
+    {
+        $data = Uji_wawancara_peserta::where('uuid', $uuid)->first();
+        $peserta = Peserta::whereHas('uji_kesehatan_peserta', function ($query) {
+            $query->where('status', 1);
+        })->with('uji_kesehatan_peserta')->get();
+
+        return view('admin.ujiWawancara.rincianEdit', compact('data', 'peserta'));
+    }
+
+    public function rincianUpdate(Request $req, $uuid)
+    {
+        $data = Uji_wawancara_peserta::where('uuid', $uuid)->first();
+        $data->fill($req->all())->save();
+        return redirect()->route('ujiWawancaraShow', ['uuid' => $data->uji_wawancara->uuid])->withSuccess('Data berhasil diubah');
+    }
+
+    public function rincianDestroy($uuid)
+    {
+        $data = Uji_wawancara_peserta::where('uuid', $uuid)->first()->delete();
+
+        return back();
+
     }
 }
