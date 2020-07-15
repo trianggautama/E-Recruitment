@@ -29,8 +29,8 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Peserta</th>
-                                                    <th>Surat Keterangan Sehat </th>
-                                                    <th>Surat Bebas Narkoba </th>
+                                                    <!-- <th>Surat Keterangan Sehat </th>
+                                                    <th>Surat Bebas Narkoba </th> -->
                                                     <th>Detak Jantung</th>
                                                     <th>Tes Lari</th>
                                                     <th>Keterangan Lulus</th>
@@ -41,14 +41,14 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->peserta->user->name}}</td>
-                                                    <td><a href="{{asset('lampiran/suratKesehatan/'.$d->surat_kesehatan)}}"
+                                                    <!-- <td><a href="{{asset('lampiran/suratKesehatan/'.$d->surat_kesehatan)}}"
                                                             class="btn btn-sm btn-warning  mb-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-download"></i>
                                                             </span><span class="btn-text"> </span></a></td>
                                                     <td><a href="{{asset('lampiran/suratNarkoba/'.$d->surat_kesehatan)}}"
                                                             class="btn btn-sm btn-warning  mb-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-download"></i>
-                                                            </span><span class="btn-text"> </span></a></td>
+                                                            </span><span class="btn-text"> </span></a></td> -->
                                                     <td>{{$d->detak_jantung}} Bpm</td>
                                                     <td>{{$d->tes_lari}} km/jam</td>
                                                     <td>
@@ -65,8 +65,8 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Peserta</th>
-                                                    <th>Surat Keterangan Sehat </th>
-                                                    <th>Surat Bebas Narkoba </th>
+                                                    <!-- <th>Surat Keterangan Sehat </th>
+                                                    <th>Surat Bebas Narkoba </th> -->
                                                     <th>Detak Jantung</th>
                                                     <th>Tes Lari</th>
                                                     <th>Keterangan Lulus</th>
