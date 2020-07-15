@@ -75,7 +75,7 @@
                                                     </td>
                                                     <td> 
                                                     <a href="{{Route('analisisPelamarCetak',['uuid'=>$d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  mb-1"><span
+                                                            class="btn btn-sm btn-outline-light  mb-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-print"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <a href="{{Route('dataPelamarIndex',['uuid'=>$d->uuid])}}"

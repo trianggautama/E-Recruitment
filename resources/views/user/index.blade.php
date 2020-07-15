@@ -255,9 +255,14 @@
                         <h4 class="timeline-title">Tes Kesehatan</h4>
                         </div>
                         <div class="timeline-body">
-                        <p>12 Juni 2020 - 15 juni 2020</p>
+                            @if(Auth::user()->peserta->lowongan)
+                                <p>{{carbon\carbon::parse(Auth::user()->peserta->lowongan->uji_kesehatan->first()->tgl_uji)->translatedFormat('d F Y')}}</p>
+                                <br>
+                                <a href="{{Route('ujiKesehatanHasil')}}" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Kesehatan</a>
+                                @else
+                                uji Kesehatan belum diinput
+                            @endif 
                         <br>
-                            <a href="{{Route('ujiKesehatanHasil')}}" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Kesehatan</a>
                         </div>
                     </div>
                     </li>
@@ -267,9 +272,13 @@
                         <h4 class="timeline-title">Tes Wawancara</h4>
                         </div>
                         <div class="timeline-body">
-                        <p>25 Juni 2020 </p>
-                        <br>
-                        <a href="{{Route('ujiWawancaraHasil')}}" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Wawancara</a>
+                            @if(Auth::user()->peserta->lowongan)
+                                <p>{{carbon\carbon::parse(Auth::user()->peserta->lowongan->uji_wawancara->first()->tgl_uji)->translatedFormat('d F Y')}}</p>
+                                <br>
+                                <a href="{{Route('ujiWawancaraHasil')}}" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Wawancara</a>
+                                @else
+                                uji Wawancara belum diinput
+                            @endif                         
                         </div>
                     </div>
                     </li>

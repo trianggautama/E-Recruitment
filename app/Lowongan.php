@@ -45,6 +45,12 @@ class Lowongan extends Model
         return $this->hasMany(Uji_kompetensi::class);
     }
 
+
+    public function uji_kesehatan()
+    {
+        return $this->hasMany(Uji_kesehatan::class);
+    }
+
     public function uji_wawancara()
     {
         return $this->hasOne(Uji_wawancara::class);
