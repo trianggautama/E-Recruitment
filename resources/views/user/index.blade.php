@@ -235,7 +235,7 @@
                         <h4 class="timeline-title">Uji Kompetensi</h4>
                         </div>
                         <div class="timeline-body">
-                            @if(Auth::user()->peserta->lowongan)
+                            @if(Auth::user()->peserta->lowongan->uji_kompetensi->first())
                             <p>{{carbon\carbon::parse(Auth::user()->peserta->lowongan->uji_kompetensi->first()->tgl_ujian)->translatedFormat('d F Y')}}</p>
                             <br>
                             @if(carbon\carbon::parse(Auth::user()->peserta->lowongan->uji_kompetensi->first()->tgl_ujian)->translatedFormat('d F Y') == carbon\carbon::now()->translatedFormat('d F Y'))
@@ -255,7 +255,7 @@
                         <h4 class="timeline-title">Tes Kesehatan</h4>
                         </div>
                         <div class="timeline-body">
-                            @if(Auth::user()->peserta->lowongan)
+                            @if(Auth::user()->peserta->lowongan->uji_kesehatan->first())
                                 <p>{{carbon\carbon::parse(Auth::user()->peserta->lowongan->uji_kesehatan->first()->tgl_uji)->translatedFormat('d F Y')}}</p>
                                 <br>
                                 <a href="{{Route('ujiKesehatanHasil')}}" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Kesehatan</a>
@@ -272,7 +272,7 @@
                         <h4 class="timeline-title">Tes Wawancara</h4>
                         </div>
                         <div class="timeline-body">
-                            @if(Auth::user()->peserta->lowongan)
+                            @if(Auth::user()->peserta->lowongan->uji_wawancara->first())
                                 <p>{{carbon\carbon::parse(Auth::user()->peserta->lowongan->uji_wawancara->first()->tgl_uji)->translatedFormat('d F Y')}}</p>
                                 <br>
                                 <a href="{{Route('ujiWawancaraHasil')}}" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Wawancara</a>
