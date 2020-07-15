@@ -78,11 +78,11 @@
                                             <tfoot>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Judul</th>
-                                                    <th>Posisi</th>
-                                                    <th>IPK minimal</th>
-                                                    <th>Pendidikan Terakhir</th>
-                                                    <th>Tanggal Pendaftaran</th>
+                                                    <th>NIK</th>
+                                                    <th>Nama</th>
+                                                    <th>Tempat Tanggal Lahir</th>
+                                                    <th>Nomor Hp</th>
+                                                    <th>Email</th>
                                                     <th>Status</th>
                                                     <th>Aksi</th>
                                                 </tr>
