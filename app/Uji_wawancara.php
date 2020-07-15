@@ -18,4 +18,9 @@ class Uji_wawancara extends Model
         return $this->belongsTo(Lowongan::class);
     }
 
+    public function uji_wawancara_peserta()
+    {
+        return $this->hasMany(Uji_wawancara_peserta::class);
+    }
+
 }

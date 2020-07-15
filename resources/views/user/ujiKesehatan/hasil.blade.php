@@ -24,7 +24,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
-                                    <table id="datable_1" class="table table-hover w-100 display pb-30">
+                                        <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -37,21 +37,29 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data->uji_kesehatan_peserta as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Nama Peserta</td>
-                                                    <td><a href="#" class="btn btn-sm btn-warning  mb-1"><span
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->peserta->user->name}}</td>
+                                                    <td><a href="{{asset('lampiran/suratKesehatan/'.$d->surat_kesehatan)}}"
+                                                            class="btn btn-sm btn-warning  mb-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-download"></i>
                                                             </span><span class="btn-text"> </span></a></td>
-                                                    <td><a href="#" class="btn btn-sm btn-warning  mb-1"><span
+                                                    <td><a href="{{asset('lampiran/suratNarkoba/'.$d->surat_kesehatan)}}"
+                                                            class="btn btn-sm btn-warning  mb-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-download"></i>
                                                             </span><span class="btn-text"> </span></a></td>
-                                                    <td>75 Bpm</td>
-                                                    <td>20 km/jam</td>
+                                                    <td>{{$d->detak_jantung}} Bpm</td>
+                                                    <td>{{$d->tes_lari}} km/jam</td>
                                                     <td>
-                                                       lulus
+                                                        @if($d->status == 0 )
+                                                        Tidak Lulus
+                                                        @else
+                                                        Lulus
+                                                        @endif
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>

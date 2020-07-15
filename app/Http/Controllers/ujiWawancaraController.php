@@ -8,6 +8,7 @@ use App\Uji_wawancara;
 use App\Uji_wawancara_peserta;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ujiWawancaraController extends Controller
 {
@@ -101,7 +102,12 @@ class ujiWawancaraController extends Controller
 
     public function hasil()
     {
-       
-        return view('user.ujiWawancara.hasil');
+        $peserta_id = Auth::user()->peserta;
+        $tesPeserta = Uji_wawancara_peserta::where('peserta_id', $peserta_id->id)->first();
+        if (!$tesPeserta) {
+            return back()->withWarning('Data hasil tes wawancara anda belum diinput');
+        }
+        $data = Uji_wawancara::where('lowongan_id', $peserta_id->lowongan_id)->first();
+        return view('user.ujiWawancara.hasil', compact('data'));
     }
 }

@@ -62,7 +62,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/ujiKompetensi/delete/{uuid}', 'ujiKompetensiController@destroy')->name('ujiKompetensiDestroy');
     Route::get('/ujiKompetensi/filter/{uuid}', 'ujiKompetensiController@filter')->name('ujiKompetensiFilter');
 
-
     Route::get('/ujiKesehatan/index', 'ujiKesehatanController@index')->name('ujiKesehatanIndex');
     Route::post('/ujiKesehatan/create', 'ujiKesehatanController@store')->name('ujiKesehatanStore');
     Route::get('/ujiKesehatan/edit/{uuid}', 'ujiKesehatanController@edit')->name('ujiKesehatanEdit');
@@ -76,7 +75,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::put('/ujiKesehatan/detail/edit/{uuid}', 'ujiKesehatanController@rincianUpdate')->name('ujiKesehatanRincianUpdate');
     Route::get('/ujiKesehatan/detail/delete/{uuid}', 'ujiKesehatanController@rincianDestroy')->name('ujiKesehatanRincianDestroy');
     Route::get('/ujiKesehatan/filter/{uuid}', 'ujiKesehatanController@filter')->name('ujiKesehatanFilter');
-
 
     // uji wawancara peserta
     Route::get('/ujiWawancara/index', 'ujiWawancaraController@index')->name('ujiWawancaraIndex');
@@ -97,14 +95,13 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/pelamar/biodata/cetak/{uuid}', 'reportController@biodatapelamar')->name('biodataCetak');
     Route::get('/pelamar/cetak/{uuid}', 'reportController@pelamar')->name('pelamarCetak');
     Route::post('/pelamar/filter/{uuid}', 'reportController@filterPelamar')->name('pelamarFilterCetak');
-    Route::get('/ujiKompetensi/cetak/{uuid}', 'reportController@ujiKompetensi')->name('ujiKompetensiCetak'); 
+    Route::get('/ujiKompetensi/cetak/{uuid}', 'reportController@ujiKompetensi')->name('ujiKompetensiCetak');
     Route::post('/ujiKompetensi/filter/{uuid}', 'reportController@ujiKompetensiFilter')->name('ujiKompetensiFilterCetak');
     Route::get('/ujiKesehatan/cetak/{uuid}', 'reportController@ujiKesehatan')->name('ujiKesehatanCetak');
     Route::post('/ujiKesehatan/filter/{uuid}', 'reportController@ujiKesehatanFilter')->name('ujiKesehatanFilterCetak');
     Route::get('/ujiWawancara/cetak/{uuid}', 'reportController@ujiWawancara')->name('ujiWawancaraCetak');
     Route::post('/ujiWawancara/filter/{uuid}', 'reportController@ujiWawancaraFilter')->name('ujiWawancaraFilterCetak');
     Route::get('/analisis/pelamar/cetak/{uuid}', 'reportController@analisisPelamar')->name('analisisPelamarCetak');
-
 
 });
 
@@ -116,8 +113,8 @@ Route::group(['middleware' => ['pelamar']], function () {
     Route::put('user/pelamar/profilUpdate/{uuid}', 'UserController@pelamarProfilUpdate')->name('pelamarProfilUpdate');
     Route::get('user/ujiKompetensi/input/{uuid}', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
     Route::post('user/ujiKompetensi/input', 'ujiKompetensiController@inputStore')->name('ujiKompetensiPesertaStore');
-    Route::get('user/ujiKompetensi/hasil/{uuid}', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
-    Route::get('user/ujiKesehatan/hasil/', 'ujiKesehatanController@hasil')->name('ujiKesehatanHasil'); 
-    Route::get('user/ujiWawancara/hasil/', 'ujiWawancaraController@hasil')->name('ujiWawancaraHasil'); 
+    Route::get('user/ujiKompetensi/hasil/', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
+    Route::get('user/ujiKesehatan/hasil/', 'ujiKesehatanController@hasil')->name('ujiKesehatanHasil');
+    Route::get('user/ujiWawancara/hasil/', 'ujiWawancaraController@hasil')->name('ujiWawancaraHasil');
 
 });
