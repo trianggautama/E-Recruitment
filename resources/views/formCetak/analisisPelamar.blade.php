@@ -124,7 +124,7 @@
                 </tr>
                 <tr>
                     <td>Jumlah Pelamar yang lolos</td>
-                    <td>: {{$lowongan->uji_wawancara->uji_wawancara_peserta}} pelamar</td>
+                    <td>: {{$lowongan->uji_wawancara->uji_wawancara_peserta->where('status',1)->count()}} pelamar</td>
                 </tr>
             </table>       
                     </div>
