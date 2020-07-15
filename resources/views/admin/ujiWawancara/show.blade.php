@@ -8,12 +8,14 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Uji Kesehatan (Nama Lowongan)</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Uji Kesehatan {{$ujiWawancara->lowongan->berita->judul}}</h2>
             </div>
             <div class="d-flex">
+            <a href="{{Route('ujiWawancaraFilter',['uuid'=>$ujiWawancara->uuid])}}" class="btn btn-sm btn-danger mb-15 mr-2"><i class="fa fa-filter"></i> Filter Data</a>
+            <a href="{{Route('ujiWawancaraCetak',['uuid'=>$ujiWawancara->uuid])}}" class="btn btn-sm btn-danger mb-15 mr-2" target="_blank"><i class="fa fa-print"></i> Cetak Data</a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
-                    </span></button>
+                    </span></button> 
             </div>
         </div>
         <div class="row">

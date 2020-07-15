@@ -164,4 +164,10 @@ class ujiKesehatanController extends Controller
         // }
         return view('user.ujiKompetensi.hasil');
     }
+
+    public function filter($uuid)
+    {
+        $ujiKesehatan = Uji_kesehatan::where('uuid', $uuid)->first();
+        return view('admin.ujiKesehatan.filter', compact('ujiKesehatan'));
+    }
 }

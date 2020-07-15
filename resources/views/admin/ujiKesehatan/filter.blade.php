@@ -26,13 +26,12 @@
                                     <div class="table-wrap">
                                         <form method="POST" enctype="multipart/form-data" target="_blank">
                                             @csrf              
-                                            <input type="hidden" name="lowongan_id" value="{{$lowongan->id}}">                           
+                                            <input type="hidden" name="uji_id" value="{{$ujiKesehatan->id}}">                           
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Status</label>
                                                 <select name="status" id="" class="form-control">
-                                                    <option value="0">Pending</option>
-                                                    <option value="1">Diterima</option>
-                                                    <option value="2">Ditolak</option>
+                                                    <option value="1">Lulus</option>
+                                                    <option value="0">Tidak Lulus</option>
                                                 </select>
                                             </div>                           
                                             <div class="text-right">

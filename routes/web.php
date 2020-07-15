@@ -75,6 +75,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/ujiKesehatan/detail/edit/{uuid}', 'ujiKesehatanController@rincianEdit')->name('ujiKesehatanRincianEdit');
     Route::put('/ujiKesehatan/detail/edit/{uuid}', 'ujiKesehatanController@rincianUpdate')->name('ujiKesehatanRincianUpdate');
     Route::get('/ujiKesehatan/detail/delete/{uuid}', 'ujiKesehatanController@rincianDestroy')->name('ujiKesehatanRincianDestroy');
+    Route::get('/ujiKesehatan/filter/{uuid}', 'ujiKesehatanController@filter')->name('ujiKesehatanFilter');
+
 
     // uji wawancara peserta
     Route::get('/ujiWawancara/index', 'ujiWawancaraController@index')->name('ujiWawancaraIndex');
@@ -89,6 +91,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/ujiWawancara/detail/edit/{uuid}', 'ujiWawancaraController@rincianEdit')->name('ujiWawancaraRincianEdit');
     Route::put('/ujiWawancara/detail/edit/{uuid}', 'ujiWawancaraController@rincianUpdate')->name('ujiWawancaraRincianUpdate');
     Route::get('/ujiWawancara/detail/delete/{uuid}', 'ujiWawancaraController@rincianDestroy')->name('ujiWawancaraRincianDestroy');
+    Route::get('/ujiWawancara/filter/{uuid}', 'ujiWawancaraController@filter')->name('ujiWawancaraFilter');
 
     //Report
     Route::get('/pelamar/biodata/cetak/{uuid}', 'reportController@biodatapelamar')->name('biodataCetak');
@@ -96,7 +99,10 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/pelamar/filter/{uuid}', 'reportController@filterPelamar')->name('pelamarFilterCetak');
     Route::get('/ujiKompetensi/cetak/{uuid}', 'reportController@ujiKompetensi')->name('ujiKompetensiCetak'); 
     Route::post('/ujiKompetensi/filter/{uuid}', 'reportController@ujiKompetensiFilter')->name('ujiKompetensiFilterCetak');
-
+    Route::get('/ujiKesehatan/cetak/{uuid}', 'reportController@ujiKesehatan')->name('ujiKesehatanCetak');
+    Route::post('/ujiKesehatan/filter/{uuid}', 'reportController@ujiKesehatanFilter')->name('ujiKesehatanFilterCetak');
+    Route::get('/ujiWawancara/cetak/{uuid}', 'reportController@ujiWawancara')->name('ujiWawancaraCetak');
+    Route::post('/ujiWawancara/filter/{uuid}', 'reportController@ujiWawancaraFilter')->name('ujiWawancaraFilterCetak');
 
 
 });

@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Filter Status Pelamar</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Filter Uji Wawancara</h2>
             </div>
         </div>
         <!-- /Title -->
@@ -19,20 +19,19 @@
                     <div class="col-lg-12">
 
                         <section class="hk-sec-wrapper">
-                            <h5 class="hk-sec-title">Filter Status Pelamar</h5>
+                            <h5 class="hk-sec-title">Filter Uji Wawancara</h5>
                             <br>
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
                                         <form method="POST" enctype="multipart/form-data" target="_blank">
                                             @csrf              
-                                            <input type="hidden" name="lowongan_id" value="{{$lowongan->id}}">                           
+                                            <input type="hidden" name="uji_id" value="{{$ujiWawancara->id}}">                           
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Status</label>
                                                 <select name="status" id="" class="form-control">
-                                                    <option value="0">Pending</option>
-                                                    <option value="1">Diterima</option>
-                                                    <option value="2">Ditolak</option>
+                                                    <option value="1">Lulus</option>
+                                                    <option value="0">Tidak Lulus</option>
                                                 </select>
                                             </div>                           
                                             <div class="text-right">

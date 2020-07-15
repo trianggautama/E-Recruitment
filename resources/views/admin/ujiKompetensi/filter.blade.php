@@ -24,7 +24,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
-                                        <form method="POST" enctype="multipart/form-data">
+                                        <form method="POST" enctype="multipart/form-data" target="_blank">
                                             @csrf              
                                             <input type="hidden" name="uji_id" value="{{$data->id}}">                           
                                             <div class="form-group">

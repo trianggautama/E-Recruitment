@@ -12,6 +12,8 @@
                     {{$ujiKesehatan->lowongan->berita->judul}}</h2>
             </div>
             <div class="d-flex">
+            <a href="{{Route('ujiKesehatanFilter',['uuid'=>$ujiKesehatan->uuid])}}" class="btn btn-sm btn-danger mb-15 mr-2"><i class="fa fa-filter"></i> Filter Data</a>
+            <a href="{{Route('ujiKesehatanCetak',['uuid'=>$ujiKesehatan->uuid])}}" class="btn btn-sm btn-danger mb-15 mr-2" target="_blank"><i class="fa fa-print"></i> Cetak Data</a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
