@@ -103,6 +103,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/ujiKesehatan/filter/{uuid}', 'reportController@ujiKesehatanFilter')->name('ujiKesehatanFilterCetak');
     Route::get('/ujiWawancara/cetak/{uuid}', 'reportController@ujiWawancara')->name('ujiWawancaraCetak');
     Route::post('/ujiWawancara/filter/{uuid}', 'reportController@ujiWawancaraFilter')->name('ujiWawancaraFilterCetak');
+    Route::get('/analisis/pelamar/cetak/{uuid}', 'reportController@analisisPelamar')->name('analisisPelamarCetak');
 
 
 });

@@ -122,4 +122,14 @@ class reportController extends Controller
         return $pdf->stream('Laporan Uji wawancara Filter .pdf');
     }
 
+    public function analisisPelamar($uuid)
+    { 
+        $lowongan = Lowongan::where('uuid',$uuid)->first();
+        $data     = $lowongan->peserta;
+        $pdf      = PDF::loadView('formCetak.analisisPelamar', ['data'=>$data, 'lowongan'=>$lowongan]);
+        $pdf->setPaper('a4', 'portrait');
+
+        return $pdf->stream('Laporan Analsis Pelamar.pdf');
+    }
+
 }
