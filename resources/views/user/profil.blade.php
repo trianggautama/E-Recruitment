@@ -24,7 +24,7 @@
 									<h5 class="hk-sec-title">Profil User</h5>
 								</div>
 								<div class="col-md-6 text-right">
-									<a href="{{Route('pelamarProfilUpdate',['uuid' => $data->id])}}"
+									<a href="{{Route('pelamarIndex')}}"
 										class="btn btn-sm btn-secondary"><i class="fa fa-arrow-left"></i> Kembali</a>
 								</div>
 							</div>
