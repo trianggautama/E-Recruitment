@@ -157,20 +157,20 @@
                                                     <tr height="30px !important;">
                                                         <td width="40%">Pas Foto</td>
                                                         <td>:
-                                                            <button
-                                                                class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                                                            <a href="{{asset('images/user/'. $data->user->foto)}}"
+                                                                class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15" target="_blank"><span
                                                                     class="icon-label"><i class="fa fa-paperclip"></i>
-                                                                </span><span class="btn-text">Foto</span></button>
+                                                                </span><span class="btn-text">Foto</span></a>
                                                         </td>
                                                     </tr>
                                                     <tr height="30px !important;">
                                                         <td width="40%">Scan Ijazah terakhir</td>
                                                         <td>:
-                                                            <button
-                                                                class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
+                                                            <a href="{{asset('lampiran/ijazah/'. $data->user->lampiran->doc_ijazah)}}"
+                                                                class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15" target="_blank"><span
                                                                     class="icon-label"><i class="fa fa-paperclip"></i>
                                                                 </span><span class="btn-text">Scan
-                                                                    Ijazah</span></button>
+                                                                    Ijazah</span></a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -181,7 +181,7 @@
                                                     <tr height="30px !important;">
                                                         <td width="40%">Tanggal Upload</td>
                                                         <td>:
-                                                            1 Juli 2020
+                                                            {{carbon\carbon::parse($data->created_at)->translatedFormat('d F Y')}}
                                                         </td>
                                                     </tr>
                                                     <tr height="30px !important;">
