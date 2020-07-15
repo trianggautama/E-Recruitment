@@ -153,16 +153,8 @@ class ujiKesehatanController extends Controller
 
     public function hasil()
     {
-        // $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id->id)->first();
-        // $data = Uji_kesehatan_peserta::where('uji_kesehatan_id', $ujiKesehatan->id)->latest()->get();
-        // $peserta = Peserta::whereHas('uji_kompetensi_peserta', function ($query) {
-        //     $query->where('nilai', '>=', 75);
-        // })->with('uji_kompetensi_peserta')->get();
-
-        // if (!$tesPeserta) {
-        //     return back()->withWarning('Anda belum melakukan ujian');
-        // }
-        return view('user.ujiKompetensi.hasil');
+       
+        return view('user.ujiKesehatan.hasil');
     }
 
     public function filter($uuid)

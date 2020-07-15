@@ -12,8 +12,7 @@
                     {{$ujiKesehatan->lowongan->berita->judul}}</h2>
             </div>
             <div class="d-flex">
-            <a href="{{Route('ujiKesehatanFilter',['uuid'=>$ujiKesehatan->uuid])}}" class="btn btn-sm btn-danger mb-15 mr-2"><i class="fa fa-filter"></i> Filter Data</a>
-            <a href="{{Route('ujiKesehatanCetak',['uuid'=>$ujiKesehatan->uuid])}}" class="btn btn-sm btn-danger mb-15 mr-2" target="_blank"><i class="fa fa-print"></i> Cetak Data</a>
+            
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
@@ -48,10 +47,10 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->peserta->user->name}}</td>
-                                                    <td><a href="#" class="btn btn-sm btn-warning  mb-1"><span
+                                                    <td><a href="{{asset('lampiran/suratKesehatan/'.$d->surat_kesehatan)}}" class="btn btn-sm btn-warning  mb-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-download"></i>
                                                             </span><span class="btn-text"> </span></a></td>
-                                                    <td><a href="#" class="btn btn-sm btn-warning  mb-1"><span
+                                                    <td><a href="{{asset('lampiran/suratNarkoba/'.$d->surat_kesehatan)}}" class="btn btn-sm btn-warning  mb-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-download"></i>
                                                             </span><span class="btn-text"> </span></a></td>
                                                     <td>{{$d->detak_jantung}} Bpm</td>

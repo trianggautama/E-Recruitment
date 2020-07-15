@@ -54,8 +54,8 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                         @if(Auth::user()->status == 1)
                             <a class="dropdown-item" href="{{Route('userIndex')}}">Hasil Uji Kompetensi</a>
-                            <a class="dropdown-item" href="{{Route('posisiIndex')}}">Hasil Tes Kesehatan</a>
-                            <a class="dropdown-item" href="{{Route('beritaIndex')}}">Hasil Tes Wawancara</a>
+                            <a class="dropdown-item" href="{{Route('ujiKesehatanHasil')}}">Hasil Tes Kesehatan</a>
+                            <a class="dropdown-item" href="{{Route('ujiWawancaraHasil')}}">Hasil Tes Wawancara</a>
                         @else
                             <a class="dropdown-item" href="#">Akun anda belum aktif</a>
                         @endif

@@ -110,11 +110,13 @@ Route::group(['middleware' => ['admin']], function () {
 Route::group(['middleware' => ['pelamar']], function () {
 
     //halaman pelamar
-    Route::get('/pelamar/index', 'UserController@pelamarIndex')->name('pelamarIndex');
-    Route::get('/pelamar/profil', 'UserController@pelamarProfil')->name('profilUser');
-    Route::put('/pelamar/profilUpdate/{uuid}', 'UserController@pelamarProfilUpdate')->name('pelamarProfilUpdate');
-    Route::get('/ujiKompetensi/input/{uuid}', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
-    Route::post('/ujiKompetensi/input', 'ujiKompetensiController@inputStore')->name('ujiKompetensiPesertaStore');
-    Route::get('/ujiKompetensi/hasil/{uuid}', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
+    Route::get('user/pelamar/index', 'UserController@pelamarIndex')->name('pelamarIndex');
+    Route::get('user/pelamar/profil', 'UserController@pelamarProfil')->name('profilUser');
+    Route::put('user/pelamar/profilUpdate/{uuid}', 'UserController@pelamarProfilUpdate')->name('pelamarProfilUpdate');
+    Route::get('user/ujiKompetensi/input/{uuid}', 'ujiKompetensiController@input')->name('ujiKompetensiInput');
+    Route::post('user/ujiKompetensi/input', 'ujiKompetensiController@inputStore')->name('ujiKompetensiPesertaStore');
+    Route::get('user/ujiKompetensi/hasil/{uuid}', 'ujiKompetensiController@hasil')->name('ujiKompetensiHasil');
+    Route::get('user/ujiKesehatan/hasil/', 'ujiKesehatanController@hasil')->name('ujiKesehatanHasil'); 
+    Route::get('user/ujiWawancara/hasil/', 'ujiWawancaraController@hasil')->name('ujiWawancaraHasil'); 
 
 });

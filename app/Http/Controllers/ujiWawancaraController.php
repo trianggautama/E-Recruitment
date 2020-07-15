@@ -98,4 +98,10 @@ class ujiWawancaraController extends Controller
         $ujiWawancara = Uji_wawancara::where('uuid', $uuid)->first();
         return view('admin.ujiWawancara.filter', compact('ujiWawancara'));
     }
+
+    public function hasil()
+    {
+       
+        return view('user.ujiWawancara.hasil');
+    }
 }

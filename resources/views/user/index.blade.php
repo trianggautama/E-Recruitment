@@ -257,7 +257,7 @@
                         <div class="timeline-body">
                         <p>12 Juni 2020 - 15 juni 2020</p>
                         <br>
-                            <a href="" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Kesehatan</a>
+                            <a href="{{Route('ujiKesehatanHasil')}}" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Kesehatan</a>
                         </div>
                     </div>
                     </li>
@@ -268,6 +268,8 @@
                         </div>
                         <div class="timeline-body">
                         <p>25 Juni 2020 </p>
+                        <br>
+                        <a href="{{Route('ujiWawancaraHasil')}}" class="btn btn-sm btn-danger"><i class="fa fa-database"></i> Hasil Tes Wawancara</a>
                         </div>
                     </div>
                     </li>
