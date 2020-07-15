@@ -63,7 +63,7 @@ class reportController extends Controller
         if(request()->status == 1){
             $data     = Uji_kompetensi_peserta::where('uji_kompetensi_id',$uji_kompetensi->id)->where('nilai','>=', 75)->get();
         }else{
-            $data     = Uji_kompetensi_peserta::where('uji_kompetensi_id',$uji_kompetensi->id)->where('nilai','<=', 75)->get();
+            $data     = Uji_kompetensi_peserta::where('uji_kompetensi_id',$uji_kompetensi->id)->where('nilai','<', 75)->get();
         }
         $status = request()->status;
         $pdf      = PDF::loadView('formCetak.dataUjiKompetensiFilter', ['data'=>$data, 'uji_kompetensi'=>$uji_kompetensi, 'status'=>$status]);
