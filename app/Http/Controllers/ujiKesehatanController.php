@@ -9,6 +9,7 @@ use App\Uji_kesehatan_peserta;
 use Carbon\Carbon;
 use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ujiKesehatanController extends Controller
 {
@@ -153,8 +154,13 @@ class ujiKesehatanController extends Controller
 
     public function hasil()
     {
-       
-        return view('user.ujiKesehatan.hasil');
+        $peserta_id = Auth::user()->peserta;
+        $tesPeserta = Uji_kesehatan_peserta::where('peserta_id', $peserta_id->id)->first();
+        if (!$tesPeserta) {
+            return back()->withWarning('Data hasil tes kesehatan anda belum diinput');
+        }
+        $data = Uji_kesehatan::where('lowongan_id', $peserta_id->lowongan_id)->first();
+        return view('user.ujiKesehatan.hasil', compact('data'));
     }
 
     public function filter($uuid)
