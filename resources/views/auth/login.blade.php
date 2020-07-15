@@ -23,8 +23,7 @@
 		<div class="hk-pg-wrapper hk-auth-wrapper">
 			<header class="d-flex justify-content-end align-items-center">
 				<div class="btn-group btn-group-sm">
-					<a href="#" class="btn btn-outline-secondary">Help</a>
-					<a href="#" class="btn btn-outline-secondary">About Us</a>
+					<a href="/" class="btn btn-outline-secondary">Halaman Depan</a>
 				</div>
 			</header>
 			<div class="container-fluid">
@@ -51,9 +50,7 @@
 											<strong>{{ $message }}</strong>
 										</span>
 										@enderror
-										<div class="form-control-position">
-											<i class="feather icon-user"></i>
-										</div>
+					
 										<label for="user-name">Username</label>
 									</fieldset>
 
@@ -66,9 +63,6 @@
 											<strong>{{ $message }}</strong>
 										</span>
 										@enderror
-										<div class="form-control-position">
-											<i class="feather icon-lock"></i>
-										</div>
 										<label for="user-password">Password</label>
 									</fieldset>
 									<div class="custom-control custom-checkbox mb-25">
