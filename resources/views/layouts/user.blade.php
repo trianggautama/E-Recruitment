@@ -53,7 +53,7 @@
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                         @if(Auth::user()->status == 1)
-                            <a class="dropdown-item" href="{{Route('userIndex')}}">Hasil Uji Kompetensi</a>
+                            <a class="dropdown-item" href="{{Route('ujiKompetensiHasil',['uuid'=>Auth::user()->peserta->lowongan->uuid])}}">Hasil Uji Kompetensi</a>
                             <a class="dropdown-item" href="{{Route('ujiKesehatanHasil')}}">Hasil Tes Kesehatan</a>
                             <a class="dropdown-item" href="{{Route('ujiWawancaraHasil')}}">Hasil Tes Wawancara</a>
                         @else
