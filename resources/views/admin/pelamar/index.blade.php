@@ -67,10 +67,10 @@
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-info-circle"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('pelamarEdit','xaxa')}}"
+                                                        <!-- <a href="{{Route('pelamarEdit','xaxa')}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
-                                                            </span><span class="btn-text"> </span></a>
+                                                            </span><span class="btn-text"> </span></a> -->
                                                     </td>
                                                 </tr>
                                                 @endforeach
