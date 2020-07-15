@@ -39,7 +39,6 @@
                                                     <th>Tempat Tanggal Lahir</th>
                                                     <th>Nomor Hp</th>
                                                     <th>Email</th>
-                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -53,21 +52,6 @@
                                                     </td>
                                                     <td>{{$d->tlp_hp}}</td>
                                                     <td>{{$d->email}}</td>
-
-                                                    <td>
-                                                        <a href="{{Route('pelamarShow',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-info-circle"></i>
-                                                            </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('pelamarEdit','xaxa')}}"
-                                                            class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-edit"></i>
-                                                            </span><span class="btn-text"> </span></a>
-                                                        <a href="{{Route('pelamarDestroy','xaxa')}}"
-                                                            class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-trash"></i>
-                                                            </span><span class="btn-text"> </span></a>
-                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
@@ -79,7 +63,6 @@
                                                     <th>IPK minimal</th>
                                                     <th>Pendidikan Terakhir</th>
                                                     <th>Tanggal Pendaftaran</th>
-                                                    <th>Aksi</th>
                                                 </tr>
                                             </tfoot>
                                         </table>

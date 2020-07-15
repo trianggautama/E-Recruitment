@@ -8,7 +8,7 @@
         <!-- Title -->
         <div class="hk-pg-header align-items-top">
             <div>
-                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Uji Kesehatan {{$ujiWawancara->lowongan->berita->judul}}</h2>
+                <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Uji Wawancara {{$ujiWawancara->lowongan->berita->judul}}</h2>
             </div>
             <div class="d-flex">
             <a href="{{Route('ujiWawancaraFilter',['uuid'=>$ujiWawancara->uuid])}}" class="btn btn-sm btn-danger mb-15 mr-2"><i class="fa fa-filter"></i> Filter Data</a>
@@ -58,7 +58,7 @@
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light"
-                                                            onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                            onclick="Hapus('{{$d->uuid}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -140,5 +140,23 @@
             $('#status').text('Tambah Data');
             $('#exampleModalForms').modal('show');
         });
+
+        function Hapus(uuid) {
+			Swal.fire({
+			title: 'Anda Yakin?',
+			text: " Menghapus Data Uji Wawancara?  " ,        
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Hapus',
+			cancelButtonText: 'Batal'
+		}).then((result) => {
+			if (result.value) {
+				url = '{{route("ujiWawancaraRincianDestroy",'')}}'; 
+				window.location.href =  url+'/'+uuid ;			
+			}
+		})
+        }
 </script>
 @endsection
