@@ -26,6 +26,12 @@ Route::group(['middleware' => ['admin']], function () {
     Route::put('/posisi/edit/{uuid}', 'PosisiController@update')->name('posisiUpdate');
     Route::get('/posisi/delete/{uuid}', 'PosisiController@destroy')->name('posisiDestroy');
 
+    Route::get('/pendidikan/index', 'pendidikanController@index')->name('pendidikanIndex');
+    Route::post('/pendidikan/index/create', 'PendidikanController@store')->name('pendidikanCreate');
+    Route::get('/pendidikan/edit/{uuid}', 'PendidikanController@edit')->name('pendidikanEdit');
+    Route::put('/pendidikan/edit/{uuid}', 'PendidikanController@update')->name('pendidikanUpdate');
+    Route::get('/pendidikan/delete/{uuid}', 'PendidikanController@destroy')->name('pendidikanDestroy');
+
     Route::get('/berita/index', 'BeritaController@index')->name('beritaIndex');
     Route::get('/berita/tambah', 'BeritaController@create')->name('beritaAdd');
     Route::post('/berita/tambah', 'BeritaController@store')->name('beritaStore');
