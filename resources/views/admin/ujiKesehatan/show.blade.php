@@ -119,7 +119,7 @@
                     <input type="hidden" name="uji_kesehatan_id" value="{{$ujiKesehatan->id}}" id="">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1"> Peserta</label>
-                        <select name="peserta_id" id="" class="form-control">
+                        <select name="peserta_id" id="" class="form-control" required>
                             <option value="">-- pilih peserta --</option>
                             @foreach($peserta as $d)
                             <option value="{{$d->id}}">{{$d->user->name}}</option>
@@ -135,12 +135,12 @@
                         <input type="file" class="form-control " id="Surat_Narkoba" name="surat_narkoba">
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Detak Jantung (Bpm)</label>
-                        <input type="text" class="form-control " id="detak_jantung" name="detak_jantung">
+                        <label for="exampleDropdownFormEmail1">Detak Jantung (Bps)</label>
+                        <input type="text" class="form-control " id="detak_jantung" name="detak_jantung" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Hasil Tes Lari (km/jam) </label>
-                        <input type="text" class="form-control " id="tes_lari" name="tes_lari">
+                        <label for="exampleDropdownFormEmail1">Hasil Tes Lari (m/12 putaran) </label>
+                        <input type="text" class="form-control " id="tes_lari" name="tes_lari" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Status</label>

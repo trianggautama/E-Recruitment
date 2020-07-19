@@ -104,7 +104,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Soal </label>
-                        <textarea name="soal" id="soal" class="tinymce" rows="1" cols="1"></textarea>
+                        <textarea name="soal" id="soal" class="tinymce" rows="1" cols="1" ></textarea>
                     </div>
                     Pilihan Jawaban
                     <hr>
@@ -112,27 +112,27 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">A</label>
-                                <input type="text" name="a" class="form-control " id="a">
+                                <input type="text" name="a" class="form-control " id="a" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">C</label>
-                                <input type="text" name="b" class="form-control " id="c">
+                                <input type="text" name="b" class="form-control " id="b" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">B</label>
-                                <input type="text" name="c" class="form-control " id="b">
+                                <input type="text" name="c" class="form-control " id="c" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">D</label>
-                                <input type="text" name="d" class="form-control " id="d">
+                                <input type="text" name="d" class="form-control " id="d" required>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Kunci Jawaban</label>
-                        <select name="kunci" id="" class="form-control">
+                        <select name="kunci" id="" class="form-control" required>
                             <option value="a">A</option>
                             <option value="b">B</option>
                             <option value="c">C</option>

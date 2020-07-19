@@ -34,7 +34,6 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama</th>
-                                                    <th>Keterangan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -43,7 +42,6 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->nama}}</td>
-                                                    <td>{{$d->keterangan}}</td>
                                                     <td>
                                                         <a href="{{Route('posisiEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
@@ -58,7 +56,6 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama</th>
-                                                    <th>Keterangan</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </tfoot>
@@ -94,11 +91,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama Posisi</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="nama">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Keterangan</label>
-                        <textarea name="keterangan" id="" class="form-control"></textarea>
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="nama" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>

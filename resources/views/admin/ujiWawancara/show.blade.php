@@ -34,7 +34,7 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Peserta</th>
-                                                    <th>Catatan Wawancara</th>
+                                                    <th>Nilai</th>
                                                     <th>Hasil</th>
                                                     <th>Aksi</th>
                                                 </tr>
@@ -44,7 +44,7 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->peserta->user->name}}</td>
-                                                    <td>{{$d->catatan}}</td>
+                                                    <td>-</td>
                                                     <td>
                                                         @if($d->status == 0 )
                                                         Tidak Lulus
@@ -106,7 +106,7 @@
                     <input type="hidden" name="uji_wawancara_id" value="{{$ujiWawancara->id}}" id="">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1"> Peserta</label>
-                        <select name="peserta_id" id="" class="form-control">
+                        <select name="peserta_id" id="" class="form-control" required>
                             <option value="">-- pilih peserta --</option>
                             @foreach($peserta as $d)
                             <option value="{{$d->id}}">{{$d->user->name}}</option>
@@ -114,8 +114,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Catatan Wawancara</label>
-                        <textarea name="catatan" class="form-control " id="catatan"></textarea>
+                        <label for="exampleDropdownFormEmail1">Nilai</label>
+                        <input type="text" class="form-control" name="nilai" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Status</label>

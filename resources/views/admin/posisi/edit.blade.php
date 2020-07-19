@@ -32,11 +32,6 @@
                                                 <input type="text" class="form-control" name="nama" id="nama"
                                                     value="{{$data->nama}}" placeholder="nama">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Keterangan</label>
-                                                <textarea name="keterangan" id=""
-                                                    class="form-control">{{$data->keterangan}}</textarea>
-                                            </div>
                                             <div class="text-right">
                                                 <a href="{{Route('posisiIndex')}}" class="btn btn-secondary"><i
                                                         class="fa fa-arrow-left"></i> Kembali</a>

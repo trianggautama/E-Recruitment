@@ -98,16 +98,16 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="name" placeholder="nama">
+                        <input type="text" class="form-control" id="nama" name="name" placeholder="nama" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">username</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="username">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleDropdownFormPassword1" name="password"
-                            placeholder="Password">
+                            placeholder="Password" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormPassword1">Foto</label>

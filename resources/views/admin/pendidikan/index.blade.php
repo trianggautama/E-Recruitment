@@ -89,7 +89,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Pendidikan</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Pendidikan">
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Pendidikan" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>

@@ -31,21 +31,21 @@
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Judul</label>
                                                 <input type="text" class="form-control" name="judul" id="judul"
-                                                    placeholder="judul">
+                                                    placeholder="judul" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Isi </label>
-                                                <textarea name="isi" id="isi" rows="10" class="tinymce"></textarea>
+                                                <textarea name="isi" id="isi" rows="10" class="tinymce" ></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Thumbnail</label>
                                                 <input type="file" class="form-control" name="foto" id="nama"
-                                                    placeholder="Foto">
+                                                    placeholder="Foto" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Posisi</label>
                                                 <select name="posisi[]" class=" form-control select2 select2-multiple"
-                                                    multiple="multiple" data-placeholder="Choose">
+                                                    multiple="multiple" data-placeholder="Choose" required>
                                                     @foreach($posisi as $d)
                                                     <option value="{{$d->nama}}">{{$d->nama}}</option>
                                                     @endforeach
@@ -54,7 +54,7 @@
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Keterangan Lowongan </label>
                                                 <textarea name="keterangan" id="keterangan" rows="10"
-                                                    class="tinymce"></textarea>
+                                                    class="tinymce" required></textarea>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -62,7 +62,7 @@
                                                         <label for="exampleDropdownFormEmail1">Tanggal Pembukaan
                                                             Pendaftaran</label>
                                                         <input type="date" class="form-control" name="tgl_mulai"
-                                                            id="nama" placeholder="nama">
+                                                            id="nama" placeholder="nama" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -70,19 +70,14 @@
                                                         <label for="exampleDropdownFormEmail1">Tanggal Penutupan
                                                             Pendaftaran</label>
                                                         <input type="date" name="tgl_selesai" class="form-control"
-                                                            id="nama" placeholder="nama">
+                                                            id="nama" placeholder="nama" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pendidikan Minimal</label>
-                                                <select name="pendidikan_terakhir" id="" class="form-control">
-                                                    <option value="">-- Pilih Pendidikan --</option>
-                                                    <option value="SMP"> SMP </option>
-                                                    <option value="SMA"> SMA </option>
-                                                    <option value="D2"> D2 </option>
-                                                    <option value="D3"> D3 </option>
-                                                    <option value="S1"> S1 </option>
+                                                <select name="pendidikan_terakhir" id="" class="form-control" required>
+                                                    <option value="">-- Pilih dari tabel pendidikan --</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">

@@ -39,9 +39,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Catatan Wawancara</label>
-                                                <textarea name="catatan" class="form-control "
-                                                    id="catatan">{{$data->catatan}}</textarea>
+                                                <label for="exampleDropdownFormEmail1">Nilai</label>
+                                                <input type="text" class="form-control" name="nilai">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Status</label>
