@@ -84,14 +84,7 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#">rekrutmen</a>
-									<ul class="menu-dropdown">
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="404.html">404</a></li>
-										<li><a href="about-us.html">About-us</a></li>
-									</ul>
-								</li>
+								<li><a href="/">Home</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<div class="home-donate donate-btn-1 text-uppercase">

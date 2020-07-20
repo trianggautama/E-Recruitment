@@ -88,13 +88,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.html">Home</a></li>
-								<li><a href="#">rekrutmen</a>
-									<ul class="menu-dropdown">
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="404.html">404</a></li>
-										<li><a href="about-us.html">About-us</a></li>
-									</ul>
-								</li>
+								<li><a href="#rekrutmen">rekrutmen</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<div class="home-donate donate-btn-1 text-uppercase">
@@ -121,16 +115,8 @@
 							<div class="moduletable_menu">
 
 								<ul class="nav menu">
-									<li><a href="home-1.html">Home</a></li>
-									<li><a href="about-us.html">About</a></li>
-									<li><a href="blog-archive.html">Blog</a></li>
-									<li><a href="blog-single.html">Blog Single</a></li>
-									<li><a href="cause.html">Cause</a></li>
-									<li><a href="cause-single.html">Cause Details</a></li>
-									<li><a href="event.html">Event</a></li>
-									<li><a href="event-single.html">Event Single</a></li>
-									<li><a href="404.html">404</a></li>
-									<li><a href="contact.html">Contacts</a></li>
+									<li><a href="/">Home</a></li>
+									<li><a href="#rekrutmen">rekrutmen</a></li>
 								</ul>
 							</div>
 						</div>
@@ -615,7 +601,7 @@
 
 	<!-- Start of Latest news
 	============================================= -->
-	<section id="latest-news" class="latest-news-section">
+	<section id="rekrutmen" class="latest-news-section">
 		<div class="container">
 			<div class="section-title text-center">
 				<div class="section-title-text">

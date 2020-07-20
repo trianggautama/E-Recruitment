@@ -9,6 +9,7 @@
         <div class="hk-pg-header align-items-top">
             <div>
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Detail Soal</h2>
+                <p>Waktu Tersisa : 40 menit</p>
             </div>
         </div>
         <!-- /Title -->
@@ -31,7 +32,7 @@
                             <br>
                             <form action="{{Route('ujiKompetensiPesertaStore')}}" method="POST">
                                 @csrf
-                                <input type="text" name="uji_id" value="{{$data->id}}">
+                                <input type="hidden" name="uji_id" value="{{$data->id}}">
                                 @foreach($soals as $soal)
                                 <div class="row">
                                     <div class="col-sm">
