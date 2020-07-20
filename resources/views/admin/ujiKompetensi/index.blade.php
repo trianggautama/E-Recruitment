@@ -33,6 +33,7 @@
                                                     <th>No</th>
                                                     <th>Lowongan</th>
                                                     <th>Tanggal Uji Kompetensi</th>
+                                                    <th>Durasi</th>
                                                     <th>Status</th>
                                                     <th>Aksi</th>
                                                 </tr>
@@ -43,6 +44,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->lowongan->berita->judul}}</td>
                                                     <td>{{carbon\carbon::parse($d->tgl_ujian)->translatedFormat('d F Y')}}
+                                                    <td>5 menit</td>
                                                     </td>
                                                     <td>
                                                         @if($now == carbon\carbon::parse($d->tgl_ujian)->format('Ymd'))
@@ -75,6 +77,7 @@
                                                     <th>No</th>
                                                     <th>Lowongan</th>
                                                     <th>Tanggal Uji Kompetensi</th>
+                                                    <th>Durasi</th>
                                                     <th>Status</th>
                                                     <th>Aksi</th>
                                                 </tr>
@@ -122,6 +125,10 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal Ujian</label>
                         <input type="date" class="form-control " id="tgl_ujian" name="tgl_ujian" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Durasi Pengerjaan (Menit)</label>
+                        <input type="number" class="form-control " id="durasi" name="durasi" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
