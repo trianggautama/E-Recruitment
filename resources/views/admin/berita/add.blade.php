@@ -69,7 +69,7 @@
                                                         <label for="exampleDropdownFormEmail1">Tanggal Penutupan
                                                             Pendaftaran</label>
                                                         <input type="date" name="tgl_selesai" value="{{ old('tgl_selesai') }}" class="form-control"
-                                                             placeholder="nama" required>
+                                                        min="{{carbon\carbon::now()->translatedFormat('Y-m-d')}}" required>
                                                     </div>
                                                 </div>
                                             </div>
