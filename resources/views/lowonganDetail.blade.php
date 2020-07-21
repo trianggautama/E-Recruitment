@@ -198,7 +198,11 @@
                                             </tr>
                                             <tr>
                                                 <td>Status</td>
-                                                <td>: <i class="text-success"> Sedang Berlangsung</i></td>
+                                                <td>:  @if($data->lowongan->status == 1)
+                                                            <p class="text-info">Sedang Berlangsung</p>
+                                                        @else
+                                                        <p class="text-success">Sudah Selesai</p>
+                                                        @endif</td>
                                             </tr>
                                         </table>
                                         <br>
