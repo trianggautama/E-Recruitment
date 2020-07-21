@@ -77,7 +77,7 @@
 												<div class="d-flex align-items-center justify-content-between position-relative">
 													<div>
 														<span class="d-block">
-															<span class="display-5 font-weight-400 text-dark">12</span>
+															<span class="display-5 font-weight-400 text-dark">{{$posisi}}</span>
 														</span>
 													</div>
 													<div class="position-absolute r-0">
@@ -94,7 +94,7 @@
 												<div class="d-flex align-items-center justify-content-between position-relative">
 													<div>
 														<span class="d-block">
-															<span class="display-5 font-weight-400 text-dark">8</span>
+															<span class="display-5 font-weight-400 text-dark">{{$lowongan}}</span>
 														</span>
 													</div>
 													<div class="position-absolute r-0">
@@ -111,7 +111,7 @@
 												<div class="d-flex align-items-center justify-content-between position-relative">
 													<div>
 														<span class="d-block">
-															<span class="display-5 font-weight-400 text-dark">55</span>
+															<span class="display-5 font-weight-400 text-dark">{{$pelamar}}</span>
 														</span>
 													</div>
 													<div class="position-absolute r-0">
@@ -128,7 +128,7 @@
 												<div class="d-flex align-items-center justify-content-between position-relative">
 													<div>
 														<span class="d-block">
-															<span class="display-5 font-weight-400 text-dark">38</span>
+															<span class="display-5 font-weight-400 text-dark">{{$soal}}</span>
 														</span>
 													</div>
 													<div class="position-absolute r-0">
@@ -145,7 +145,7 @@
 												<div class="d-flex align-items-center justify-content-between position-relative">
 													<div>
 														<span class="d-block">
-															<span class="display-5 font-weight-400 text-dark">8</span>
+															<span class="display-5 font-weight-400 text-dark">{{$ujiKompetensi}}</span>
 														</span>
 													</div>
 													<div class="position-absolute r-0">
@@ -162,7 +162,7 @@
 												<div class="d-flex align-items-center justify-content-between position-relative">
 													<div>
 														<span class="d-block">
-															<span class="display-5 font-weight-400 text-dark">40</span>
+															<span class="display-5 font-weight-400 text-dark">{{$lulus}}</span>
 														</span>
 													</div>
 													<div class="position-absolute r-0">
