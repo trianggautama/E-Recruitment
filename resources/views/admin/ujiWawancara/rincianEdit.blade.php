@@ -40,7 +40,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Nilai</label>
-                                                <input type="text" class="form-control" name="nilai">
+                                                <input type="number" value="{{ $data->nilai }}" class="form-control" name="nilai">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Status</label>
