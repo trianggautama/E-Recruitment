@@ -10,6 +10,6 @@ class Posisi extends Model
     use Uuid;
 
     protected $fillable = [
-        'nama', 'keterangan',
+        'nama',
     ];
 }
