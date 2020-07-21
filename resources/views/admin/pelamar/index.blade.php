@@ -47,7 +47,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($lowongan->peserta as $d)
+                                                @foreach($data as $d)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->NIK}}</td>

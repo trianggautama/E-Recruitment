@@ -17,7 +17,8 @@ class PelamarController extends Controller
     public function index($uuid)
     {
         $lowongan = Lowongan::where('uuid', $uuid)->first();
-        return view('admin.pelamar.index', compact('lowongan'));
+        $data = Peserta::where('lowongan_id',$lowongan->id)->get();
+        return view('admin.pelamar.index', compact('lowongan','data'));
     }
 
     public function store(Request $req)
