@@ -44,7 +44,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->lowongan->berita->judul}}</td>
                                                     <td>{{carbon\carbon::parse($d->tgl_ujian)->translatedFormat('d F Y')}}
-                                                    <td>5 menit</td>
+                                                    <td>{{ $d->durasi }} menit</td>
                                                     </td>
                                                     <td>
                                                         @if($now == carbon\carbon::parse($d->tgl_ujian)->format('Ymd'))
@@ -56,7 +56,7 @@
                                                             carbon\carbon::parse($d->tgl_ujian)->format('Ymd'))
                                                             Sudah lewat
                                                             @endif
-                                                    </td> 
+                                                    </td>
                                                     <td>
                                                         <a href="{{Route('ujiKompetensiShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
@@ -149,7 +149,7 @@
         function Hapus(uuid) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Uji Kompetensi" ,        
+			text: " Menghapus Data Uji Kompetensi" ,
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -159,7 +159,7 @@
 		}).then((result) => {
 			if (result.value) {
 				url = '{{route("ujiKompetensiDestroy",'')}}';
-				window.location.href =  url+'/'+uuid ;			
+				window.location.href =  url+'/'+uuid ;
 			}
 		})
         }
