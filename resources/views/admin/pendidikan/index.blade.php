@@ -38,17 +38,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>SMA</td>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $d->nama }}</td>
                                                     <td>
-                                                        <a href="{{Route('pendidikanEdit','nijhj')}}"
+                                                        <a href="{{Route('pendidikanEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                             <button class="btn btn-sm btn-outline-light" onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -111,7 +113,7 @@
         function Hapus(uuid, pendidikan) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Posisi '" + pendidikan ,        
+			text: " Menghapus Data Posisi '" + pendidikan ,
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -121,7 +123,7 @@
 		}).then((result) => {
 			if (result.value) {
 				url = '{{route("pendidikanDestroy",'')}}';
-				window.location.href =  url+'/'+uuid ;			
+				window.location.href =  url+'/'+uuid ;
 			}
 		})
         }
