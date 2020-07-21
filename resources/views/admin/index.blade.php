@@ -174,7 +174,7 @@
 									</div>
 
 								</div>
-									<div class="card">
+									<!-- <div class="card">
 										<div class="card-header">
 											<p>Lowongan yang sedang berjalan</p>
 										</div>
@@ -226,7 +226,7 @@
 											</div>
 										</div>
 										</div>
-									</div>
+									</div> -->
 							</div>
 						</div>
 					</div>
