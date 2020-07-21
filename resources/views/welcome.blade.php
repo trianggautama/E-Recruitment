@@ -45,7 +45,7 @@
 
 <body>
 	<div id="preloader"></div>
-	<!-- Start of Header 
+	<!-- Start of Header
 	============================================= -->
 	<header>
 		<div class="header-top-bg">
@@ -126,10 +126,10 @@
 		</div>
 		<!--/menu-bar  -->
 	</header>
-	<!-- End of Header 
+	<!-- End of Header
 	============================================= -->
 
-	<!-- Start of Slider Section 
+	<!-- Start of Slider Section
 	============================================= -->
 	<!-- START REVOLUTION SLIDER 5.2.6 fullscreen mode -->
 	<div id="rev_slider_2_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.2.6">
@@ -199,10 +199,10 @@
 			<!-- SLIDE  -->
 		</ul>
 	</div>
-	<!-- End of Slider Section 
+	<!-- End of Slider Section
 	============================================= -->
 
-	<!-- Start of Ways of help 
+	<!-- Start of Ways of help
 	============================================= -->
 	<section id="way-help" class="way-help-section">
 		<div class="container">
@@ -346,10 +346,10 @@
 			</div><!-- /row-->
 		</div><!-- /container -->
 	</section>
-	<!-- End of Ways of help  
+	<!-- End of Ways of help
 	============================================= -->
 
-	<!-- Start of Count Down 
+	<!-- Start of Count Down
 	============================================= -->
 	<section id="countdown-area" class="countdown-section">
 		<div class="container">
@@ -388,11 +388,11 @@
 			</div><!-- /row -->
 		</div><!-- /container -->
 	</section>
-	<!-- End of Count Down  
+	<!-- End of Count Down
 	============================================= -->
 
 
-	<!-- Start of can we do section 
+	<!-- Start of can we do section
 	============================================= -->
 	<section id="can-we-do" class="can-we-do-section">
 		<div class="container">
@@ -557,7 +557,7 @@
 			</div><!-- /row -->
 		</div><!-- /container -->
 	</section>
-	<!-- End of can we do section 
+	<!-- End of can we do section
 	============================================= -->
 
 
@@ -592,8 +592,8 @@
 												<img src="{{asset('images/berita/'.$b->foto)}}" alt="image">
 											</div>
 											<br>
-											<h4>{{carbon\carbon::parse($b->tgl_mulai)->translatedFormat('d F Y')}} -
-												{{carbon\carbon::parse($b->tgl_selesai)->translatedFormat('d F Y')}}
+											<h4>{{carbon\carbon::parse($b->lowongan->tgl_mulai)->translatedFormat('d F Y')}} -
+												{{carbon\carbon::parse($b->lowongan->tgl_selesai)->translatedFormat('d F Y')}}
 											</h4>
 											<h4>( @foreach(collect($b->lowongan->posisi) as $p)
 												{{$p}},
