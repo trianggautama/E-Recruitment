@@ -80,39 +80,15 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pendidikan Minimal</label>
-                                                <select name="pendidikan_terakhir" id="" class="form-control">
-                                                    <option value="">-- Pilih Pendidikan --</option>
-                                                    <option value="SMP"
-                                                        {{$data->lowongan->pendidikan_terakhir == 'SMP' ? 'selected' : ''}}>
-                                                        SMP </option>
-                                                    <option value="SMA"
-                                                        {{$data->lowongan->pendidikan_terakhir == 'SMA' ? 'selected' : ''}}>
-                                                        SMA </option>
-                                                    <option value="D2"
-                                                        {{$data->lowongan->pendidikan_terakhir == 'D2' ? 'selected' : ''}}>
-                                                        D2 </option>
-                                                    <option value="D3"
-                                                        {{$data->lowongan->pendidikan_terakhir == 'D3' ? 'selected' : ''}}>
-                                                        D3 </option>
-                                                    <option value="S1"
-                                                        {{$data->lowongan->pendidikan_terakhir == 'S1' ? 'selected' : ''}}>
-                                                        S1 </option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Status</label>
-                                                <select name="status" id="" class="form-control">
-                                                    <option value="1"
-                                                        {{$data->lowongan->status == 1 ? 'selected' : ''}}>
-                                                        Berlangsung </option>
-                                                    <option value="2"
-                                                        {{$data->lowongan->status == 2 ? 'selected' : ''}}>
-                                                        Sudah Terlaksana </option>
+                                                <select name="pendidikan_terakhir_id" class="form-control" required>
+                                                    @foreach($pendidikan as $d)
+                                                    <option value="{{ $d->id }}" {{ $d->id == $data->lowongan->pendidikan_terakhir_id ? 'selected' : '' }}>{{ $d->nama }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>
-                                                    Tambah Data</button>
+                                                    Ubah Data</button>
                                             </div>
                                         </form>
                                     </div>
