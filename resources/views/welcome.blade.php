@@ -54,18 +54,14 @@
 					<div class="header-top">
 						<div class="head-top-info pull-left">
 							<ul class="top-info">
-								<li><img src="{{asset('depan/assets/img/call.png')}}" alt="image">05. 256. 8942</li>
-								<li><img src="{{asset('depan/assets/img/inbox.png')}}" alt="image">info@fundme.com</li>
+								<li><img src="{{asset('depan/assets/img/call.png')}}" alt="image">(0511) 3255551</li>
+								<li><img src="{{asset('depan/assets/img/inbox.png')}}" alt="image">corporate@telkomakses.co.id</li>
 							</ul>
 						</div>
 						<!-- /head-top-info -->
 						<div class="header-social pull-right">
 							<div class="social">
 								<ul class="social-list">
-									<li><a href="#"><span class="ti-facebook"></span></a></li>
-									<li><a href="#"><span class="ti-twitter"></span></a></li>
-									<li><a href="#"><span class="ti-google"></span></a></li>
-									<li><a href="#"><span class="ti-instagram"></span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -157,7 +153,7 @@
 					data-transform_out="opacity:0;s:300;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
 					data-start="1210" data-splitin="none" data-splitout="none" data-responsive_offset="on"
 					style="z-index: 5; white-space: nowrap; font-size: 36px; line-height: 36px; font-weight: 700; color: rgba(255, 255, 255, 1.00);font-family:lato;">
-					MAKE WORLD BETTER </div>
+					E-REKRUTMEN</div>
 
 				<!-- LAYER NR. 2 -->
 				<div class="tp-caption   tp-resizeme" id="slide-13-layer-2" data-x="91" data-y="383"
@@ -166,25 +162,8 @@
 					data-transform_out="opacity:0;s:300;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
 					data-start="1710" data-splitin="none" data-splitout="none" data-responsive_offset="on"
 					style="z-index: 6; white-space: nowrap; font-size: 20px; line-height: 36px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Arial;">
-					Eaque ipsa quae ab illo inventore veritatis et quasi architecto voluptas </div>
+					Aplikasi Rekrutmen Telkom Akses Banjarmasin</div>
 
-				<!-- LAYER NR. 3 -->
-				<div class="tp-caption   tp-resizeme" id="slide-13-layer-3" data-x="91" data-y="413"
-					data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1920;e:Power2.easeInOut;"
-					data-transform_out="opacity:0;s:300;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-					data-start="1730" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-					style="z-index: 7; white-space: nowrap; font-size: 20px; line-height: 36px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Arial;">
-					explicabo. Nemo enim ipsam voluptatem quia </div>
-
-				<!-- LAYER NR. 4 -->
-				<div class="tp-caption rev-btn " id="slide-13-layer-4" data-x="91" data-y="465" data-width="['150']"
-					data-height="['45']" data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2250;e:Power2.easeInOut;"
-					data-transform_out="opacity:0;s:300;" data-mask_in="x:0px;y:[100%];" data-start="2240"
-					data-splitin="none" data-splitout="none" data-responsive_offset="on" data-responsive="off"
-					style="z-index: 8; min-width: 150px; max-width: 150px; max-width: 45px; max-width: 45px; white-space: normal; font-size: 14px; line-height: 22px; font-weight: 500; color: rgba(255, 255, 255, 1.00);font-family:'Merriweather Sans', sans-serif;text-align:center;background-color:rgba(215, 6, 44, 0.75);padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-					DONATE NOW </div>
 			</li>
 			<!-- /slide -->
 			<li data-index="rs-15" data-transition="slidingoverlayup" data-slotamount="default" data-hideafterloop="0"
@@ -205,7 +184,7 @@
 					data-transform_out="opacity:0;s:300;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
 					data-start="1210" data-splitin="none" data-splitout="none" data-responsive_offset="on"
 					style="z-index: 5; white-space: nowrap; font-size: 36px; line-height: 36px; font-weight: 700; color: rgba(255, 255, 255, 1.00);font-family:lato;">
-					MAKE WORLD BETTER </div>
+					E-REKRUTMEN</div>
 
 				<!-- LAYER NR. 2 -->
 				<div class="tp-caption   tp-resizeme" id="slide-15-layer-2" data-x="91" data-y="383"
@@ -214,25 +193,8 @@
 					data-transform_out="opacity:0;s:300;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
 					data-start="1710" data-splitin="none" data-splitout="none" data-responsive_offset="on"
 					style="z-index: 6; white-space: nowrap; font-size: 20px; line-height: 36px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Arial;">
-					Eaque ipsa quae ab illo inventore veritatis et quasi architecto voluptas </div>
+					Aplikasi Rekrutmen Telkom Akses Banjarmasin</div>
 
-				<!-- LAYER NR. 3 -->
-				<div class="tp-caption   tp-resizeme" id="slide-15-layer-3" data-x="91" data-y="413"
-					data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1920;e:Power2.easeInOut;"
-					data-transform_out="opacity:0;s:300;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-					data-start="1730" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-					style="z-index: 7; white-space: nowrap; font-size: 20px; line-height: 36px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Arial;">
-					explicabo. Nemo enim ipsam voluptatem quia </div>
-
-				<!-- LAYER NR. 4 -->
-				<div class="tp-caption rev-btn " id="slide-15-layer-4" data-x="91" data-y="465" data-width="['150']"
-					data-height="['45']" data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2250;e:Power2.easeInOut;"
-					data-transform_out="opacity:0;s:300;" data-mask_in="x:0px;y:[100%];" data-start="2240"
-					data-splitin="none" data-splitout="none" data-responsive_offset="on" data-responsive="off"
-					style="z-index: 8; min-width: 150px; max-width: 150px; max-width: 45px; max-width: 45px; white-space: normal; font-size: 14px; line-height: 22px; font-weight: 500; color: rgba(255, 255, 255, 1.00);font-family:'Merriweather Sans', sans-serif;text-align:center;background-color:rgba(215, 6, 44, 0.75);padding:12px 20px 12px 20px;border-color:rgba(0, 0, 0, 1.00);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-					DONATE NOW </div>
 			</li>
 			<!-- SLIDE  -->
 		</ul>

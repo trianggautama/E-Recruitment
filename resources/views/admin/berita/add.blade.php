@@ -61,7 +61,7 @@
                                                         <label for="exampleDropdownFormEmail1">Tanggal Pembukaan
                                                             Pendaftaran</label>
                                                         <input type="date" class="form-control" name="tgl_mulai"
-                                                            id="nama" placeholder="nama" value="{{ old('tgl_mulai') }}" required>
+                                                            id="nama" placeholder="nama"  value="{{ old('tgl_mulai') }}" min="{{carbon\carbon::now()->translatedFormat('Y-m-d')}}" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">

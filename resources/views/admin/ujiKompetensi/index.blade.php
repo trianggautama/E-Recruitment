@@ -124,7 +124,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal Ujian</label>
-                        <input type="date" class="form-control " id="tgl_ujian" name="tgl_ujian" required>
+                        <input type="date" class="form-control " id="tgl_ujian" name="tgl_ujian" min="{{carbon\carbon::now()->translatedFormat('Y-m-d')}}" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Durasi Pengerjaan (Menit)</label>

@@ -31,32 +31,37 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
-                                        <img src="{{asset('admin/dist/img/landing-pg/calenderapp.png')}}" alt="" width="100%">
+                                        <img src="{{asset('images/berita/'. $data->foto)}}" alt="" width="100%">
                                         <hr>
                                         <br>
-                                        <h2>Judul Berita</h2>
-                                        <small>1 Juli 2020</small>
+                                        <h2>{{$data->judul}}</h2>
+                                        <small>{{$data->created_at}}</small>
                                         <br>
                                         <br>
-                                        <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam suscipit tempora est eligendi, quisquam maiores libero adipisci mollitia, enim sed itaque quos deleniti eaque ipsum cum! Illum cupiditate nam natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto voluptates a obcaecati labore quasi ducimus itaque sed illum corrupti dolorum neque amet expedita eos, modi impedit fuga facere perferendis atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dignissimos eligendi esse unde sit hic libero ratione, natus voluptatibus quas facere non est ex iusto nihil, autem vero sint ipsa?</p>
-                                        <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam suscipit tempora est eligendi, quisquam maiores libero adipisci mollitia,</p>
+                                        <p class="text-justify">{!! $data->isi !!}</p> 
                                         <br>
                                         <table>
                                             <tr>
                                                 <td width="50%">Posisi</td>
-                                                <td>: Jaringan, Programmer</td>
+                                                <td>: @foreach(collect($data->lowongan->posisi) as $p)
+                                                      {{$p}},
+                                                      @endforeach</td>
                                             </tr>
                                             <tr>
                                                 <td>Tanggal Pendaftaran</td>
-                                                <td>: 1 Juli 2020 - 25 Juli 2020</td>
+                                                <td>: {{carbon\carbon::parse($data->tgl_mulai)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($data->tgl_selesai)->translatedFormat('d F Y')}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Pendidikan Minimal</td>
-                                                <td>: SMA</td>
+                                                <td>: {{$data->lowongan->pendidikan_terakhir}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Status</td>
-                                                <td>: <i class="text-success"> Sedang Berlangsung</i></td>
+                                                <td>:  @if($data->lowongan->status == 1)
+                                                            Sedang Berlangsung
+                                                        @else
+                                                     Sudah Selesai
+                                                        @endif</td>
                                             </tr>
                                         </table>
                                     </div>

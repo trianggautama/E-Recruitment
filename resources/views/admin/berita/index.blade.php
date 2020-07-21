@@ -64,7 +64,7 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        <a href="{{Route('beritaShow','xalsialn')}}"
+                                                        <a href="{{Route('beritaShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-eye"></i>
                                                             </span><span class="btn-text"> </span></a>
