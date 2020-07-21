@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Berita;
 use App\Lowongan;
 use App\Posisi;
+use App\Pendidikan_terakhir;
 use File;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -18,6 +20,20 @@ class BeritaController extends Controller
     public function index()
     {
         $data = Berita::orderBy('id', 'desc')->get();
+        $now = Carbon::now()->format('Y-m-d');
+        $data =$data->map(function($item)use($now){
+            if($now > $item->lowongan->tgl_selesai){
+                $item['status'] = 2;
+
+            }elseif($now < $item->lowongan->tgl_mulai){
+                $item['status'] = 0;
+                }
+            else{
+                $item['status'] = 1;
+            }
+
+            return $item;
+        });
         $posisi = Posisi::orderBy('nama', 'asc')->get();
         return view('admin.berita.index', compact('data', 'posisi'));
     }
@@ -30,8 +46,9 @@ class BeritaController extends Controller
     public function create()
     {
         $posisi = Posisi::orderBy('nama', 'asc')->get();
+        $pendidikan = Pendidikan_terakhir::all();
 
-        return view('admin.berita.add', compact('posisi'));
+        return view('admin.berita.add', compact('posisi','pendidikan'));
     }
 
     /**
@@ -42,6 +59,9 @@ class BeritaController extends Controller
      */
     public function store(Request $req)
     {
+        if($req->tgl_mulai > $req->tgl_selesai){
+            return back()->withInput()->withWarning('Tanggal selesai tidak boleh sebelum tanggal mulai');
+        }else{
         $berita = Berita::create($req->all());
         if ($req->foto != null) {
             $img = $req->file('foto');
@@ -57,6 +77,7 @@ class BeritaController extends Controller
         $lowongan = $berita->lowongan()->create($req->all());
 
         return redirect()->route('beritaIndex')->withSuccess('Data berhasil disimpan');
+    }
     }
 
     /**
@@ -81,9 +102,10 @@ class BeritaController extends Controller
     {
         $data = Berita::where('uuid', $uuid)->first();
         $posisi = Posisi::orderBy('nama', 'asc')->get();
+        $pendidikan = Pendidikan_terakhir::all();
         $posisi2 = json_encode($data->lowongan->posisi);
 
-        return view('admin.berita.edit', compact('data', 'posisi', 'posisi2'));
+        return view('admin.berita.edit', compact('data', 'posisi', 'posisi2','pendidikan'));
     }
 
     /**
@@ -95,6 +117,9 @@ class BeritaController extends Controller
      */
     public function update(Request $req, $uuid)
     {
+        if($req->tgl_mulai > $req->tgl_selesai){
+            return back()->withWarning('Tanggal selesai tidak boleh sebelum tanggal mulai');
+        }else{
         $berita = Berita::where('uuid', $uuid)->first();
         $berita->fill($req->all())->save();
 
@@ -112,6 +137,7 @@ class BeritaController extends Controller
         $lowongan->fill($req->all())->save();
 
         return redirect()->route('beritaIndex')->withSuccess('Data berhasil diubah');
+    }
     }
 
     /**
