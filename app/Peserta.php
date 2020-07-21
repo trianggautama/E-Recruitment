@@ -15,6 +15,11 @@ class Peserta extends Model
         'tahun_lulus', 'lembaga', 'jurusan', 'ipk',
     ];
 
+    public function setIpkAttribute($value)
+    {
+        $this->attributes['ipk'] = preg_replace( '/,/', '.', $value);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
