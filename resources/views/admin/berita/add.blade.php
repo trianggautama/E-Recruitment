@@ -24,22 +24,21 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
-                                        <form action="{{Route('beritaStore')}}" method="POST"
-                                            enctype="multipart/form-data">
+                                        <form action="{{Route('beritaStore')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" name="user_id" value="{{Auth::id()}}" id="">
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Judul</label>
-                                                <input type="text" class="form-control" name="judul" id="judul"
+                                                <input type="text" class="form-control" value="{{ old('judul') }}" name="judul" id="judul"
                                                     placeholder="judul" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Isi </label>
-                                                <textarea name="isi" id="isi" rows="10" class="tinymce" ></textarea>
+                                                <textarea name="isi" id="isi" rows="10" class="tinymce" >{{ old('isi') }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Thumbnail</label>
-                                                <input type="file" class="form-control" name="foto" id="nama"
+                                                <input type="file" class="form-control" name="foto" id="foto"
                                                     placeholder="Foto" required>
                                             </div>
                                             <div class="form-group">
@@ -47,14 +46,14 @@
                                                 <select name="posisi[]" class=" form-control select2 select2-multiple"
                                                     multiple="multiple" data-placeholder="Choose" required>
                                                     @foreach($posisi as $d)
-                                                    <option value="{{$d->nama}}">{{$d->nama}}</option>
+                                                    <option value="{{$d->nama}}" {{ old('posisi[]') == $d->nama ? 'selected' : ''  }}>{{$d->nama}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Keterangan Lowongan </label>
                                                 <textarea name="keterangan" id="keterangan" rows="10"
-                                                    class="tinymce" required></textarea>
+                                                    class="tinymce" required>{{ old('keterangan') }}</textarea>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -62,29 +61,24 @@
                                                         <label for="exampleDropdownFormEmail1">Tanggal Pembukaan
                                                             Pendaftaran</label>
                                                         <input type="date" class="form-control" name="tgl_mulai"
-                                                            id="nama" placeholder="nama" required>
+                                                            id="nama" placeholder="nama" value="{{ old('tgl_mulai') }}" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="exampleDropdownFormEmail1">Tanggal Penutupan
                                                             Pendaftaran</label>
-                                                        <input type="date" name="tgl_selesai" class="form-control"
-                                                            id="nama" placeholder="nama" required>
+                                                        <input type="date" name="tgl_selesai" value="{{ old('tgl_selesai') }}" class="form-control"
+                                                             placeholder="nama" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pendidikan Minimal</label>
-                                                <select name="pendidikan_terakhir" id="" class="form-control" required>
-                                                    <option value="">-- Pilih dari tabel pendidikan --</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Status</label>
-                                                <select name="status" id="" class="form-control">
-                                                    <option value="1"> Berlangsung </option>
-                                                    <option value="2"> Sudah Terlaksana </option>
+                                                <select name="pendidikan_terakhir_id" class="form-control" required>
+                                                    @foreach($pendidikan as $d)
+                                                    <option value="{{ $d->id }}"  {{ old('pendidikan_terakhir_id') == $d->id ? 'selected' : ''  }}>{{ $d->nama }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="text-right">
