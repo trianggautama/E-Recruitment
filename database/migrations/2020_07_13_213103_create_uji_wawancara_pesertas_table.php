@@ -18,7 +18,7 @@ class CreateUjiWawancaraPesertasTable extends Migration
             $table->string('uuid', 36);
             $table->unsignedBigInteger('uji_wawancara_id');
             $table->unsignedBigInteger('peserta_id');
-            $table->text('catatan');
+            $table->integer('nilai');
             $table->tinyInteger('status');
             $table->foreign('uji_wawancara_id')->references('id')->on('uji_wawancaras')->onDelete('cascade');
             $table->foreign('peserta_id')->references('id')->on('pesertas')->onDelete('cascade');
