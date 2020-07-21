@@ -34,7 +34,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Isi </label>
-                                                <textarea name="isi" id="isi" rows="10" class="tinymce" ></textarea>
+                                                <textarea name="isi" id="isi" rows="10" class="tinymce" >{{ old('isi') }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Thumbnail</label>
@@ -53,7 +53,7 @@
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Keterangan Lowongan </label>
                                                 <textarea name="keterangan" id="keterangan" rows="10"
-                                                    class="tinymce" ></textarea>
+                                                    class="tinymce" >{{ old('keterangan') }}</textarea>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
