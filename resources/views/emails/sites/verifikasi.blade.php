@@ -9,6 +9,7 @@ Klik Disini Untuk Kunjungi Website Kami
 @endcomponent
 
 TerimaKasih,<br>
-<a style="text-decoration: none;" href="['url' => 'http://127.0.0.1:8000/']">PT. Telkom Indonesia Banjarmasin</a>, <br>
-Jl. P. Samudera No.92, Kertak Baru Ilir, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70111
+<a style="text-decoration: none;" href="['url' => 'http://127.0.0.1:8000/']">PT. Telkom Akses Banjarmasin</a>, <br>
+Jl. Djok Mentaya No. 1, Banjarmasin Tengah, Kota Banjarmasin, 707111
+(Gedung Serbaguna Telkom)
 @endcomponent
