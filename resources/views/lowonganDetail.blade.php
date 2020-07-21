@@ -190,7 +190,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Tanggal Pendaftaran</td>
-                                                <td>: {{carbon\carbon::parse($berita->tgl_mulai)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($berita->tgl_selesai)->translatedFormat('d F Y')}}</td>
+                                                <td>: {{carbon\carbon::parse($berita->lowongan->tgl_mulai)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($berita->lowongan->tgl_selesai)->translatedFormat('d F Y')}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Pendidikan Minimal</td>
