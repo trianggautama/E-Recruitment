@@ -60,11 +60,12 @@ class ujiKompetensiController extends Controller
         $data = Uji_kompetensi::where('lowongan_id', $lowongan->id)->first();
         $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id)->where('uji_kompetensi_id', $data->id)->first();
 
-        if (!$tesPeserta) {
-            $tesPeserta = new Uji_kompetensi_peserta;
-            $tesPeserta->peserta_id = $peserta_id;
-            $tesPeserta->uji_kompetensi_id = $data->id;
-            $tesPeserta->save();
+        if ($tesPeserta->jawaban_peserta->count() == 0) {
+            $tesPeserta->delete();
+            $tesBaru = new Uji_kompetensi_peserta;
+            $tesBaru->peserta_id = $peserta_id;
+            $tesBaru->uji_kompetensi_id = $data->id;
+            $tesBaru->save();
 
             $soalData = Soal::all();
             $soals = $soalData->shuffle()->take(20);
@@ -81,9 +82,11 @@ class ujiKompetensiController extends Controller
 
         $data = Uji_kompetensi::findOrFail($req->uji_id);
         $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id)->where('uji_kompetensi_id', $data->id)->first();
-        $soal = collect($req->soal_id)->filter();
         $pilihan = collect($req->pilihan)->filter();
+        $soal = collect($req->soal_id)->take($pilihan->count());
         for ($i = 0; $i < count($soal); $i++) {
+            if(isset($soal[$i]))
+            {
             $jawabanSoal = Soal::findOrFail($soal[$i]);
             if ($jawabanSoal->kunci == $pilihan[$i]) {
                 $bs = 1;
@@ -96,6 +99,7 @@ class ujiKompetensiController extends Controller
             $jawaban->bs = $bs;
             $jawaban->uji_kompetensi_peserta_id = $tesPeserta->id;
             $jawaban->save();
+        }
         }
         $peserta = Jawaban_peserta::where('uji_kompetensi_peserta_id', $tesPeserta->id)->where('bs', 1)->count();
         $tesPeserta->nilai = $peserta * 5;
@@ -120,5 +124,12 @@ class ujiKompetensiController extends Controller
         $data = Uji_kompetensi::where('uuid', $uuid)->first();
 
         return view('admin.ujiKompetensi.filter', compact('data'));
-    } 
+    }
+
+    public function destroy($uuid)
+    {
+        $data = Uji_kompetensi::where('uuid', $uuid)->first()->delete();
+
+        return back()->withSuccess('Data berhasil dihapus');
+    }
 }
