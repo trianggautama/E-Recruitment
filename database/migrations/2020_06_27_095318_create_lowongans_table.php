@@ -17,16 +17,14 @@ class CreateLowongansTable extends Migration
             $table->id();
             $table->string('uuid', 36);
             $table->unsignedBigInteger('berita_id');
-            // $table->unsignedBigInteger('posisi_id');
+            $table->unsignedBigInteger('pendidikan_terakhir_id');
             $table->json('posisi');
             $table->text('keterangan');
             $table->double('ipk_min')->nullable();
-            $table->string('pendidikan_terakhir', 20);
             $table->date('tgl_mulai');
             $table->date('tgl_selesai');
-            $table->tinyInteger('status');
             $table->foreign('berita_id')->references('id')->on('beritas')->onDelete('cascade');
-            // $table->foreign('posisi_id')->references('id')->on('posisis')->onDelete('cascade');
+            $table->foreign('pendidikan_terakhir_id')->references('id')->on('pendidikan_terakhirs')->onDelete('cascade');
             $table->timestamps();
         });
     }
