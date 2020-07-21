@@ -210,7 +210,7 @@
                                             </tr>
                                         </table>
                                         <br>
-                                            @if($now < $berita->lowongan->tgl_mulai)
+                                            @if($now >= $berita->lowongan->tgl_mulai && $now <= $berita->lowongan->tgl_selesai)
                                                 <div class="donate-btn text-uppercase">
                                                 <a  href="{{Route('lowonganInput',['uuid'=>$berita->lowongan->uuid])}}">Input Lamaran</a>
                                                 </div>
