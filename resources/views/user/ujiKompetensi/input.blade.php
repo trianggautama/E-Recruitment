@@ -9,7 +9,7 @@
         <div class="hk-pg-header align-items-top">
             <div>
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Detail Soal</h2>
-                <p>Waktu Tersisa : 40 menit</p>
+                <p>Waktu mengerjakan soal tersisa <span id="timer"></span></p>
             </div>
         </div>
         <!-- /Title -->
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <br>
-                            <form action="{{Route('ujiKompetensiPesertaStore')}}" method="POST">
+                            <form action="{{Route('ujiKompetensiPesertaStore')}}" method="POST" id="myForm">
                                 @csrf
                                 <input type="hidden" name="uji_id" value="{{$data->id}}">
                                 @foreach($soals as $soal)
@@ -111,9 +111,36 @@
 @endsection
 @section('scripts')
 <script>
-    $("#tambah").click(function(){
-            $('#status').text('Tambah soal');
-            $('#exampleModalForms').modal('show');
-        });
+    function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            Swal.fire({
+                    title: 'Waktu telah habis',
+                    text: " Terimakasih telah melakukan ujian " ,
+                    icon: 'warning',
+                    showCancelButton: false,
+                })
+            $("#myForm").submit();
+
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var times = {{ $data->durasi }} * 60,
+        display = document.querySelector('#timer');
+    startTimer(times, display);
+
+};
+
 </script>
 @endsection
