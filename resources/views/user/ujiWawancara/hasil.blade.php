@@ -29,7 +29,7 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Peserta</th>
-                                                    <th>Catatan Wawancara</th>
+                                                    <th>Nilai</th>
                                                     <th>Hasil</th>
                                                 </tr>
                                             </thead>
@@ -38,7 +38,7 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->peserta->user->name}}</td>
-                                                    <td>{{$d->catatan}}</td>
+                                                    <td>{{$d->nilai}}</td>
                                                     <td>
                                                         @if($d->status == 0 )
                                                         Tidak Lulus
@@ -53,7 +53,7 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Peserta</th>
-                                                    <th>catatan Wawancara</th>
+                                                    <th>Nilai</th>
                                                     <th>Hasil</th>
                                                 </tr>
                                             </tfoot>
