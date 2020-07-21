@@ -43,6 +43,10 @@
                                                 <input type="date" value="{{$data->tgl_ujian}}" class="form-control "
                                                     id="tgl_ujian" name="tgl_ujian">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Durasi Pengerjaan (Menit)</label>
+                                                <input type="number" class="form-control" value="{{ $data->durasi }}" id="durasi" name="durasi" required>
+                                            </div>
                                             <div class="text-right">
                                                 <a href="{{Route('ujiKompetensiIndex')}}" class="btn btn-secondary"><i
                                                         class="fa fa-arrow-left"></i> Kembali</a>
