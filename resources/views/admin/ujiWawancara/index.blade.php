@@ -121,7 +121,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Tanggal uji Wawancara</label>
-                        <input type="date" class="form-control " id="tgl_uji" name="tgl_uji" required>
+                        <input type="date" class="form-control " id="tgl_uji" name="tgl_uji" min="{{carbon\carbon::now()->translatedFormat('Y-m-d')}}" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
