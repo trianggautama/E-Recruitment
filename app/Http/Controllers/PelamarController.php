@@ -7,6 +7,8 @@ use App\Lowongan;
 use App\Peserta;
 use App\User;
 use Illuminate\Http\Request;
+use App\Mail\NotifVerifikasi;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
 
 class PelamarController extends Controller
@@ -90,6 +92,8 @@ class PelamarController extends Controller
 
         $data->status = $req->status;
         $data->update();
+
+        Mail::to($data->peserta->email)->send(new NotifVerifikasi($data));
 
         return back()->withSuccess('Berhasil verifikasi');
     }
