@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Posisi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PosisiController extends Controller
 {
@@ -36,6 +37,16 @@ class PosisiController extends Controller
      */
     public function store(Request $req)
     {
+        $validator = Validator::make($req->all(), [
+            'nama' => 'required|unique:posisis|max:100',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                        ->withWarning('Posisi tidak boleh sama')
+                        ->withInput();
+        }
+
         $data = Posisi::create($req->all());
 
         return back()->withSuccess('Data berhasil disimpan');
