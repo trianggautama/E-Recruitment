@@ -9,6 +9,8 @@ use App\Uji_kesehatan_peserta;
 use Carbon\Carbon;
 use File;
 use Illuminate\Http\Request;
+use App\Mail\HasilUjiKesehatan;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 
 class ujiKesehatanController extends Controller
@@ -35,7 +37,7 @@ class ujiKesehatanController extends Controller
         return view('admin.ujiKesehatan.edit', compact('data'));
     }
 
-    public function update($uuid)
+    public function update(Request $req,$uuid)
     {
         $data = Uji_kesehatan::where('uuid', $uuid)->first();
 
@@ -92,6 +94,8 @@ class ujiKesehatanController extends Controller
 
         $data->update();
 
+        Mail::to($data->peserta->email)->send(new HasilUjiKesehatan($data));
+
         return back()->withSuccess('Data berhasil disimpan');
 
     }
@@ -131,6 +135,8 @@ class ujiKesehatanController extends Controller
             $data->surat_narkoba = $surat_narkoba;
         }
         $data->update();
+
+        Mail::to($data->peserta->email)->send(new HasilUjiKesehatan($data));
 
         return redirect()->route('ujiKesehatanShow', ['uuid' => $data->uji_kesehatan->uuid])->withSuccess('Data berhasil diubah');
 
