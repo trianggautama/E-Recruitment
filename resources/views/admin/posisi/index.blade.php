@@ -91,7 +91,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Nama Posisi</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="nama" required>
+                        <input type="text" class="form-control" name="nama" value="{{ old('nama') }}" id="nama" placeholder="nama" required>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i> Tambah Data</button>
@@ -113,7 +113,7 @@
         function Hapus(uuid, nama) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Posisi '" + nama ,        
+			text: " Menghapus Data Posisi '" + nama ,
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -123,7 +123,7 @@
 		}).then((result) => {
 			if (result.value) {
 				url = '{{route("posisiDestroy",'')}}';
-				window.location.href =  url+'/'+uuid ;			
+				window.location.href =  url+'/'+uuid ;
 			}
 		})
         }
