@@ -29,8 +29,8 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Pendidikan</label>
-                                                <input type="text" class="form-control" name="pendidikan" id="pendidikan"
-                                                    value="" placeholder="pendidikan">
+                                                <input type="text" class="form-control" name="nama" id="nama"
+                                                    value="{{ $data->nama }}" placeholder="pendidikan">
                                             </div>
                                             <div class="text-right">
                                                 <a href="{{Route('pendidikanIndex')}}" class="btn btn-secondary"><i
