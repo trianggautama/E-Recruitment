@@ -8,6 +8,8 @@ use App\Uji_wawancara;
 use App\Uji_wawancara_peserta;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Mail\HasilUjiWawancara;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 
 class ujiWawancaraController extends Controller
@@ -65,6 +67,7 @@ class ujiWawancaraController extends Controller
     public function pesertaStore(Request $req)
     {
         $data = Uji_wawancara_peserta::create($req->all());
+        Mail::to($data->peserta->email)->send(new HasilUjiWawancara($data));
 
         return back()->withSuccess('Data berhasil disimpan');
     }
@@ -83,6 +86,7 @@ class ujiWawancaraController extends Controller
     {
         $data = Uji_wawancara_peserta::where('uuid', $uuid)->first();
         $data->fill($req->all())->save();
+        Mail::to($data->peserta->email)->send(new HasilUjiWawancara($data));
         return redirect()->route('ujiWawancaraShow', ['uuid' => $data->uji_wawancara->uuid])->withSuccess('Data berhasil diubah');
     }
 
