@@ -10,8 +10,8 @@ class Lowongan extends Model
     use Uuid;
 
     protected $fillable = [
-        'berita_id', 'posisi', 'keterangan', 'ipk_min', 'pendidikan_terakhir'
-        , 'tgl_mulai', 'tgl_selesai', 'status',
+        'berita_id', 'posisi', 'keterangan', 'ipk_min', 'pendidikan_terakhir_id'
+        , 'tgl_mulai', 'tgl_selesai',
     ];
 
     protected $casts = [
@@ -33,6 +33,11 @@ class Lowongan extends Model
     public function berita()
     {
         return $this->belongsTo(Berita::class);
+    }
+
+    public function pendidikan_terakhir()
+    {
+        return $this->belongsTo(Pendidikan_terakhir::class);
     }
 
     public function peserta()
