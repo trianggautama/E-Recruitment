@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pendidikan_terakhir;
+use Illuminate\Support\Facades\Validator;
 
 class PendidikanController extends Controller
 {
@@ -31,6 +32,15 @@ class PendidikanController extends Controller
      */
     public function store(Request $req)
     {
+        $validator = Validator::make($req->all(), [
+            'nama' => 'required|unique:pendidikan_terakhirs|max:50',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+                        ->withWarning('Pendidikan terakhir tidak boleh sama')
+                        ->withInput();
+        }
         $data = Pendidikan_terakhir::create($req->all());
 
         return back()->withSuccess('Data berhasil disimpan');
