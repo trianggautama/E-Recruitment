@@ -26,7 +26,7 @@
                                     <div class="table-wrap">
                                         <form action="{{Route('beritaStore')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="user_id" value="{{Auth::id()}}" id="">
+                                            <input type="hidden" name="user_id" value="{{Auth::id()}}">
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Judul</label>
                                                 <input type="text" class="form-control" value="{{ old('judul') }}" name="judul" id="judul"
