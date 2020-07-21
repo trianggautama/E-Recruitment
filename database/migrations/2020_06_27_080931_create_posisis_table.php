@@ -17,7 +17,6 @@ class CreatePosisisTable extends Migration
             $table->id();
             $table->string('uuid', 36);
             $table->string('nama', 50);
-            $table->string('keterangan', 100);
             $table->timestamps();
         });
     }
