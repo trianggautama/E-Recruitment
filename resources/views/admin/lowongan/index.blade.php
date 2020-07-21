@@ -58,7 +58,7 @@
                                                         {{$d->ipk_min}}
                                                         @endif
                                                     </td>
-                                                    <td>{{$d->pendidikan_terakhir}}</td>
+                                                    <td>{{$d->pendidikan_terakhir->nama}}</td>
                                                     <td>{{carbon\carbon::parse($d->tgl_mulai)->translatedFormat('d F Y')}}
                                                         -
                                                         {{carbon\carbon::parse($d->tgl_selesai)->translatedFormat('d F Y')}}
@@ -70,7 +70,7 @@
                                                         <p class="text-success">Sudah Selesai</p>
                                                         @endif
                                                     </td>
-                                                    <td> 
+                                                    <td>
                                                     <a href="{{Route('analisisPelamarCetak',['uuid'=>$d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1" target="_blank"><span
                                                                 class="icon-label"><i class="fa fa-print"></i>
