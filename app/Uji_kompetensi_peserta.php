@@ -18,4 +18,9 @@ class Uji_kompetensi_peserta extends Model
     {
         return $this->belongsTo(uji_kompetensi::class);
     }
+
+    public function jawaban_peserta()
+    {
+        return $this->hasMany(Jawaban_peserta::class);
+    }
 }
