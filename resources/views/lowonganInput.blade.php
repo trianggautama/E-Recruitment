@@ -252,18 +252,14 @@
 							</div>
 							<div class="row">
 								<div class="col-md-6">
-									<div class="form-group">
-										<label for="exampleDropdownFormEmail1">Ijazah Terakhir</label>
-										<select name="ijazah_terakhir" id="agama" class="form-control" required>
-											<option value="SMA">SMA</option>
-											<option value="SMK">SMK</option>
-											<option value="D2">D2</option>
-											<option value="D3">D3</option>
-											<option value="S1">S1</option>
-											<option value="S2">S2</option>
-											<option value="S3">S3</option>
-										</select>
-									</div>
+								<div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">Pendidikan Minimal</label>
+                                                <select name="ijazah_terakhir" class="form-control" required>
+                                                    @foreach($pendidikan as $d)
+                                                    <option value="{{ $d->id }}"  {{ old('ijazah_terakhir') == $d->id ? 'selected' : ''  }}>{{ $d->nama }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
