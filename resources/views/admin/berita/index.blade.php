@@ -45,9 +45,9 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->judul}}</td>
-                                                    <td>{{carbon\carbon::parse($d->tgl_mulai)->translatedFormat('d F Y')}}
+                                                    <td>{{carbon\carbon::parse($d->lowongan->tgl_mulai)->translatedFormat('d F Y')}}
                                                         -
-                                                        {{carbon\carbon::parse($d->tgl_selesai)->translatedFormat('d F Y')}}
+                                                        {{carbon\carbon::parse($d->lowongan->tgl_selesai)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>
                                                       @foreach(collect($d->lowongan->posisi) as $p)
@@ -55,10 +55,12 @@
                                                       @endforeach
                                                     </td>
                                                     <td>
-                                                        @if($d->lowongan->status == 1)
-                                                            <p class="text-info">Sedang Berlangsung</p>
+                                                        @if($d->status == 0)
+                                                            <p class="text-info">Belum Berlangsung</p>
+                                                        @elseif($d->status == 1)
+                                                            <p class="text-success">Sedang Berlangsung</p>
                                                         @else
-                                                        <p class="text-success">Sudah Selesai</p>
+                                                        <p class="text-danger">Sudah Ditutup</p>
                                                         @endif
                                                     </td>
                                                     <td>
@@ -107,7 +109,7 @@
      function Hapus(uuid, judul) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Lowongan '" + judul ,        
+			text: " Menghapus Data Lowongan '" + judul ,
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -117,7 +119,7 @@
 		}).then((result) => {
 			if (result.value) {
 				url = '{{route("beritaDestroy",'')}}';
-				window.location.href =  url+'/'+uuid ;			
+				window.location.href =  url+'/'+uuid ;
 			}
 		})
         }
