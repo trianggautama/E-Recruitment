@@ -10,7 +10,7 @@ class Uji_kompetensi extends Model
     use Uuid;
 
     protected $fillable = [
-        'lowongan_id', 'tgl_ujian',
+        'lowongan_id', 'tgl_ujian','durasi',
     ];
 
     public function lowongan()
