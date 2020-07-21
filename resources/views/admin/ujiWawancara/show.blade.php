@@ -15,7 +15,7 @@
             <a href="{{Route('ujiWawancaraCetak',['uuid'=>$ujiWawancara->uuid])}}" class="btn btn-sm btn-danger mb-15 mr-2" target="_blank"><i class="fa fa-print"></i> Cetak Data</a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
-                    </span></button> 
+                    </span></button>
             </div>
         </div>
         <div class="row">
@@ -44,7 +44,7 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->peserta->user->name}}</td>
-                                                    <td>-</td>
+                                                    <td>{{ $d->nilai }}</td>
                                                     <td>
                                                         @if($d->status == 0 )
                                                         Tidak Lulus
@@ -67,7 +67,7 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Peserta</th>
-                                                    <th>catatan Wawancara</th>
+                                                    <th>Nilai</th>
                                                     <th>Hasil</th>
                                                     <th>Aksi</th>
                                                 </tr>
@@ -144,7 +144,7 @@
         function Hapus(uuid) {
 			Swal.fire({
 			title: 'Anda Yakin?',
-			text: " Menghapus Data Uji Wawancara?  " ,        
+			text: " Menghapus Data Uji Wawancara?  " ,
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -153,8 +153,8 @@
 			cancelButtonText: 'Batal'
 		}).then((result) => {
 			if (result.value) {
-				url = '{{route("ujiWawancaraRincianDestroy",'')}}'; 
-				window.location.href =  url+'/'+uuid ;			
+				url = '{{route("ujiWawancaraRincianDestroy",'')}}';
+				window.location.href =  url+'/'+uuid ;
 			}
 		})
         }
