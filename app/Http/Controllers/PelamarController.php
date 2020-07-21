@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Mail\NotifVerifikasi;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PelamarController extends Controller
 {
@@ -77,7 +78,8 @@ class PelamarController extends Controller
 
         $lampiran->save();
 
-        return redirect()->route('depan')->withSuccess('Berhasil input lamaran, silahkan login menggunakan NIK sebagai username & password');
+        toast('Berhasil input lamaran, silahkan login menggunakan NIK sebagai username & password','success');
+        return redirect()->route('depan');
     }
 
     public function show($uuid)
