@@ -43,7 +43,7 @@
 
 <body>
 	<div id="preloader"></div>
-	<!-- Start of Header 
+	<!-- Start of Header
 	============================================= -->
 	<header>
 		<div class="header-top-bg">
@@ -128,10 +128,10 @@
 			</div><!--/container  -->
 		</div><!--/menu-bar  -->
 	</header>
-	<!-- End of Header 
+	<!-- End of Header
 	============================================= -->
 
-	<!-- Start of Count Down 
+	<!-- Start of Count Down
 	============================================= -->
 	<section id="countdown-area" class="countdown-section">
 		<div class="container">
@@ -162,7 +162,7 @@
 			</div><!-- /row -->
 		</div><!-- /container -->
 	</section>
-	<!-- End of Count Down  
+	<!-- End of Count Down
 	============================================= -->
 
 
@@ -190,21 +190,31 @@
                                             </tr>
                                             <tr>
                                                 <td>Tanggal Pendaftaran</td>
-                                                <td>:{{carbon\carbon::parse($berita->tgl_mulai)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($berita->tgl_selesai)->translatedFormat('d F Y')}}</td>
+                                                <td>: {{carbon\carbon::parse($berita->tgl_mulai)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($berita->tgl_selesai)->translatedFormat('d F Y')}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Pendidikan Minimal</td>
-                                                <td>:{{$berita->lowongan->pendidikan_terakhir}}</td>
+                                                <td>: {{$berita->lowongan->pendidikan_terakhir->nama}}</td>
                                             </tr>
                                             <tr>
                                                 <td>Status</td>
-                                                <td>: <i class="text-success"> Sedang Berlangsung</i></td>
+                                                <td>:
+                                                    @if($now > $berita->lowongan->tgl_selesai)
+                                                        <i class="text-danger"> Sudah ditutup</i>
+                                                    @elseif($now < $berita->lowongan->tgl_mulai)
+                                                        <i class="text-info"> Belum Berlangsung</i>
+                                                    @else
+                                                        <i class="text-success"> Sedang Berlangsung</i>
+                                                    @endif
+                                                </td>
                                             </tr>
                                         </table>
                                         <br>
-                                        <div class="donate-btn text-uppercase">
-										<a  href="{{Route('lowonganInput',['uuid'=>$berita->lowongan->uuid])}}">Input Lamaran</a>
-									</div>
+                                            @if($now < $berita->lowongan->tgl_mulai)
+                                                <div class="donate-btn text-uppercase">
+                                                <a  href="{{Route('lowonganInput',['uuid'=>$berita->lowongan->uuid])}}">Input Lamaran</a>
+                                                </div>
+                                            @endif
                                 </div>
                             </div>
                         </div>
@@ -286,7 +296,7 @@
 										</div>
 										<div class="tweet-text">
 											<span class="name-tweet"><a class="" href="#">@tonmoymishal</a></span>
-											<span class="tweet-content">Excepteur sint occ aecat cupidatat </span> 
+											<span class="tweet-content">Excepteur sint occ aecat cupidatat </span>
 											<span class="red tweet-link"><a href="#">goo.gl/GjFUTp</a></span>
 											<span class="tweet-time">45 min ago</span>
 										</div>
@@ -299,7 +309,7 @@
 										</div>
 										<div class="tweet-text">
 											<span class="name-tweet"><a class="" href="#">@tonmoymishal</a></span>
-											<span class="tweet-content">Excepteur sint occ aecat cupidatat </span> 
+											<span class="tweet-content">Excepteur sint occ aecat cupidatat </span>
 											<span class="red tweet-link"><a href="#">goo.gl/GjFUTp</a></span>
 											<span class="tweet-time">45 min ago</span>
 										</div>
@@ -315,15 +325,15 @@
 									<div class="touch-content">
 										<div class="tweet-text">
 											<span class="name-tweet">Address: </span>
-											<span class="tweet-content">315 Chat mohon Bazar New Yor, NY 4536 </span> 
+											<span class="tweet-content">315 Chat mohon Bazar New Yor, NY 4536 </span>
 										</div>
 										<div class="tweet-text mt5">
 											<span class="name-tweet">E-mail: </span>
-											<span class="tweet-content">support@yourdomain.com </span> 
+											<span class="tweet-content">support@yourdomain.com </span>
 										</div>
 										<div class="tweet-text mt5">
 											<span class="name-tweet">Phone: </span>
-											<span class="tweet-content">560 265 1523</span> 
+											<span class="tweet-content">560 265 1523</span>
 										</div>
 										<div class="newsletter-form">
 											<form action="#" method="get" class="nwsltter">
@@ -407,7 +417,7 @@
     The following part can be removed on Server for On Demand Loading) -->
 
     <script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.actions.min.js')}}"></script>
-    
+
     <script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.layeranimation.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.navigation.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('delpan/rev-slider/js/revolution.extension.parallax.min.js')}}"></script>
@@ -489,5 +499,5 @@
     	});	/*ready*/
     </script>
 
-</body> 
+</body>
 </html>
