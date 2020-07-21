@@ -18,6 +18,7 @@ class CreateUjiKompetensisTable extends Migration
             $table->string('uuid', 36);
             $table->unsignedBigInteger('lowongan_id');
             $table->date('tgl_ujian');
+            $table->integer('durasi');
             $table->foreign('lowongan_id')->references('id')->on('lowongans')->onDelete('cascade');
             $table->timestamps();
         });
