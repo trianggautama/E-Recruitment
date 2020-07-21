@@ -64,10 +64,12 @@
                                                         {{carbon\carbon::parse($d->tgl_selesai)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>
-                                                        @if($d->status == 1)
-                                                        <p class="text-info">Sedang Berlangsung</p>
+                                                        @if($d->status == 0)
+                                                            <p class="text-info">Belum Berlangsung</p>
+                                                        @elseif($d->status == 1)
+                                                            <p class="text-success">Sedang Berlangsung</p>
                                                         @else
-                                                        <p class="text-success">Sudah Selesai</p>
+                                                        <p class="text-danger">Sudah Ditutup</p>
                                                         @endif
                                                     </td>
                                                     <td>
