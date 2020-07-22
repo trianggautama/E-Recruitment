@@ -58,7 +58,7 @@ class Lowongan extends Model
 
     public function uji_wawancara()
     {
-        return $this->hasOne(Uji_wawancara::class);
+        return $this->hasMany(Uji_wawancara::class);
     }
 
 }
