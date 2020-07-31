@@ -26,6 +26,12 @@ Route::group(['middleware' => ['admin']], function () {
     Route::put('/posisi/edit/{uuid}', 'PosisiController@update')->name('posisiUpdate');
     Route::get('/posisi/delete/{uuid}', 'PosisiController@destroy')->name('posisiDestroy');
 
+    Route::get('/agama/index', 'AgamaController@index')->name('agamaIndex');
+    Route::post('/agama/index/create', 'AgamaController@store')->name('agamaCreate');
+    Route::get('/agama/edit/{uuid}', 'AgamaController@edit')->name('agamaEdit');
+    Route::put('/agama/edit/{uuid}', 'AgamaController@update')->name('agamaUpdate');
+    Route::get('/agama/delete/{uuid}', 'AgamaController@destroy')->name('agamaDestroy');
+
     Route::get('/pendidikan/index', 'pendidikanController@index')->name('pendidikanIndex');
     Route::post('/pendidikan/index/create', 'PendidikanController@store')->name('pendidikanCreate');
     Route::get('/pendidikan/edit/{uuid}', 'PendidikanController@edit')->name('pendidikanEdit');
