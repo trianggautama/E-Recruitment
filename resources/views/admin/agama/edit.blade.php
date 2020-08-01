@@ -29,11 +29,13 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Agama</label>
-                                                <input type="text" class="form-control" name="agama" id="agama" placeholder="Agama" required>
+                                                <input type="text" class="form-control" value="{{$data->agama}}"
+                                                    name="agama" id="agama" placeholder="Agama" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Uraian</label>
-                                                <input type="text" class="form-control" name="uraian" id="uraian" placeholder="Uraian" required>
+                                                <input type="text" class="form-control" value="{{$data->uraian}}"
+                                                    name="uraian" id="uraian" placeholder="Uraian" required>
                                             </div>
                                             <div class="text-right">
                                                 <a href="{{Route('agamaIndex')}}" class="btn btn-secondary"><i

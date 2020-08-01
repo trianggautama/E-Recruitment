@@ -4,25 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Lampiran;
 use App\Lowongan;
+use App\Mail\NotifVerifikasi;
 use App\Peserta;
 use App\User;
 use Illuminate\Http\Request;
-use App\Mail\NotifVerifikasi;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
-use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class PelamarController extends Controller
 {
     public function index($uuid)
     {
         $lowongan = Lowongan::where('uuid', $uuid)->first();
-        $data = Peserta::where('lowongan_id',$lowongan->id)->get();
-        return view('admin.pelamar.index', compact('lowongan','data'));
+        $data = Peserta::where('lowongan_id', $lowongan->id)->get();
+        return view('admin.pelamar.index', compact('lowongan', 'data'));
     }
 
     public function store(Request $req)
     {
+        $validator = Validator::make($req->all(), [
+            'username' => 'required|unique:users|max:50',
+        ]);
+
+        if ($validator->fails()) {
+            toast('Anda sudah terdaftar didalam sistem kami, silahkan login menggunakan NIK anda', 'warning');
+
+            return redirect()->route('login');
+        }
+
         $user = new User;
         $user->name = $req->name;
         $user->username = $req->NIK;
@@ -79,7 +89,7 @@ class PelamarController extends Controller
 
         $lampiran->save();
 
-        toast('Berhasil input lamaran, silahkan login menggunakan NIK sebagai username & password','success');
+        toast('Berhasil input lamaran, silahkan login menggunakan NIK sebagai username & password', 'success');
         return redirect()->route('depan');
     }
 

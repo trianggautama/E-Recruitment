@@ -50,7 +50,7 @@
 											<strong>{{ $message }}</strong>
 										</span>
 										@enderror
-					
+
 										<label for="user-name">Username</label>
 									</fieldset>
 
@@ -81,6 +81,7 @@
 		<!-- /Main Content -->
 
 	</div>
+	@include('sweetalert::alert')
 	<!-- jQuery -->
 	<script src="{{asset('admin/vendors/jquery/dist/jquery.min.js')}}"></script>
 

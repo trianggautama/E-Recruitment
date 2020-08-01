@@ -39,18 +39,22 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($data as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Islam</td>
-                                                    <td>-</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->agama}}</td>
+                                                    <td>{{$d->uraian}}
+                                                    </td>
                                                     <td>
-                                                        <a href="{{Route('agamaEdit','jicdnsbk')}}"
+                                                        <a href="{{Route('agamaEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
-                                                            <button class="btn btn-sm btn-outline-light" onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-sm btn-outline-light"
+                                                            onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -88,7 +92,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('pendidikanCreate')}}" method="POST">
+                <form action="{{Route('agamaCreate')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Agama</label>
