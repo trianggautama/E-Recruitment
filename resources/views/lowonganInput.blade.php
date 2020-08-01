@@ -143,8 +143,7 @@
 								name="lowongan_id" value="{{$lowongan->id}}" required>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">NIK</label>
-								<input type="number" class="form-control" id="NIK" placeholder="NIK" name="NIK"
-									required>
+								<input type="number" class="form-control" id="NIK" placeholder="NIK" name="NIK" maxlength="17" required>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Nama</label>
@@ -216,14 +215,13 @@
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Telepon Rumah</label>
 										<input type="text" class="form-control" id="telepon_rumah"
-											placeholder="telepon_rumah" name="tlp_rumah" required>
+											placeholder="telepon_rumah" name="tlp_rumah" maxlength="13" required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Nomor Hp</label>
-										<input type="text" class="form-control" id="no_hp" placeholder="no_hp"
-											name="tlp_hp" required>
+										<input type="text" class="form-control" id="no_hp" placeholder="no_hp" maxlength="13" name="tlp_hp" required>
 									</div>
 								</div>
 							</div>

@@ -202,153 +202,6 @@
 	<!-- End of Slider Section
 	============================================= -->
 
-	<!-- Start of Ways of help
-	============================================= -->
-	<section id="way-help" class="way-help-section">
-		<div class="container">
-			<div class="row section-content">
-				<div class="section-title text-center">
-					<div class="section-title-text text-uppercase">
-						<p>Visi dan Misi</p>
-					</div>
-					<div class="section-title-text">
-						<h2>PT. Telkom Akses</h2>
-					</div>
-				</div>
-				<!-- /section-title -->
-				<div class="way-help-section-content">
-					<div class="row">
-						<div class="col-md-3 col-sm-6">
-							<div class="way-help-pic-text text-center colmd3">
-								<div class="way-help-pic pb30">
-									<img src="{{asset('depan/assets/img/help-4.png')}}" alt="image">
-								</div>
-								<!-- /img -->
-								<div class="way-help-text">
-									<div class="way-help-head pb20 text-uppercase">
-										<h3 class="black">MAKE DONATION</h3>
-									</div>
-									<div class="way-help-text-content">
-										<p>Excepteur sint occaecat cupidatat non proident suntin culpa</p>
-									</div>
-								</div>
-								<!-- /text -->
-								<div class="hover-content">
-									<div class="way-help-head pb20 text-uppercase">
-										<h3 class="red">MAKE DONATION</h3>
-									</div>
-									<div class="way-help-text-content pb20">
-										<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-											eu fugiat nulla.</p>
-									</div>
-									<div class="way-help-pic pb30">
-										<a href="#"><span class="red ti-plus"></span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /col-sm-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="way-help-pic-text text-center colmd3">
-								<div class="way-help-pic pb30">
-									<img src="{{asset('depan/assets/img/help-2.png')}}" alt="image">
-								</div>
-								<!-- /img -->
-								<div class="way-help-text">
-									<div class="way-help-head pb20 text-uppercase">
-										<h3 class="black">BECOME VOLUNTEER</h3>
-									</div>
-									<div class="way-help-text-content">
-										<p>Excepteur sint occaecat cupidatat non proident suntin culpa</p>
-									</div>
-								</div>
-								<!-- /text -->
-								<div class="hover-content">
-									<div class="way-help-head pb20 text-uppercase">
-										<h3 class="red">BECOME VOLUNTEER</h3>
-									</div>
-									<div class="way-help-text-content pb20">
-										<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-											eu fugiat nulla.</p>
-									</div>
-									<div class="way-help-pic pb30">
-										<a href="#"><span class="red ti-plus"></span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /col-sm-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="way-help-pic-text text-center colmd3">
-								<div class="way-help-pic pb30">
-									<img src="{{asset('depan/assets/img/help-3.png')}}" alt="image">
-								</div>
-								<!-- /img -->
-								<div class="way-help-text">
-									<div class="way-help-head pb20 text-uppercase">
-										<h3 class="black">SUPPORT US</h3>
-									</div>
-									<div class="way-help-text-content">
-										<p>Excepteur sint occaecat cupidatat non proident suntin culpa</p>
-									</div>
-								</div>
-								<!-- /text -->
-								<div class="hover-content">
-									<div class="way-help-head pb20 text-uppercase">
-										<h3 class="red">SUPPORT US</h3>
-									</div>
-									<div class="way-help-text-content pb20">
-										<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-											eu fugiat nulla.</p>
-									</div>
-									<div class="way-help-pic pb30">
-										<a href="#"><span class="red ti-plus"></span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /col-sm-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="way-help-pic-text text-center colmd3">
-								<div class="way-help-pic pb30">
-									<img src="{{asset('depan/assets/img/help-4.png')}}" alt="image">
-								</div>
-								<!-- /img -->
-								<div class="way-help-text">
-									<div class="way-help-head pb20 text-uppercase">
-										<h3 class="black">OUR PROGRAMS</h3>
-									</div>
-									<div class="way-help-text-content">
-										<p>Excepteur sint occaecat cupidatat non proident suntin culpa</p>
-									</div>
-								</div>
-								<!-- /text -->
-								<div class="hover-content">
-									<div class="way-help-head pb20 text-uppercase">
-										<h3 class="red">OUR PROGRAMS</h3>
-									</div>
-									<div class="way-help-text-content pb20">
-										<p>Duis aute irure dolor in reprehend-erit in voluptate velit esse cillum dolore
-											eu fugiat nulla.</p>
-									</div>
-									<div class="way-help-pic pb30">
-										<a href="#"><span class="red ti-plus"></span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /col-sm-3 -->
-					</div>
-				</div><!-- /way-help-section-content -->
-			</div><!-- /row-->
-		</div><!-- /container -->
-	</section>
-	<!-- End of Ways of help
-	============================================= -->
-
 	<!-- Start of Count Down
 	============================================= -->
 	<section id="countdown-area" class="countdown-section">
@@ -399,159 +252,30 @@
 			<div class="row section-content">
 				<div class="section-title text-center">
 					<div class="section-title-text text-uppercase">
-						<p>JABATAN </p>
 					</div>
 					<div class="section-title-text">
-						<h2>Sub text</h2>
+						<h2>Posisi</h2>
 					</div>
 				</div>
 				<!-- /section-title -->
 
 				<div class="can-we-do-section-content">
 					<div class="row">
-						<div class="col-md-3 col-sm-6">
-							<div class="we-can-do-text-icon  text-center colmd3">
-								<div class="we-can-do-icon">
-									<span class="red ti-crown"></span>
-								</div>
-								<div class="we-can-do-text">
-									<h3 class="we-can-do-head red"> <a href="#">Croud Funding</a></h3>
-								</div>
-								<div class="hide-icon">
-									<span class="red ti-crown"></span>
-								</div>
-								<div class="hide-text text-left">
-									<p>Modi tempora incidunt ut labore et dolore magnam voluptatem...</p>
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="we-can-do-text-icon  text-center colmd3">
-								<div class="we-can-do-icon">
-									<span class="red ti-heart"></span>
-								</div>
-								<div class="we-can-do-text">
-									<h3 class="we-can-do-head red"><a href="#">Make Donation</a></h3>
-								</div>
-								<div class="hide-icon">
-									<span class="red ti-heart"></span>
-								</div>
-								<div class="hide-text text-left">
-									<p>Modi tempora incidunt ut labore et dolore magnam voluptatem...</p>
+						@foreach($posisi as $p)
+							<div class="col-md-3 col-sm-6">
+								<div class="we-can-do-text-icon  text-center colmd3">
+									<div class="we-can-do-icon">
+										<span class="red ti-user"></span>
+									</div>
+									<div class="we-can-do-text">
+										<h3 class="we-can-do-head red"> <a href="#">{{$p->nama}}</a></h3>
+									</div>
+									<div class="hide-icon">
+										<span class="red ti-user"></span>
+									</div>
 								</div>
 							</div>
-						</div>
-						<!-- /col-md-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="we-can-do-text-icon  text-center colmd3">
-								<div class="we-can-do-icon">
-									<span class="red ti-support"></span>
-								</div>
-								<div class="we-can-do-text">
-									<h3 class="we-can-do-head red"><a href="#">Medical Support</a></h3>
-								</div>
-								<div class="hide-icon">
-									<span class="red ti-support"></span>
-								</div>
-								<div class="hide-text text-left">
-									<p>Modi tempora incidunt ut labore et dolore magnam voluptatem...</p>
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="we-can-do-text-icon  text-center colmd3">
-								<div class="we-can-do-icon">
-									<span class="red ti-book"></span>
-								</div>
-								<div class="we-can-do-text">
-									<h3 class="we-can-do-head red"><a href="#">Education Fund</a></h3>
-								</div>
-								<div class="hide-icon">
-									<span class="red ti-book"></span>
-								</div>
-								<div class="hide-text text-left">
-									<p>Modi tempora incidunt ut labore et dolore magnam voluptatem...</p>
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="we-can-do-text-icon  text-center colmd3">
-								<div class="we-can-do-icon">
-									<span class="red ti-timer"></span>
-								</div>
-								<div class="we-can-do-text">
-									<h3 class="we-can-do-head red"><a href="#">Event Organize</a></h3>
-								</div>
-								<div class="hide-icon">
-									<span class="red ti-timer"></span>
-								</div>
-								<div class="hide-text text-left">
-									<p>Modi tempora incidunt ut labore et dolore magnam voluptatem...</p>
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="we-can-do-text-icon  text-center colmd3">
-								<div class="we-can-do-icon">
-									<span class="red ti-wheelchair"></span>
-								</div>
-								<div class="we-can-do-text">
-									<h3 class="we-can-do-head red"><a href="#">Help Disability</a></h3>
-								</div>
-								<div class="hide-icon">
-									<span class="red ti-wheelchair"></span>
-								</div>
-								<div class="hide-text text-left">
-									<p>Modi tempora incidunt ut labore et dolore magnam voluptatem...</p>
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="we-can-do-text-icon  text-center colmd3">
-								<div class="we-can-do-icon">
-									<span class="red ti-paint-bucket"></span>
-								</div>
-								<div class="we-can-do-text">
-									<h3 class="we-can-do-head red"><a href="#">Blood Donation</a></h3>
-								</div>
-								<div class="hide-icon">
-									<span class="red ti-paint-bucket"></span>
-								</div>
-								<div class="hide-text text-left">
-									<p>Modi tempora incidunt ut labore et dolore magnam voluptatem...</p>
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-3 -->
-
-						<div class="col-md-3 col-sm-6">
-							<div class="we-can-do-text-icon  text-center colmd3">
-								<div class="we-can-do-icon">
-									<span class="red ti-gift"></span>
-								</div>
-								<div class="we-can-do-text">
-									<h3 class="we-can-do-head red"><a href="#">Gift Collection</a></h3>
-								</div>
-								<div class="hide-icon">
-									<span class="red ti-gift"></span>
-								</div>
-								<div class="hide-text text-left">
-									<p>Modi tempora incidunt ut labore et dolore magnam voluptatem...</p>
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-3 -->
+						@endforeach
 					</div>
 				</div>
 			</div><!-- /row -->
@@ -605,7 +329,6 @@
                                                     @else
                                                         <i class="text-success"> Sedang Berlangsung</i>
                                                     @endif</p>
-
 										</div>
 										<div class="text-center">
 											<div class="text-uppercase ">

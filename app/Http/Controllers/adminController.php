@@ -27,8 +27,9 @@ class adminController extends Controller
 
     public function depan(){
         $berita = Berita::latest()->get();
+        $posisi = Posisi::latest()->get();
         $now = Carbon::now()->format('Y-m-d');
-        return view('welcome',compact('berita','now'));
+        return view('welcome',compact('berita','now','posisi'));
     }
 
     public function lowonganDetail($uuid){
