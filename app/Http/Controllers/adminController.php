@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Agama;
 use App\Berita;
 use App\Lowongan;
 use App\Pendidikan_terakhir;
@@ -41,6 +42,7 @@ class adminController extends Controller
     public function lowonganInput($uuid){
         $pendidikan = Pendidikan_terakhir::latest()->get();
         $lowongan = Lowongan::where('uuid',$uuid)->first();
-        return view('lowonganInput',compact('lowongan','pendidikan'));
+        $agama = Agama::latest()->get();
+        return view('lowonganInput',compact('lowongan','pendidikan','agama'));
     }
 }

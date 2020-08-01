@@ -51,7 +51,7 @@
                                                                 class="icon-label"><i class="fa fa-edit"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                         <button class="btn btn-sm btn-outline-light"
-                                                            onclick="Hapus('')"> <i class="fa fa-trash"></i></button>
+                                                            onclick="Hapus('{{$d->uuid}}')"> <i class="fa fa-trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 @endforeach

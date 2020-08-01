@@ -115,11 +115,7 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
-                        data-dropdown-out="flipOutX">
-                        <a class="dropdown-item" href="profile.html"><i
-                                class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
-                        <a class="dropdown-item" href="#"><i
-                                class="dropdown-icon zmdi zmdi-settings"></i><span>Settings</span></a>
+                        data-dropdown-out="flipOutX"> 
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
