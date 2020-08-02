@@ -28,7 +28,7 @@ class PelamarController extends Controller
         ]);
 
         if ($validator->fails()) {
-            toast('Anda sudah terdaftar didalam sistem kami, silahkan login menggunakan NIK anda', 'warning');
+            toast('Anda sudah terdaftar didalam sistem kami, silahkan login menggunakan username dan password terakhir anda', 'warning');
 
             return redirect()->route('login');
         }
@@ -89,7 +89,7 @@ class PelamarController extends Controller
 
         $lampiran->save();
 
-        toast('Berhasil input lamaran, silahkan login menggunakan NIK sebagai username & password', 'success');
+        toast('Terimakasih sudah mendaftar, mohon tunggu max 2 x 24 jam untuk dapat login', 'success');
         return redirect()->route('depan');
     }
 
