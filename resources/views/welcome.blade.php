@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>E-Recruitment</title>
+	<title>E-Rekrutmen</title>
 	<link rel="shortcut icon" href="{{asset('depan/assets/img/icon.png')}}">
 
 	<meta name="description"
@@ -83,7 +83,7 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="#rev_slider_2_1">Home</a></li>
 								<li><a href="#rekrutmen">rekrutmen</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
@@ -319,16 +319,17 @@
 											<h4>{{carbon\carbon::parse($b->lowongan->tgl_mulai)->translatedFormat('d F Y')}} -
 												{{carbon\carbon::parse($b->lowongan->tgl_selesai)->translatedFormat('d F Y')}}
 											</h4>
-											<h4>( @foreach(collect($b->lowongan->posisi) as $p)
+											<p style="margin-top:5px;">Posisi : @foreach(collect($b->lowongan->posisi) as $p)
 												{{$p}},
-												@endforeach)</h4>
-												<p>  @if($now > $b->lowongan->tgl_selesai)
+												@endforeach</p>
+												<p> Status: @if($now > $b->lowongan->tgl_selesai)
                                                         <i class="text-danger"> Sudah ditutup</i>
                                                     @elseif($now < $b->lowongan->tgl_mulai)
                                                         <i class="text-info"> Belum Berlangsung</i>
                                                     @else
                                                         <i class="text-success"> Sedang Berlangsung</i>
                                                     @endif</p>
+													<p class="small">jumlah Pelamar : {{$b->lowongan->peserta->count()}} pelamar</p>
 										</div>
 										<div class="text-center">
 											<div class="text-uppercase ">

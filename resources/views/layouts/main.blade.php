@@ -56,7 +56,7 @@
                             <a class="dropdown-item" href="{{Route('posisiIndex')}}">Posisi</a>
                             <a class="dropdown-item" href="{{Route('agamaIndex')}}">Agama</a>
                             <a class="dropdown-item" href="{{Route('pendidikanIndex')}}">Pendidikan Terakhir</a>
-                            <a class="dropdown-item" href="{{Route('beritaIndex')}}">Informasi Recrutment</a>
+                            <a class="dropdown-item" href="{{Route('beritaIndex')}}">Informasi Rekrutmen</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown show-on-hover active">
@@ -119,7 +119,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
-                                                                                         document.getElementById('logout-form').submit();">
+                            document.getElementById('logout-form').submit();">
                             <i class="feather icon-power"></i> Logout
                         </a>
 

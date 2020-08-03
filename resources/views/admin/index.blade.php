@@ -29,16 +29,16 @@
 											<div class="fadeOut item img-background overlay-wrap" style="background-image:url(admin/dist/img/slide1.jpg);">
 												<div class="position-relative z-index-2 pa-20">
 													<div class="position-relative text-white mnh-225p">
-														<p>Very easy to use. Thanks to design, we've just launched our 5th website! Thank you for making it painless, pleasant and most of all hassle free! Just what I was looking for.</p>
+														<p class="text-justify">sebuah aplikasi yang mampu menunjang proses perekrutan karyawan dimulai dari proses pendaftaran, ujian yang memungkinkan untuk dilaksanakan secara online, informasi hasil verifikasi dan ujian serta  berbagai tahapan yang telah disusun oleh PT. Telkom Akses Banjarmasin</p>
 														<div class="media position-absolute b-0 l-0 align-items-center">
 															<div class="media-img-wrap d-flex mr-15">
 																<div class="avatar avatar-sm">
-																	<span class="avatar-text avatar-text-inv-pink rounded-circle"><span class="initial-wrap"><span>ZC</span></span></span>
+																	<span class="avatar-text avatar-text-inv-pink rounded-circle"><span class="initial-wrap"><span>TA</span></span></span>
 																</div>
 															</div>
 															<div class="media-body">
-																<span class="d-block font-14 font-weight-500">Zuck Chan</span>
-																<span class="d-block font-12">Design Lead, Hencework</span>
+																<span class="d-block font-14 font-weight-500">PT. Telkom Akses </span>
+																<span class="d-block font-12">Banjarmasin</span>
 															</div>
 														</div>
 													</div>
@@ -48,16 +48,16 @@
 											<div class="fadeOut item img-background overlay-wrap" style="background-image:url(dist/img/slide2.jpg);">
 												<div class="position-relative z-index-2 pa-20">
 													<div class="position-relative text-white mnh-225p">
-														<p>Nice work on your design. Design is worth much more than I paid. We've used design for the last five years. I just can't get enough of design.</p>
+														<p class="text-justify">sehingga perekrutan dapat dilaksanakan secara efektif dan efisien , aplikasi ini juga akan memudahkan perusahaan dalam melakukan evaluasi terhadap proses perekrutan serta mengurangi biaya perekrutan, biaya kerja dan beban administrasi</p>
 														<div class="media position-absolute b-0 l-0 align-items-center">
 															<div class="media-img-wrap d-flex mr-15">
 																<div class="avatar avatar-sm">
-																	<span class="avatar-text avatar-text-inv-primary rounded-circle"><span class="initial-wrap"><span>NT</span></span></span>
+																	<span class="avatar-text avatar-text-inv-pink rounded-circle"><span class="initial-wrap"><span>TA</span></span></span>
 																</div>
 															</div>
 															<div class="media-body">
-																<span class="d-block font-14 font-weight-500">Normand T.</span>
-																<span class="d-block font-12">Sales Executive, Media</span>
+																<span class="d-block font-14 font-weight-500">PT. Telkom Akses </span>
+																<span class="d-block font-12">Banjarmasin</span>
 															</div>
 														</div>
 													</div>

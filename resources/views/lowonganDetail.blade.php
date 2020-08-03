@@ -208,6 +208,15 @@
                                                     @endif
                                                 </td>
                                             </tr>
+											<tr>
+												<td>Tanggal Tes</td>
+												<td>: @if($berita->lowongan->uji_kompetensi->isNotEmpty())
+												{{carbon\carbon::parse($berita->lowongan->uji_kompetensi->first()->tgl_ujian)->translatedFormat('d F Y')}}
+													@else
+													Tanggal Belum Ditentukan
+													@endif
+												</td>
+											</tr>
                                         </table>
                                         <br>
                                             @if($now >= $berita->lowongan->tgl_mulai && $now <= $berita->lowongan->tgl_selesai)

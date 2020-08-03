@@ -107,14 +107,14 @@
                 </tr>
                 <tr>
                     <td>Pendidikan Minimal</td>
-                    <td>: {{$lowongan->pendidikan_terakhir}}</td>
+                    <td>: {{$lowongan->pendidikan_terakhir->nama}}</td>
                 </tr>
                 <tr>
                     <td>Status</td>
                     <td>:   @if($lowongan->status == 1)
                     <i class="text-success"> Sedang Berlangsung</i>
                     @else
-                    <p class="text-primary">Sudah Selesai</p>
+                    <i class="text-primary">Sudah Selesai</i>
                     @endif
                     </td>
                 </tr>
@@ -124,7 +124,7 @@
                 </tr>
                 <tr>
                     <td>Jumlah Pelamar yang lolos</td>
-                    <td>: {{$lowongan->uji_wawancara->uji_wawancara_peserta->where('status',1)->count()}} pelamar</td>
+                    <td>:@if($lowongan->uji_wawancara->isNotEmpty()) {{$lowongan->uji_wawancara->uji_wawancara_peserta->where('status',1)->count()}} pelamar @else Rekrutmen masih berlangsung @endif</td>
                 </tr>
             </table>       
                     </div>

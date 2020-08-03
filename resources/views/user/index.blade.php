@@ -224,7 +224,8 @@
                         <h4 class="timeline-title">Seleksi Berkas </h4>
                         </div>
                         <div class="timeline-body">
-                            <p>1 juli 2020 - 2 juni 2020</p>
+                            <p>{{carbon\carbon::parse(Auth::user()->peserta->lowongan->tgl_mulai)->translatedFormat('d F Y')}} -
+												{{carbon\carbon::parse(Auth::user()->peserta->lowongan->tgl_selesai)->translatedFormat('d F Y')}}</p>
                         </div>
                     </div>
                     </li>
