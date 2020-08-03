@@ -221,7 +221,7 @@
                     <div class="timeline-badge"><i class="glyphicon glyphicon-hourglass"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                        <h4 class="timeline-title">Seleksi Berkas </h4>
+                        <h4 class="timeline-title">Pendaftaran dan Seleksi Berkas </h4>
                         </div>
                         <div class="timeline-body">
                             <p>{{carbon\carbon::parse(Auth::user()->peserta->lowongan->tgl_mulai)->translatedFormat('d F Y')}} -
