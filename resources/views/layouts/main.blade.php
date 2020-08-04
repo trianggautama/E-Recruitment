@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item text-black">Rekrutment</a>
+                                <a href="#" class="dropdown-toggle dropdown-item text-dark">Rekrutment</a>
                                 <div class="dropdown-menu open-right-side">
                                     <a class="dropdown-item" href="{{Route('seleksiBerkasIndex')}}">Seleksi Berkas</a>
                                     <a class="dropdown-item" href="{{Route('ujiKompetensiIndex')}}">Tes Kompetensi</a>
