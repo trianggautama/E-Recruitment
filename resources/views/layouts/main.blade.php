@@ -94,10 +94,10 @@
                 </ul>
             </div>
             <ul class="navbar-nav hk-navbar-content">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><span
                             class="feather-icon"><i data-feather="bell"></i></span></a>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown dropdown-authentication">
                     <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
