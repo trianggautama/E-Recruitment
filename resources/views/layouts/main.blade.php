@@ -68,27 +68,16 @@
                             <a class="dropdown-item" href="{{Route('soalIndex')}}">Manajemen Soal</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown show-on-hover">
+                    <li class="nav-item dropdown show-on-hover active">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Rekrutmen
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item">Lamaran</a>
-                                <div class="dropdown-menu open-right-side">
-                                    <a class="dropdown-item" href="{{Route('lowonganIndex')}}">Pelamar</a>
-                                </div>
-                            </div>
-                            <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item">Rekrutment</a>
-                                <div class="dropdown-menu open-right-side">
-                                    <a class="dropdown-item" href="{{Route('seleksiBerkasIndex')}}">Seleksi Berkas</a>
-                                    <a class="dropdown-item" href="{{Route('ujiKompetensiIndex')}}">Tes Kompetensi</a>
-                                    <a class="dropdown-item" href="{{Route('ujiKesehatanIndex')}}">Tes Kesehatan</a>
-                                    <a class="dropdown-item" href="{{Route('ujiWawancaraIndex')}}">Tes Wawancara</a>
-                                </div>
-                            </div>
+                            <a class="dropdown-item" href="{{Route('seleksiBerkasIndex')}}">Seleksi Berkas</a>
+                            <a class="dropdown-item" href="{{Route('ujiKompetensiIndex')}}">Tes Kompetensi</a>
+                            <a class="dropdown-item" href="{{Route('ujiKesehatanIndex')}}">Tes Kesehatan</a>
+                            <a class="dropdown-item" href="{{Route('ujiWawancaraIndex')}}">Tes Wawancara</a>
                         </div>
                     </li>
                 </ul>
