@@ -35,13 +35,13 @@
 <body>
     <!-- HK Wrapper -->
     <div class="hk-wrapper hk-alt-nav">
- 
+
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar hk-navbar-alt">
             <a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse"
                 data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
-            <a class="navbar-brand text-red" href="{{Route('index')}}"> 
+            <a class="navbar-brand text-red" href="{{Route('index')}}">
                 E-Recruitment
             </a>
             <div class="collapse navbar-collapse" id="navbarCollapseAlt">
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item">Rekrutment</a>
+                                <a href="#" class="dropdown-toggle dropdown-item text-black">Rekrutment</a>
                                 <div class="dropdown-menu open-right-side">
                                     <a class="dropdown-item" href="{{Route('seleksiBerkasIndex')}}">Seleksi Berkas</a>
                                     <a class="dropdown-item" href="{{Route('ujiKompetensiIndex')}}">Tes Kompetensi</a>
@@ -115,7 +115,7 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
-                        data-dropdown-out="flipOutX"> 
+                        data-dropdown-out="flipOutX">
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
