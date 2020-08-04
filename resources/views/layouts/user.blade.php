@@ -42,7 +42,7 @@
                 data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
             <a class="navbar-brand text-red" href="{{Route('pelamarIndex')}}">
-                E-Recruitment
+                E-Rekrutmen
             </a>
             <div class="collapse navbar-collapse" id="navbarCollapseAlt">
                 <ul class="navbar-nav">
@@ -64,10 +64,10 @@
                 </ul>
             </div>
             <ul class="navbar-nav hk-navbar-content">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><span
                             class="feather-icon"><i data-feather="bell"></i></span></a>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown dropdown-authentication">
                     <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -80,16 +80,12 @@
                                 <span class="badge badge-success badge-indicator"></span>
                             </div>
                             <div class="media-body">
-                                <span>Admin<i class="zmdi zmdi-chevron-down"></i></span>
+                                <span>{{Auth::user()->name}}<i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
                         data-dropdown-out="flipOutX">
-                        <a class="dropdown-item" href="profile.html"><i
-                                class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
-                        <a class="dropdown-item" href="#"><i
-                                class="dropdown-icon zmdi zmdi-settings"></i><span>Settings</span></a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
