@@ -24,7 +24,7 @@ class PelamarController extends Controller
     public function store(Request $req)
     {
         $validator = Validator::make($req->all(), [
-            'username' => 'required|unique:users|max:50',
+            'NIK' => 'required|unique:pesertas|max:100',
         ]);
 
         if ($validator->fails()) {
