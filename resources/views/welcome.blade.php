@@ -298,25 +298,24 @@
 					<div class="row">
 						@foreach($berita as $b)
 						<div class="col-sm-4">
-							<div class="latest-news-slide-content">
+							<div class="latest-news-slide-content " style="height:750px !important;">
 								<div class="latest-news-slide text-center">
 									<div class="slide-quate-pic pb30">
 										<img src="{{asset('depan/assets/img/quate.png')}}" alt="image">
 									</div>
 									<!-- /slide-quate-pic -->
-									<div class="slide-text pb30">
-										<h2>{{$b->judul}}
-										</h2>
-									</div>
 									<!-- /slide-text -->
 									<div class="quate-client-pic-text">
 										<div class="quate-client-pic pb60">
 										<img src="{{asset('images/berita/'.$b->foto)}}" alt="image" style="width: 100% !important; height:220px !important">
 
 											<br>
-											<h4>{{carbon\carbon::parse($b->lowongan->tgl_mulai)->translatedFormat('d F Y')}} -
+											<h4>{{$b->judul}}
+										</h4>
+										<hr>
+											<p>{{carbon\carbon::parse($b->lowongan->tgl_mulai)->translatedFormat('d F Y')}} -
 												{{carbon\carbon::parse($b->lowongan->tgl_selesai)->translatedFormat('d F Y')}}
-											</h4>
+											</p>
 											<p style="margin-top:5px;">Posisi : @foreach(collect($b->lowongan->posisi) as $p)
 												{{$p}},
 												@endforeach</p>

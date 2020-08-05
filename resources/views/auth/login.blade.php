@@ -65,11 +65,7 @@
 										@enderror
 										<label for="user-password">Password</label>
 									</fieldset>
-									<div class="custom-control custom-checkbox mb-25">
-										<input class="custom-control-input" id="same-address" type="checkbox" checked>
-										<label class="custom-control-label font-14" for="same-address">Keep me logged
-											in</label>
-									</div>
+									<br>
 									<button class="btn btn-danger btn-block" type="submit">Login</button>
 								</form>
 							</div>

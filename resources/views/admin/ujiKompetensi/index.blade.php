@@ -60,7 +60,7 @@
                                                     <td>
                                                         <a href="{{Route('ujiKompetensiShow',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-info-circle"></i>
+                                                                class="icon-label"><i class="fa fa-info-circle"></i> 
                                                             </span><span class="btn-text"> </span></a>
                                                         <a href="{{Route('ujiKompetensiEdit',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span

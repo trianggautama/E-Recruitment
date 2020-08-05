@@ -186,8 +186,7 @@
 										</div>
 										<div class="form-group">
 											<label for="exampleDropdownFormEmail1">Username</label>
-											<input type="text" class="form-control" id="username" name="username">
-											<p class="text-danger">Isi jika ingin merubah username</p>
+											<input type="text" class="form-control" id="username" name="username" value="{{$data->username}}" readonly>
 										</div>
 										<div class="form-group">
 											<label for="exampleDropdownFormEmail1">Password</label>
