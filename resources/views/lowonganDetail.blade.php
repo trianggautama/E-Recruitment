@@ -221,14 +221,12 @@
 								 <thead>
 									 <th>No</th>
 									 <th>Nama</th>
-									 <th>NIK</th>
 									 <th>Nilai Uji Kompetensi</th>
 									 <th>Nilai Wawancara</th>
 								 </thead>
 								 <tbody>
 									 <td>1</td>
 									 <td>Tri Angga</td>
-									 <td>1234567789</td>
 									 <td>76</td>
 									 <td>80</td>
 								 </tbody>

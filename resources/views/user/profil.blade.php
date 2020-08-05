@@ -190,7 +190,7 @@
 										</div>
 										<div class="form-group">
 											<label for="exampleDropdownFormEmail1">Password</label>
-											<input type="text" class="form-control" id="password" name="password">
+											<input type="password" class="form-control" id="password" name="password">
 											<p class="text-danger">Isi jika ingin merubah password</p>
 										</div>
 										<div class="text-right">
