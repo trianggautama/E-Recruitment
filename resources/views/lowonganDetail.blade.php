@@ -142,46 +142,11 @@
 							<div class="left-countdown colmd6">
 								<div class="countdown-text-head  mt40 pb70">
 									<div class="countdown-head">
-										<h2 class="black">Bergabung Bersama Kami</h2>
+										<h2 class="black">Detail Penerimaan</h2>
 									</div>
 									<div class="countdown-text mt25">
-										<p class="text-justify">Kami membangun jaringan serat optik dan membawa koneksi internet ke properti Anda dengan menyebarkan 30 rute rute terra dan sekitar 8,500+ km kabel serat optik.</p>
-										<p>Kami mendukung serat Anda ke koneksi rumah serta jaringan backbone untuk koneksi nirkabel broadband Anda.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /col-md-6 -->
-						<div class="col-md-6">
-							<div class="count-right-img pl30 colmd6">
-								<img src="{{asset('depan/assets/img/count-right.jpg')}}" alt="image">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div><!-- /row -->
-		</div><!-- /container -->
-	</section>
-	<!-- End of Count Down
-	============================================= -->
-
-
-	<!-- Start of Latest news
-	============================================= -->
-	<section id="latest-news" class="latest-news-section">
-		<div class="container">
-			<div class="row section-content">
-				<div class="latest-news-content">
-					<div class="row">
-                        <div class="text-center">
-                            <h2>Detail Lowongan Pekerjaan</h2> <br>
-                                <div class="col-md-6">
-                                <img src="{{asset('images/berita/'. $berita->foto)}}" alt="" width="100%">
-                                </div>
-                                <div class="col-md-6">
 									{!! $berita->isi !!}
-                                    <br>
-                                    <table class="text-left">
+									<table class="text-left">
                                             <tr>
                                                 <td width="50%">Posisi</td>
                                                 <td>:  @foreach(collect($berita->lowongan->posisi) as $p)
@@ -217,14 +182,57 @@
 													@endif
 												</td>
 											</tr>
-                                        </table>
-                                        <br>
+										</table>
+										<br>
                                             @if($now >= $berita->lowongan->tgl_mulai && $now <= $berita->lowongan->tgl_selesai)
                                                 <div class="donate-btn text-uppercase">
                                                 <a  href="{{Route('lowonganInput',['uuid'=>$berita->lowongan->uuid])}}">Input Lamaran</a>
                                                 </div>
                                             @endif
-                                </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /col-md-6 -->
+						<div class="col-md-6">
+							<div class="count-right-img pl30 colmd6 text-center">
+								<img src="{{asset('images/berita/'. $berita->foto)}}" alt="image" width="400px" height="100px">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</section>
+	<!-- End of Count Down
+	============================================= -->
+
+
+	<!-- Start of Latest news
+	============================================= -->
+	<section id="latest-news" class="latest-news-section">
+		<div class="container">
+			<div class="row section-content">
+				<div class="latest-news-content">
+					<div class="row">
+                        <div class="">
+                            <h2 class="text-center">Informasi Kelulusan</h2> <br>
+                             <table class="table table-bordered">
+								 <thead>
+									 <th>No</th>
+									 <th>Nama</th>
+									 <th>NIK</th>
+									 <th>Nilai Uji Kompetensi</th>
+									 <th>Nilai Wawancara</th>
+								 </thead>
+								 <tbody>
+									 <td>1</td>
+									 <td>Tri Angga</td>
+									 <td>1234567789</td>
+									 <td>76</td>
+									 <td>80</td>
+								 </tbody>
+							 </table>
                             </div>
                         </div>
 					</div>
