@@ -74,6 +74,7 @@
                             Rekrutmen
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <a class="dropdown-item" href="{{Route('lowonganIndex')}}">Pelamar</a>
                             <a class="dropdown-item" href="{{Route('seleksiBerkasIndex')}}">Seleksi Berkas</a>
                             <a class="dropdown-item" href="{{Route('ujiKompetensiIndex')}}">Tes Kompetensi</a>
                             <a class="dropdown-item" href="{{Route('ujiKesehatanIndex')}}">Tes Kesehatan</a>
@@ -106,8 +107,7 @@
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
                         data-dropdown-out="flipOutX">
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                             <i class="feather icon-power"></i> Logout
                         </a>
