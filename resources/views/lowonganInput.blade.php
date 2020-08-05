@@ -110,7 +110,7 @@
 							<div class="moduletable_menu">
 
 								<ul class="nav menu">
-								<li><a href="/">Home</a></li>
+									<li><a href="/">Home</a></li>
 								</ul>
 							</div>
 						</div>
@@ -143,7 +143,9 @@
 								name="lowongan_id" value="{{$lowongan->id}}" required>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">NIK</label>
-								<input type="number" class="form-control" id="NIK" placeholder="NIK" name="NIK" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==14) return false;" required />
+								<input type="number" class="form-control" id="NIK" placeholder="NIK" name="NIK"
+									pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==14) return false;"
+									required />
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Nama</label>
@@ -217,13 +219,17 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Telepon Rumah</label>
-										<input type="number" class="form-control" id="telepon_rumah"placeholder="telepon_rumah" name="tlp_rumah" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==14) return false;" required />
+										<input type="number" class="form-control" id="telepon_rumah"
+											placeholder="telepon_rumah" name="tlp_rumah" pattern="/^-?\d+\.?\d*$/"
+											onKeyPress="if(this.value.length==14) return false;" />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Nomor Hp</label>
-										<input type="number" class="form-control" id="no_hp" placeholder="no_hp"  name="tlp_hp" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==14) return false;" required />
+										<input type="number" class="form-control" id="no_hp" placeholder="no_hp"
+											name="tlp_hp" pattern="/^-?\d+\.?\d*$/"
+											onKeyPress="if(this.value.length==14) return false;" required />
 									</div>
 								</div>
 							</div>
@@ -252,14 +258,16 @@
 							</div>
 							<div class="row">
 								<div class="col-md-6">
-								<div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">Pendidikan Minimal</label>
-                                                <select name="ijazah_terakhir" class="form-control" required>
-                                                    @foreach($pendidikan as $d)
-                                                    <option value="{{ $d->id }}"  {{ old('ijazah_terakhir') == $d->id ? 'selected' : ''  }}>{{ $d->nama }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
+									<div class="form-group">
+										<label for="exampleDropdownFormEmail1">Pendidikan Minimal</label>
+										<select name="ijazah_terakhir" class="form-control" required>
+											@foreach($pendidikan as $d)
+											<option value="{{ $d->id }}"
+												{{ old('ijazah_terakhir') == $d->id ? 'selected' : ''  }}>{{ $d->nama }}
+											</option>
+											@endforeach
+										</select>
+									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
