@@ -93,9 +93,12 @@
 												<option value="Islam"
 													{{$data->peserta->agama == 'Islam' ? 'selected' : ''}}>
 													Islam</option>
-												<option value="Kristen"
-													{{$data->peserta->agama == 'Kristen' ? 'selected' : ''}}>
-													Kristen</option>
+												<option value="Kristen Protestan"
+													{{$data->peserta->agama == 'Kristen Protestan' ? 'selected' : ''}}>
+													Kristen Protestan</option>
+												<option value="Kristen Katolik"
+													{{$data->peserta->agama == 'Kristen Katolik' ? 'selected' : ''}}>
+													Kristen Katolik</option>
 												<option value="Hindu"
 													{{$data->peserta->agama == 'Hindu' ? 'selected' : ''}}>
 													Hindu</option>
@@ -105,6 +108,9 @@
 												<option value="Konghuchu"
 													{{$data->peserta->agama == 'Konghuchu' ? 'selected' : ''}}>
 													Konghuchu</option>
+												<option value="Lain-lain"
+													{{$data->peserta->agama == 'Lain-lain' ? 'selected' : ''}}>
+													Lain-lain</option>
 											</select>
 										</div>
 										<div class="form-group">

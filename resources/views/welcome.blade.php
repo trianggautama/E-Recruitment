@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
 	<meta charset="utf-8">
 	<title>E-Rekrutmen</title>
@@ -312,9 +311,8 @@
 									<!-- /slide-text -->
 									<div class="quate-client-pic-text">
 										<div class="quate-client-pic pb60">
-											<div class="">
-												<img src="{{asset('images/berita/'.$b->foto)}}" alt="image">
-											</div>
+										<img src="{{asset('images/berita/'.$b->foto)}}" alt="image" style="width: 100% !important; height:220px !important">
+
 											<br>
 											<h4>{{carbon\carbon::parse($b->lowongan->tgl_mulai)->translatedFormat('d F Y')}} -
 												{{carbon\carbon::parse($b->lowongan->tgl_selesai)->translatedFormat('d F Y')}}

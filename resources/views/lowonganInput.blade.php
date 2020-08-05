@@ -188,9 +188,13 @@
 								<label for="exampleDropdownFormEmail1">Agama</label>
 								<select name="agama" id="agama" class="form-control" required>
 									<option value="">-- Pilih Agama --</option>
-									@foreach($agama as $a)
-									<option value="{{$a->agama}}">{{$a->agama}}</option>
-									@endforeach
+									<option value="Islam"> Islam </option>
+									<option value="Kristen Protestan">Kristen Protestan</option>
+									<option value="Kristen Katolik">Kristen Katolik</option>
+									<option value="Hindu">Hindu</option>
+									<option value="Budha">Budha</option>
+									<option value="Konghuchu">Konghuchu</option>
+									<option value="Lain-lain">Lain-lain</option>
 								</select>
 							</div>
 							<div class="form-group">

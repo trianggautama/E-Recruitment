@@ -54,7 +54,7 @@
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <a class="dropdown-item" href="{{Route('userIndex')}}">User</a>
                             <a class="dropdown-item" href="{{Route('posisiIndex')}}">Posisi</a>
-                            <a class="dropdown-item" href="{{Route('agamaIndex')}}">Agama</a>
+                            <!-- <a class="dropdown-item" href="{{Route('agamaIndex')}}">Agama</a> -->
                             <a class="dropdown-item" href="{{Route('pendidikanIndex')}}">Pendidikan Terakhir</a>
                             <a class="dropdown-item" href="{{Route('beritaIndex')}}">Informasi Rekrutmen</a>
                         </div>
