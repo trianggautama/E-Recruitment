@@ -380,33 +380,23 @@
 					<div class="row">
 						<div class="footer-contact-content">
 							<div class="row">
-								<div class="col-sm-2 col-xs-5">
+								<div class="col-sm-6 col-xs-6">
 									<div class="footer-contact-info">
 										<ul class="footer-contact-info-list">
 											<li><span class="pull-left icon ti-comments-smiley"></span><span
 													class="info-details text-uppercase">call us</span>
-												<p>560 265 1523</p>
+												<p>(0511) 3255551</p>
 											</li>
 										</ul>
 									</div>
 								</div>
-								<div class="col-sm-3 col-xs-5">
+								<div class="col-sm-6 col-xs-6">
 									<div class="footer-contact-info">
 										<ul class="footer-contact-info-list">
 											<li><span class="pull-left icon ti-comments"></span><span
-													class="info-details text-uppercase">PLEASE</span>
-												<p>GET CALL BACK</p>
+													class="info-details text-uppercase">E-mail</span>
+												<p>corporate@telkomakses.co.id</p>
 											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="footer-social pull-right mt10">
-									<div class="social">
-										<ul class="social-list">
-											<li><a href="#"><span class="ti-facebook"></span></a></li>
-											<li><a href="#"><span class="ti-twitter"></span></a></li>
-											<li><a href="#"><span class="ti-google"></span></a></li>
-											<li><a href="#"><span class="ti-instagram"></span></a></li>
 										</ul>
 									</div>
 								</div>
@@ -417,129 +407,12 @@
 			</div>
 			<!-- /footer-contact-1 -->
 
-			<div class="footer-main-content">
-				<div class="container">
-					<div class="row">
-						<div class="footer-main-content-area pt75">
-							<div class="row">
-								<div class="col-sm-3">
-									<div class="footer-logo pb20">
-										<a href="home-1.html"><img src="assets/img/f-logo.png" alt="image"></a>
-									</div>
-									<div class="footer-text">
-										<p>Lorem ipsum dolor sit ametlyeolo consectetur adipisicing elit sed dong
-											eiusmod tempor incididunt ut labore et incididunt. </p>
-									</div>
-									<div class="footer-text">
-										<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco. </p>
-									</div>
-								</div>
-								<!-- /col-sm-3 -->
-
-								<div class="col-sm-3">
-									<div class="footer-head-title text-uppercase pb35">
-										<h2 class="widgettitle">RECENT TWEET</h2>
-									</div>
-									<!-- /title -->
-									<div class="recent-tweet-list">
-										<div class="tweet-icon pull-left mr20">
-											<span class="red ti-twitter"></span>
-										</div>
-										<div class="tweet-text">
-											<span class="name-tweet"><a class="" href="#">@tonmoymishal</a></span>
-											<span class="tweet-content">Excepteur sint occ aecat cupidatat </span>
-											<span class="red tweet-link"><a href="#">goo.gl/GjFUTp</a></span>
-											<span class="tweet-time">45 min ago</span>
-										</div>
-									</div>
-									<!-- /list -->
-
-									<div class="recent-tweet-list mt10">
-										<div class="tweet-icon pull-left mr20">
-											<span class="red ti-twitter"></span>
-										</div>
-										<div class="tweet-text">
-											<span class="name-tweet"><a class="" href="#">@tonmoymishal</a></span>
-											<span class="tweet-content">Excepteur sint occ aecat cupidatat </span>
-											<span class="red tweet-link"><a href="#">goo.gl/GjFUTp</a></span>
-											<span class="tweet-time">45 min ago</span>
-										</div>
-									</div>
-								</div>
-								<!-- /col-sm-3 -->
-
-								<div class="col-sm-3">
-									<div class="footer-head-title text-uppercase pb35">
-										<h2 class="widgettitle">GET IN TOUCH</h2>
-									</div>
-									<!-- /title -->
-									<div class="touch-content">
-										<div class="tweet-text">
-											<span class="name-tweet">Address: </span>
-											<span class="tweet-content">315 Chat mohon Bazar New Yor, NY 4536 </span>
-										</div>
-										<div class="tweet-text mt5">
-											<span class="name-tweet">E-mail: </span>
-											<span class="tweet-content">support@yourdomain.com </span>
-										</div>
-										<div class="tweet-text mt5">
-											<span class="name-tweet">Phone: </span>
-											<span class="tweet-content">560 265 1523</span>
-										</div>
-										<div class="newsletter-form">
-											<form action="#" method="get" class="nwsltter">
-												<div class="form-group">
-													<input type="email" name="email" placeholder="Your Email"
-														class="form-control">
-												</div>
-											</form>
-											<div class="submit-btn">
-												<button type="submit" value="Submit"><img src="assets/img/inbox.png"
-														alt="image"></button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /col-sm-3 -->
-
-								<div class="col-sm-3">
-									<div class="footer-head-title text-uppercase pb35">
-										<h2 class="widgettitle">GALLERY</h2>
-									</div>
-									<div class="footer-gallery pb35">
-										<ul class="footer-gallery">
-											<li><a href="#"><img src="assets/img/g-1.png" alt="image"></a></li>
-											<li><a href="#"><img src="assets/img/g-2.png" alt="image"></a></li>
-											<li><a href="#"><img src="assets/img/g-3.png" alt="image"></a></li>
-											<li><a href="#"><img src="assets/img/g-4.png" alt="image"></a></li>
-											<li><a href="#"><img src="assets/img/g-5.png" alt="image"></a></li>
-											<li><a href="#"><img src="assets/img/g-6.png" alt="image"></a></li>
-										</ul>
-									</div>
-								</div>
-								<!-- /col-sm-3 -->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /footer-main-content -->
 			<div class="footer-menu">
 				<div class="container">
 					<div class="row">
 						<div class="footer-menu-content">
-							<div class="copy-right pull-left">
-								<p>© 2016 <span class="red"><a href="https://www.htmlmate.com/">HTMLmate</a> </span>All
-									right reserved. </p>
-							</div>
-							<div class="footer-menu-list pull-right mt25">
-								<ul class="menu-list">
-									<li><a href="#">Home</a><span>/</span></li>
-									<li><a href="#">Event</a><span>/</span></li>
-									<li><a href="#">Cause</a><span>/</span></li>
-									<li><a href="#">FAQ</a><span>/</span></li>
-									<li><a href="#">Support</a><span></span></li>
-								</ul>
+							<div class="copy-right text-center">
+								<p>© 2020</p>
 							</div>
 						</div>
 					</div>
