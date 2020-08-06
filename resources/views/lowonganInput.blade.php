@@ -143,28 +143,29 @@
 								name="lowongan_id" value="{{$lowongan->id}}" required>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">NIK</label>
-								<input type="number" class="form-control" id="NIK" placeholder="NIK" name="NIK"
-									pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==14) return false;"
-									required />
+								<input type="number" class="form-control" id="NIK" placeholder="NIK"
+									value="{{old('NIK')}}" name="NIK" pattern="/^-?\d+\.?\d*$/"
+									onKeyPress="if(this.value.length==14) return false;" required />
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Nama</label>
-								<input type="text" class="form-control" id="nama" placeholder="nama" name="name"
-									required>
+								<input type="text" class="form-control" id="nama" placeholder="nama"
+									value="{{old('name')}}" name="name" required>
 							</div>
 							<br>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="custom-control custom-radio">
 										<input type="radio" value="1" id="customRadio1" name="jk"
-											class="custom-control-input" required>
+											class="custom-control-input" required
+											{{(old('jk') == '1') ? 'checked' : ''}}>
 										<label class="custom-control-label" for="customRadio1">Laki-laki</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="custom-control custom-radio">
 										<input type="radio" value="2" id="customRadio1" name="jk"
-											class="custom-control-input">
+											class="custom-control-input" {{(old('jk') == '2') ? 'checked' : ''}}>
 										<label class="custom-control-label" for="customRadio1">Perempuan</label>
 									</div>
 								</div>
@@ -175,14 +176,16 @@
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Tempat Lahir</label>
 										<input type="text" class="form-control" id="tempat_lahir"
-											placeholder="tempat_lahir" name="tempat_lahir" required>
+											placeholder="tempat_lahir" name="tempat_lahir" required
+											value="{{old('tempat_lahir')}}">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Tanggal Lahir</label>
 										<input type="date" class="form-control" id="tanggal_lahir"
-											placeholder="tanggal_lahir" name="tgl_lahir" required>
+											placeholder="tanggal_lahir" name="tgl_lahir" required
+											value="{{old('tgl_lahir')}}">
 									</div>
 								</div>
 							</div>
@@ -190,30 +193,46 @@
 								<label for="exampleDropdownFormEmail1">Agama</label>
 								<select name="agama" id="agama" class="form-control" required>
 									<option value="">-- Pilih Agama --</option>
-									<option value="Islam"> Islam </option>
-									<option value="Kristen Protestan">Kristen Protestan</option>
-									<option value="Kristen Katolik">Kristen Katolik</option>
-									<option value="Hindu">Hindu</option>
-									<option value="Budha">Budha</option>
-									<option value="Konghuchu">Konghuchu</option>
-									<option value="Lain-lain">Lain-lain</option>
+									<option value="Islam" {{(old('agama') == 'Islam') ? 'selected' : ''}}> Islam
+									</option>
+									<option value="Kristen Protestan"
+										{{(old('agama') == 'Kristen Protestan') ? 'selected' : ''}}>Kristen
+										Protestan</option>
+									<option value="Kristen Katolik"
+										{{(old('agama') == 'Kristen Katolik') ? 'selected' : ''}}>
+										Kristen Katolik</option>
+									<option value="Hindu" {{(old('agama') == 'Hindu') ? 'selected' : ''}}>Hindu
+									</option>
+									<option value="Budha" {{(old('agama') == 'Budha') ? 'selected' : ''}}>Budha
+									</option>
+									<option value="Konghuchu" {{(old('agama') == 'Konghuchu') ? 'selected' : ''}}>
+										Konghuchu</option>
+									<option value="Lain-lain" {{(old('agama') == 'Lain-lain') ? 'selected' : ''}}>
+										Lain-lain</option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Warga Negara</label>
 								<select name="warga_negara" id="agama" class="form-control" required>
-									<option value="Warga Negara Indonesia">Warga Negara Indonesia</option>
-									<option value="Warga Negara Asing">Warga Negara Asing</option>
+									<option value="Warga Negara Indonesia"
+										{{(old('warga_negara') == 'Warga Negara Indonesia') ? 'checked' : ''}}>Warga
+										Negara Indonesia
+									</option>
+									<option value="Warga Negara Asing"
+										{{(old('warga_negara') == 'Warga Negara Asing') ? 'checked' : ''}}>Warga Negara
+										Asing
+									</option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Alamat Sekarang</label>
 								<textarea name="alamat_sekarang" id="alamat_sekarang" class="form-control"
-									required></textarea>
+									required>{{old('alamat_sekarang')}}</textarea>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Alamat KTP</label>
-								<textarea name="alamat_ktp" id="alamat_ktp" class="form-control" required></textarea>
+								<textarea name="alamat_ktp" id="alamat_ktp" class="form-control"
+									required>{{old('alamat_ktp')}}</textarea>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
@@ -221,36 +240,45 @@
 										<label for="exampleDropdownFormEmail1">Telepon Rumah</label>
 										<input type="number" class="form-control" id="telepon_rumah"
 											placeholder="telepon_rumah" name="tlp_rumah" pattern="/^-?\d+\.?\d*$/"
-											onKeyPress="if(this.value.length==14) return false;" />
+											onKeyPress="if(this.value.length==14) return false;"
+											value="{{old('tlp_rumah')}}" />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Nomor Hp</label>
-										<input type="number" class="form-control" id="no_hp" placeholder="no_hp"
-											name="tlp_hp" pattern="/^-?\d+\.?\d*$/"
+										<input type="number" class="form-control" id="no_hp" value="{{old('tlp_hp')}}"
+											placeholder="no_hp" name="tlp_hp" pattern="/^-?\d+\.?\d*$/"
 											onKeyPress="if(this.value.length==14) return false;" required />
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Hobi</label>
-								<input type="text" class="form-control" id="hobi" placeholder="hobi" name="hobi"
-									required>
+								<input type="text" class="form-control" id="hobi" placeholder="hobi"
+									value="{{old('hobi')}}" name="hobi" required>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Transportasi Sehari hari</label>
 								<select name="transportasi" id="agama" class="form-control " required>
-									<option value="Roda 2">Roda 2</option>
-									<option value="Roda 4">Roda 4</option>
-									<option value="Angkutan Umum">Angkutan Umum</option>
-									<option value="Sepeda">Sepeda</option>
+									<option value="Roda 2" {{(old('transportasi') == 'Roda 2') ? 'selected' : ''}}>Roda
+										2
+									</option>
+									<option value="Roda 4" {{(old('transportasi') == 'Roda 2') ? 'selected' : ''}}>Roda
+										4
+									</option>
+									<option value="Angkutan Umum"
+										{{(old('transportasi') == 'Angkutan Umum') ? 'selected' : ''}}>Angkutan
+										Umum</option>
+									<option value="Sepeda" {{(old('transportasi') == 'Sepeda') ? 'selected' : ''}}>
+										Sepeda
+									</option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">E-mail</label>
-								<input type="text" class="form-control" id="email" placeholder="email" name="email"
-									required>
+								<input type="text" class="form-control" id="email" value="{{old('email')}}"
+									placeholder="email" name="email" required>
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Pas Foto</label>
@@ -280,15 +308,15 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Tahun Lulus</label>
-										<input type="number" class="form-control" id="tahun_lulus" name="tahun_lulus"
-											required>
+										<input type="number" value="{{old('tahun_lulus')}}" class="form-control"
+											id="tahun_lulus" name="tahun_lulus" required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Nama Sekolah / Universitas</label>
-										<input type="text" class="form-control" id="ipk" name="lembaga"
-											placeholder="Nama Lembaga Pendidikan" required>
+										<input type="text" class="form-control" id="ipk" value="{{old('lembaga')}}"
+											name="lembaga" placeholder="Nama Lembaga Pendidikan" required>
 									</div>
 								</div>
 							</div>
@@ -296,13 +324,15 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">Jurusan</label>
-										<input type="text" class="form-control" id="jurusan" name="jurusan" required>
+										<input type="text" class="form-control" value="{{old('jurusan')}}" id="jurusan"
+											name="jurusan" required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="exampleDropdownFormEmail1">IPK / Rata-Rata UN</label>
-										<input type="text" class="form-control" id="ipk" name="ipk" required>
+										<input type="text" class="form-control" value="{{old('ipk')}}" id="ipk"
+											name="ipk" required>
 									</div>
 								</div>
 								<div class="col-md-6">

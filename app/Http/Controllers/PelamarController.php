@@ -23,14 +23,25 @@ class PelamarController extends Controller
 
     public function store(Request $req)
     {
+
         $validator = Validator::make($req->all(), [
             'NIK' => 'required|unique:pesertas|max:100',
         ]);
 
         if ($validator->fails()) {
-            toast('Anda sudah terdaftar didalam sistem kami, silahkan login menggunakan username dan password terakhir anda', 'warning');
+            // toast('Anda sudah terdaftar didalam sistem kami, silahkan login menggunakan username dan password terakhir anda', 'warning');
 
-            return redirect()->route('login');
+            return redirect()->route('login')->with('toast_warning', 'Anda sudah terdaftar didalam sistem kami, silahkan login menggunakan NIK anda');
+        }
+
+        $nik = Validator::make($req->all(), [
+            'NIK' => 'min:14',
+        ]);
+
+        if ($nik->fails()) {
+            // toast('Anda sudah terdaftar didalam sistem kami, silahkan login menggunakan username dan password terakhir anda', 'warning');
+
+            return back()->withInput()->withWarning('NIK kurang dari 14');
         }
 
         $user = new User;
@@ -89,8 +100,8 @@ class PelamarController extends Controller
 
         $lampiran->save();
 
-        toast('Terimakasih sudah mendaftar, mohon tunggu max 2 x 24 jam untuk dapat login', 'success');
-        return redirect()->route('depan');
+        // toast('Terimakasih sudah mendaftar, mohon tunggu max 2 x 24 jam untuk dapat login', 'success');
+        return redirect()->route('depan')->withToastSuccess('Terimakasih sudah mendaftar, mohon tunggu max 2 x 24 jam untuk dapat login');
     }
 
     public function show($uuid)
