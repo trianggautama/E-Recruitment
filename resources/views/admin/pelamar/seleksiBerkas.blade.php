@@ -48,18 +48,24 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->berita->judul}}</td>
                                                     <td> @foreach(collect($d->posisi) as $p)
-                                                      {{$p}} <br>
-                                                      @endforeach
+                                                        {{$p}} <br>
+                                                        @endforeach
                                                     </td>
-                                                    <td>3.8</td>
-                                                    <td>S1</td>
+                                                    <td>
+                                                        @if(isset($d->ipk_min))
+                                                        {{$d->ipk_min}}
+                                                        @else
+                                                        -
+                                                        @endif
+                                                    </td>
+                                                    <td>{{$d->pendidikan_terakhir->nama}}</td>
                                                     <td>{{carbon\carbon::parse($d->tgl_mulai)->translatedFormat('d F Y')}}
                                                         -
                                                         {{carbon\carbon::parse($d->tgl_selesai)->translatedFormat('d F Y')}}
                                                     </td>
                                                     <td>
                                                         @if($d->status == 1)
-                                                            <p class="text-info">Sedang Berlangsung</p>
+                                                        <p class="text-info">Sedang Berlangsung</p>
                                                         @else
                                                         <p class="text-success">Sudah Selesai</p>
                                                         @endif
@@ -67,7 +73,8 @@
                                                     <td>
                                                         <a href="{{Route('seleksiBerkasShow',['uuid'=>$d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-info-circle"></i> Detail Pelamar 
+                                                                class="icon-label"><i class="fa fa-info-circle"></i>
+                                                                Detail Pelamar
                                                             </span><span class="btn-text"> </span></a>
                                                 </tr>
                                                 @endforeach

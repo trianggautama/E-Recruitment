@@ -82,9 +82,16 @@
                                                 <label for="exampleDropdownFormEmail1">Pendidikan Minimal</label>
                                                 <select name="pendidikan_terakhir_id" class="form-control" required>
                                                     @foreach($pendidikan as $d)
-                                                    <option value="{{ $d->id }}" {{ $d->id == $data->lowongan->pendidikan_terakhir_id ? 'selected' : '' }}>{{ $d->nama }}</option>
+                                                    <option value="{{ $d->id }}"
+                                                        {{ $d->id == $data->lowongan->pendidikan_terakhir_id ? 'selected' : '' }}>
+                                                        {{ $d->nama }}</option>
                                                     @endforeach
                                                 </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormEmail1">IPK Minimal</label>
+                                                <input type="text" class="form-control"
+                                                    value="{{$data->lowongan->ipk_min}}" name="ipk_min" id="">
                                             </div>
                                             <div class="text-right">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-save"></i>
