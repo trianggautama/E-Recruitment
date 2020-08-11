@@ -125,7 +125,7 @@
                                                 <table width="100%">
                                                     <tr height="30px !important;">
                                                         <td width="40%">Pendidikan Terakhir</td>
-                                                        <td>: {{$data->ijazah_terakhir}}</td>
+                                                        <td>: {{$data->pendidikan->nama}}</td>
                                                     </tr>
                                                     <tr height="30px !important;">
                                                         <td>Nama Sekolah / Universitas</td>

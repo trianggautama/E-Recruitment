@@ -25,6 +25,11 @@ class Peserta extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function pendidikan()
+    {
+        return $this->hasOne(Pendidikan_terakhir::class,'id','ijazah_terakhir');
+    }
+
     public function uji_kompetensi_peserta()
     {
         return $this->hasOne(Uji_kompetensi_peserta::class);
