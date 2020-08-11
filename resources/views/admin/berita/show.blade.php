@@ -53,7 +53,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Pendidikan Minimal</td>
-                                                <td>: {{$data->lowongan->pendidikan_terakhir}}</td>
+                                                <td>: {{$data->lowongan->pendidikan_terakhir->nama}}</td> 
                                             </tr>
                                             <tr>
                                                 <td>Status</td>

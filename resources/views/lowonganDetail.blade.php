@@ -182,6 +182,11 @@
 													@endif
 												</td>
 											</tr>
+											<tr>
+												<td>Keterangan</td>
+												<td> {!! $berita->lowongan->keterangan !!}
+												</td>
+											</tr>
 										</table>
 										<br>
                                             @if($now >= $berita->lowongan->tgl_mulai && $now <= $berita->lowongan->tgl_selesai)
