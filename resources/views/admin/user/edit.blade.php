@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormPassword1">Foto</label>
-                                                <input type="file" class="form-control" id="foto">
+                                                <input type="file" class="form-control" id="foto" name="foto">
                                                 <p class="text-danger"> Isi Jika ingin merubah foto</p>
                                             </div>
                                             <div class="text-right">

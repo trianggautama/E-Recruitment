@@ -94,8 +94,8 @@
                         <div class="media">
                             <div class="media-img-wrap">
                                 <div class="avatar">
-                                    <img src="{{asset('admin/dist/img/avatar1.jpg')}}" alt="user"
-                                        class="avatar-img rounded-circle">
+                                        <img src="{{asset('images/user/'. Auth::user()->foto)}}" alt="user"
+                                            class="avatar-img rounded-circle">
                                 </div>
                                 <span class="badge badge-success badge-indicator"></span>
                             </div>
