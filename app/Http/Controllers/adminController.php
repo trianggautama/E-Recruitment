@@ -11,6 +11,7 @@ use App\Posisi;
 use App\Soal;
 use App\Uji_wawancara;
 use App\Uji_wawancara_peserta;
+use App\Uji_kompetensi;
 use Carbon\Carbon;
 
 class adminController extends Controller
