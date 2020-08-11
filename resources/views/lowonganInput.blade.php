@@ -54,8 +54,8 @@
 					<div class="header-top">
 						<div class="head-top-info pull-left">
 							<ul class="top-info">
-								<li><img src="{{asset('depan/assets/img/call.png')}}" alt="image">05. 256. 8942</li>
-								<li><img src="{{asset('depan/assets/img/inbox.png')}}" alt="image">info@fundme.com</li>
+								<li><img src="{{asset('depan/assets/img/call.png')}}" alt="image">(0511) 3255551</li>
+								<li><img src="{{asset('depan/assets/img/inbox.png')}}" alt="image">corporate@telkomakses.co.id</li>
 							</ul>
 						</div>
 						<!-- /head-top-info -->
