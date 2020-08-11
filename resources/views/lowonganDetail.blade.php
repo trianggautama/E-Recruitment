@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
 	<meta charset="utf-8">
 	<title>E-Recruitment</title>
 	<link rel="shortcut icon" href="{{asset('depan/assets/img/icon.png')}}">
 
-	<meta name="description" content="FundMe - is a Premium HTML Responsive Templeate by HTMLmate Team. You can use this for anykind of Nonprofit website">
+	<meta name="description"
+		content="FundMe - is a Premium HTML Responsive Templeate by HTMLmate Team. You can use this for anykind of Nonprofit website">
 
 	<meta name="keywords" content="Premium HTML Template">
 
@@ -78,7 +80,8 @@
 					<nav class="navbar">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
-							<a class="navbar-brand" href="/"><img src="{{asset('depan/assets/img/logo.png')}}" alt="image" width="50%"></a>
+							<a class="navbar-brand" href="/"><img src="{{asset('depan/assets/img/logo.png')}}"
+									alt="image" width="50%"></a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
@@ -90,12 +93,14 @@
 						<div class="home-donate donate-btn-1 text-uppercase">
 							<a href="{{Route('login')}}">Login</a>
 						</div>
-						<div id="sb-search" class="sb-search " >
+						<div id="sb-search" class="sb-search ">
 							    <form action="#" method="post">
-								   <input class="sb-search-input " onkeyup="buttonUp();" placeholder="Enter Your Search Word..." type="search" value="" name="search" id="search">
-								 <input class="sb-search-submit" type="submit"  value="">
+								   <input class="sb-search-input " onkeyup="buttonUp();"
+									placeholder="Enter Your Search Word..." type="search" value="" name="search"
+									id="search">
+								 <input class="sb-search-submit" type="submit" value="">
 								 <span class="sb-icon-search"><i class="ti-search"></i></span>
-							    </form>
+								    </form>
 						</div>
 					</nav>
 					<div class="wrap">
@@ -123,10 +128,14 @@
 							</div>
 						</div>
 						<!-- END menu -->
-					</div><!--/wrap  -->
-				</div><!--/row  -->
-			</div><!--/container  -->
-		</div><!--/menu-bar  -->
+					</div>
+					<!--/wrap  -->
+				</div>
+				<!--/row  -->
+			</div>
+			<!--/container  -->
+		</div>
+		<!--/menu-bar  -->
 	</header>
 	<!-- End of Header
 	============================================= -->
@@ -145,38 +154,42 @@
 										<h2 class="black">Detail Penerimaan</h2>
 									</div>
 									<div class="countdown-text mt25">
-									{!! $berita->isi !!}
-									<table class="text-left">
-                                            <tr>
-                                                <td width="50%">Posisi</td>
-                                                <td>:  @foreach(collect($berita->lowongan->posisi) as $p)
-                                                      {{$p}},
-                                                      @endforeach</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tanggal Pendaftaran</td>
-                                                <td>: {{carbon\carbon::parse($berita->lowongan->tgl_mulai)->translatedFormat('d F Y')}} - {{carbon\carbon::parse($berita->lowongan->tgl_selesai)->translatedFormat('d F Y')}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pendidikan Minimal</td>
-                                                <td>: {{$berita->lowongan->pendidikan_terakhir->nama}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Status</td>
-                                                <td>:
-                                                    @if($now > $berita->lowongan->tgl_selesai)
-                                                        <i class="text-danger"> Sudah ditutup</i>
-                                                    @elseif($now < $berita->lowongan->tgl_mulai)
-                                                        <i class="text-info"> Belum Berlangsung</i>
-                                                    @else
-                                                        <i class="text-success"> Sedang Berlangsung</i>
-                                                    @endif
-                                                </td>
-                                            </tr>
+										{!! $berita->isi !!}
+										<table class="text-left">
+											<tr>
+												<td width="50%">Posisi</td>
+												<td>: @foreach(collect($berita->lowongan->posisi) as $p)
+													{{$p}},
+													@endforeach</td>
+											</tr>
+											<tr>
+												<td>Tanggal Pendaftaran</td>
+												<td>:
+													{{carbon\carbon::parse($berita->lowongan->tgl_mulai)->translatedFormat('d F Y')}}
+													-
+													{{carbon\carbon::parse($berita->lowongan->tgl_selesai)->translatedFormat('d F Y')}}
+												</td>
+											</tr>
+											<tr>
+												<td>Pendidikan Minimal</td>
+												<td>: {{$berita->lowongan->pendidikan_terakhir->nama}}</td>
+											</tr>
+											<tr>
+												<td>Status</td>
+												<td>:
+													@if($now > $berita->lowongan->tgl_selesai)
+													<i class="text-danger"> Sudah ditutup</i>
+													@elseif($now < $berita->lowongan->tgl_mulai)
+														<i class="text-info"> Belum Berlangsung</i>
+														@else
+														<i class="text-success"> Sedang Berlangsung</i>
+														@endif
+												</td>
+											</tr>
 											<tr>
 												<td>Tanggal Tes</td>
 												<td>: @if($berita->lowongan->uji_kompetensi->isNotEmpty())
-												{{carbon\carbon::parse($berita->lowongan->uji_kompetensi->first()->tgl_ujian)->translatedFormat('d F Y')}}
+													{{carbon\carbon::parse($berita->lowongan->uji_kompetensi->first()->tgl_ujian)->translatedFormat('d F Y')}}
 													@else
 													Tanggal Belum Ditentukan
 													@endif
@@ -189,11 +202,13 @@
 											</tr>
 										</table>
 										<br>
-                                            @if($now >= $berita->lowongan->tgl_mulai && $now <= $berita->lowongan->tgl_selesai)
-                                                <div class="donate-btn text-uppercase">
-                                                <a  href="{{Route('lowonganInput',['uuid'=>$berita->lowongan->uuid])}}">Input Lamaran</a>
-                                                </div>
-                                            @endif
+										@if($now >= $berita->lowongan->tgl_mulai && $now <= $berita->
+											lowongan->tgl_selesai)
+											<div class="donate-btn text-uppercase">
+												<a href="{{Route('lowonganInput',['uuid'=>$berita->lowongan->uuid])}}">Input
+													Lamaran</a>
+											</div>
+											@endif
 									</div>
 								</div>
 							</div>
@@ -201,7 +216,8 @@
 						<!-- /col-md-6 -->
 						<div class="col-md-6">
 							<div class="count-right-img pl30 colmd6 text-center">
-								<img src="{{asset('images/berita/'. $berita->foto)}}" alt="image" width="400px" height="100px">
+								<img src="{{asset('images/berita/'. $berita->foto)}}" alt="image" width="400px"
+									height="100px">
 							</div>
 						</div>
 					</div>
@@ -220,27 +236,36 @@
 			<div class="row section-content">
 				<div class="latest-news-content">
 					<div class="row">
-                        <div class="">
-                            <h2 class="text-center">Informasi Kelulusan</h2> <br>
-                             <table class="table table-bordered">
-								 <thead>
-									 <th>No</th>
-									 <th>Nama</th>
-									 <th>Nilai Uji Kompetensi</th>
-									 <th>Nilai Wawancara</th>
-								 </thead>
-								 <tbody>
-									 <td>1</td>
-									 <td>Tri Angga</td>
-									 <td>76</td>
-									 <td>80</td>
-								 </tbody>
-							 </table>
-                            </div>
-                        </div>
+						<div class="">
+							<h2 class="text-center">Informasi Kelulusan</h2> <br>
+							<table class="table table-bordered">
+								<thead>
+									<th>No</th>
+									<th>Nama</th>
+									<th>Nilai Uji Kompetensi</th>
+									<th>Nilai Wawancara</th>
+								</thead>
+								<tbody>
+									@if(isset($ujiWawancara->uji_wawancara_peserta))
+									@foreach($ujiWawancara->uji_wawancara_peserta as $d)
+									<td>{{$loop->iteration}}</td>
+									<td>{{$d->peserta->user->name}}</td>
+									<td>{{$d->peserta->uji_kompetensi_peserta->nilai}}</td>
+									<td>{{$d->nilai}}</td>
+									@endforeach
+									@else
+									<td>1</td>
+									<td>Belum ada data</td>
+									<td>Belum ada data</td>
+									<td>Belum ada data</td>
+									@endif
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</section>
 	<!-- End of Latest news
@@ -316,23 +341,27 @@
 	<script type="text/javascript" src="{{asset('depan/rev-slider/js/jquery.themepunch.tools.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('depan/rev-slider/js/jquery.themepunch.revolution.min.js')}}"></script>
 
-    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS (Load Extensions only on Local File Systems !
+	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS (Load Extensions only on Local File Systems !
     The following part can be removed on Server for On Demand Loading) -->
 
-    <script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.actions.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.actions.min.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.layeranimation.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.navigation.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('delpan/rev-slider/js/revolution.extension.parallax.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.slideanims.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.video.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.layeranimation.min.js')}}">
+	</script>
+	<script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.navigation.min.js')}}">
+	</script>
+	<script type="text/javascript" src="{{asset('delpan/rev-slider/js/revolution.extension.parallax.min.js')}}">
+	</script>
+	<script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.slideanims.min.js')}}">
+	</script>
+	<script type="text/javascript" src="{{asset('depan/rev-slider/js/revolution.extension.video.min.js')}}"></script>
 
 
 
-    <script type="text/javascript" src="{{asset('depan/assets/js/function.js')}}"></script>
+	<script type="text/javascript" src="{{asset('depan/assets/js/function.js')}}"></script>
 
-    <script>
-    	var tpj=jQuery;
+	<script>
+		var tpj=jQuery;
 
     	var revapi2;
     	tpj(document).ready(function() {
@@ -400,7 +429,8 @@
     			});
     		}
     	});	/*ready*/
-    </script>
+	</script>
 
 </body>
+
 </html>

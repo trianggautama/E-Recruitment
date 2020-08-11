@@ -24,8 +24,9 @@
                                     <h5 class="hk-sec-title">Detail Pelamar</h5>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                <a href="{{Route('biodataCetak',['uuid'=>$data->uuid])}}" class="btn btn-sm btn-danger mb-15" target="_blank"><i
-                                            class="fa fa-print"></i> Cetak Biodata</a>
+                                    <a href="{{Route('biodataCetak',['uuid'=>$data->uuid])}}"
+                                        class="btn btn-sm btn-danger mb-15" target="_blank"><i class="fa fa-print"></i>
+                                        Cetak Biodata</a>
                                     <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15"
                                         id="tambah"><span class="icon-label"><i class="fa fa-check-circle"></i>
                                         </span><span class="btn-text">Verifikasi</span></button>
@@ -74,7 +75,7 @@
                                                     </tr>
                                                     <tr height="30px !important;">
                                                         <td>Warga Negara</td>
-                                                        <td>: {{$data->agama}}</td>
+                                                        <td>: {{$data->warga_negara}}</td>
                                                     </tr>
                                                     <tr height="30px !important;">
                                                         <td>Alamat KTP</td>
@@ -158,8 +159,9 @@
                                                         <td width="40%">Pas Foto</td>
                                                         <td>:
                                                             <a href="{{asset('images/user/'. $data->user->foto)}}"
-                                                                class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15" target="_blank"><span
-                                                                    class="icon-label"><i class="fa fa-paperclip"></i>
+                                                                class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15"
+                                                                target="_blank"><span class="icon-label"><i
+                                                                        class="fa fa-paperclip"></i>
                                                                 </span><span class="btn-text">Foto</span></a>
                                                         </td>
                                                     </tr>
@@ -167,8 +169,9 @@
                                                         <td width="40%">Scan Ijazah terakhir</td>
                                                         <td>:
                                                             <a href="{{asset('lampiran/ijazah/'. $data->user->lampiran->doc_ijazah)}}"
-                                                                class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15" target="_blank"><span
-                                                                    class="icon-label"><i class="fa fa-paperclip"></i>
+                                                                class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15"
+                                                                target="_blank"><span class="icon-label"><i
+                                                                        class="fa fa-paperclip"></i>
                                                                 </span><span class="btn-text">Scan
                                                                     Ijazah</span></a>
                                                         </td>
