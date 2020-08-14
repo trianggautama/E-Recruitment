@@ -33,8 +33,8 @@ class ujiKesehatanController extends Controller
     public function edit($uuid)
     {
         $data = Uji_kesehatan::where('uuid', $uuid)->first();
-
-        return view('admin.ujiKesehatan.edit', compact('data'));
+        $lowongan = Lowongan::latest()->get();
+        return view('admin.ujiKesehatan.edit', compact('data','lowongan'));
     }
 
     public function update(Request $req,$uuid)

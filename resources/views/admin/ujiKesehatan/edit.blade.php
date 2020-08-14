@@ -32,21 +32,15 @@
                                                 <select name="lowongan_id" id="" class="form-control">
                                                     <option value="">-- pilih lowongan --</option>
                                                     @foreach($lowongan as $d)
-                                                    <option value="{{$d->id}}">{{$d->berita->judul}}</option>
+                                                    <option value="{{$d->id}}" {{$data->lowongan_id == $d->id ? 'selected' : ''}}>{{$d->berita->judul}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleDropdownFormEmail1">Tanggal uji Kesehatan</label>
-                                                <input type="date" class="form-control " id="tanggal_ujian" name="tanggal_ujian">
+                                                <input type="date" class="form-control " id="tgl_uji" name="tgl_uji" value="{{$data->tgl_uji}}">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleDropdownFormEmail1">lulus</label>
-                                                <select name="lowongan_id" id="" class="form-control">
-                                                    <option value="0">Lulus</option>
-                                                    <option value="1">tidak Lulus</option>
-                                                </select>
-                                            </div>
+                    
                                             <div class="text-right">
                                                 <a href="{{Route('soalIndex')}}" class="btn btn-secondary"><i
                                                         class="fa fa-arrow-left"></i> Kembali</a>

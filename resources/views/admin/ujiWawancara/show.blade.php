@@ -47,9 +47,9 @@
                                                     <td>{{ $d->nilai }}</td>
                                                     <td>
                                                         @if($d->status == 0 )
-                                                        Tidak Lulus
+                                                       <p class="text-dange"> Tidak Lulus</p>
                                                         @else
-                                                        Lulus
+                                                        <p class="text-success">Lulus</p>
                                                         @endif
                                                     </td>
                                                     <td>
