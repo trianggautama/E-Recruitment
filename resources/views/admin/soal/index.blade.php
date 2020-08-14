@@ -116,13 +116,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">C</label>
-                                <input type="text" name="b" class="form-control " id="b" required>
+                                <input type="text" name="c" class="form-control " id="b" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">B</label>
-                                <input type="text" name="c" class="form-control " id="c" required>
+                                <input type="text" name="b" class="form-control " id="c" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleDropdownFormEmail1">D</label>
