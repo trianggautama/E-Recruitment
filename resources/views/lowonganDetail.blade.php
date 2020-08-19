@@ -248,16 +248,20 @@
 								<tbody>
 									@if(isset($ujiWawancara->uji_wawancara_peserta))
 									@foreach($ujiWawancara->uji_wawancara_peserta as $d)
+									<tr>
 									<td>{{$loop->iteration}}</td>
 									<td>{{$d->peserta->user->name}}</td>
 									<td>{{$d->peserta->uji_kompetensi_peserta->nilai}}</td>
 									<td>{{$d->nilai}}</td>
+									</tr>
 									@endforeach
 									@else
+									<tr>
 									<td>1</td>
 									<td>Belum ada data</td>
 									<td>Belum ada data</td>
 									<td>Belum ada data</td>
+									</tr>
 									@endif
 								</tbody>
 							</table>
