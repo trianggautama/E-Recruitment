@@ -57,9 +57,9 @@
                                                     <td>{{$d->email}}</td>
                                                     <td>
                                                         @if($d->user->status == 0)
-                                                        Belum diverifikasi
+                                                        <p class="text-danger">Belum diverifikasi</p>
                                                         @else
-                                                        Sudah diverifikasi
+                                                        <p class="text-primary">Sudah diverifikasi</p>
                                                         @endif
                                                     </td>
                                                     <td>

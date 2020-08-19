@@ -43,14 +43,14 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="exampleDropdownFormEmail1">C</label>
-                                                        <input type="text" value="{{$data->b}}" name="b"
+                                                        <input type="text" value="{{$data->c}}" name="c"
                                                             class="form-control " id="c">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="exampleDropdownFormEmail1">B</label>
-                                                        <input type="text" value="{{$data->c}}" name="c"
+                                                        <input type="text" value="{{$data->b}}" name="b"
                                                             class="form-control " id="b">
                                                     </div>
                                                     <div class="form-group">
