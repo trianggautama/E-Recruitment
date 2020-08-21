@@ -93,7 +93,7 @@
     <div class="container">
         <div class="isi">
         <hr>
-            <h2 style="text-align:center; text-transform:uppercase;">DATA HASIL UJI KOMPETENSI {{$uji_kesehatan->lowongan->berita->judul}}</h2>
+            <h2 style="text-align:center; text-transform:uppercase;">DATA HASIL UJI KESEHATAN {{$uji_kesehatan->lowongan->berita->judul}}</h2>
             <br>
             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>

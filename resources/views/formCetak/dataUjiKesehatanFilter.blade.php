@@ -93,7 +93,7 @@
     <div class="container">
         <div class="isi">
         <hr>
-            <h3 style="text-align:center; text-transform:uppercase;">DATA HASIL UJI KOMPETENSI {{$uji_kesehatan->lowongan->berita->judul}} dengan status @if($status == 1 ) Lulus @else Tidak Lulus @endif</h3>
+            <h3 style="text-align:center; text-transform:uppercase;">DATA HASIL UJI KESEHATAN {{$uji_kesehatan->lowongan->berita->judul}} dengan status @if($status == 1 ) Lulus @else Tidak Lulus @endif</h3>
             <br>
             <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>

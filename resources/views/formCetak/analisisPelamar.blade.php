@@ -124,7 +124,16 @@
                 </tr>
                 <tr>
                     <td>Jumlah Pelamar yang lolos</td>
-                    <td>:@if($lowongan->uji_wawancara->isNotEmpty()) {{$lowongan->uji_wawancara->uji_wawancara_peserta->where('status',1)->count()}} pelamar @else Rekrutmen masih berlangsung @endif</td>
+                    <td>:
+                        @if($lowongan->uji_wawancara->isNotEmpty())
+                            @if($lowongan->uji_wawancara->first()->uji_wawancara_peserta->isNotEmpty())
+                                {{$lowongan->uji_wawancara->uji_wawancara_peserta->where('status',1)->count()}} pelamar
+                            @else
+                                Belum ada peserta yang lolos
+                            @endif
+                        @else 
+                            Rekrutmen masih berlangsung
+                        @endif</td>
                 </tr>
             </table>       
                     </div>
