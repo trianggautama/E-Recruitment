@@ -127,10 +127,10 @@
                     title: 'Waktu telah habis',
                     text: " Terimakasih telah melakukan ujian " ,
                     icon: 'warning',
-                    confirmButtonText: "OK",
-                }, function(isConfirm){  //this is just an alias for the previous line    
-                    $("#myForm").submit();
-                });
+                    showCancelButton: false,
+                })
+            $("#myForm").submit();
+            die;
 
         }
     }, 1000);
