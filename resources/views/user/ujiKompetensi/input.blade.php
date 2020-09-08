@@ -130,7 +130,7 @@
                     showCancelButton: false,
                 })
             $("#myForm").submit();
-            die;
+            die();
 
         }
     }, 1000);
