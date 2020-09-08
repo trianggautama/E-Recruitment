@@ -55,7 +55,8 @@
 						<div class="head-top-info pull-left">
 							<ul class="top-info">
 								<li><img src="{{asset('depan/assets/img/call.png')}}" alt="image">(0511) 3255551</li>
-								<li><img src="{{asset('depan/assets/img/inbox.png')}}" alt="image">corporate@telkomakses.co.id</li>
+								<li><img src="{{asset('depan/assets/img/inbox.png')}}"
+										alt="image">corporate@telkomakses.co.id</li>
 							</ul>
 						</div>
 						<!-- /head-top-info -->
@@ -287,7 +288,7 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="exampleDropdownFormEmail1">Pendidikan Minimal</label>
+										<label for="exampleDropdownFormEmail1">Pendidikan Terakhir</label>
 										<select name="ijazah_terakhir" class="form-control" required>
 											@foreach($pendidikan as $d)
 											<option value="{{ $d->id }}"
