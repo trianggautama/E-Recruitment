@@ -12,9 +12,6 @@
                     {{$lowongan->berita->judul}}</h3>
             </div>
             <div class="d-flex text-right">
-                <button class="btn btn-sm btn-outline-light btn-wth-icon icon-wthot-bg mr-15 mb-15"><span
-                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Print
-                    </span></button>
             </div>
         </div>
         <!-- /Title -->
