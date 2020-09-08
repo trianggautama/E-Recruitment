@@ -122,14 +122,15 @@
 
         display.textContent = minutes + ":" + seconds;
 
-        if (timer < 0) {
+        if (--timer < 0) {
             Swal.fire({
                     title: 'Waktu telah habis',
                     text: " Terimakasih telah melakukan ujian " ,
                     icon: 'warning',
-                    showCancelButton: false,
-                })
-            $("#myForm").submit();
+                    confirmButtonText: "OK",
+                }, function(isConfirm){  //this is just an alias for the previous line    
+                    $("#myForm").submit();
+                });
 
         }
     }, 1000);
