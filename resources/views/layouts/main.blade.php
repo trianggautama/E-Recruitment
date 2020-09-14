@@ -79,6 +79,7 @@
                             <a class="dropdown-item" href="{{Route('ujiKompetensiIndex')}}">Tes Kompetensi</a>
                             <a class="dropdown-item" href="{{Route('ujiKesehatanIndex')}}">Tes Kesehatan</a>
                             <a class="dropdown-item" href="{{Route('ujiWawancaraIndex')}}">Tes Wawancara</a>
+                            <a class="dropdown-item" href="{{Route('hasilAkhirIndex')}}">Hasil Akhir</a>
                         </div>
                     </li>
                 </ul>

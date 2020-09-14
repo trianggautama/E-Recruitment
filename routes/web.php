@@ -103,6 +103,13 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/ujiWawancara/detail/delete/{uuid}', 'ujiWawancaraController@rincianDestroy')->name('ujiWawancaraRincianDestroy');
     Route::get('/ujiWawancara/filter/{uuid}', 'ujiWawancaraController@filter')->name('ujiWawancaraFilter');
 
+    // uji wawancara peserta
+    Route::get('/hasilAkhir/index', 'hasilAkhirController@index')->name('hasilAkhirIndex');
+    Route::post('/hasilAkhir/create', 'hasilAkhirController@store')->name('hasilAkhirStore');
+    Route::get('/hasilAkhir/show/{uuid}', 'hasilAkhirController@show')->name('hasilAkhirShow');
+    Route::get('/hasilAkhir/edit/{uuid}', 'hasilAkhirController@edit')->name('hasilAkhirEdit');
+    Route::put('/hasilAkhir/edit/{uuid}', 'hasilAkhirController@update')->name('hasilAkhirUpdate');
+    Route::get('/hasilAkhir/delete/{uuid}', 'hasilAkhirController@destroy')->name('hasilAkhirDestroy');
     //Report
     Route::get('/pelamar/biodata/cetak/{uuid}', 'reportController@biodatapelamar')->name('biodataCetak');
     Route::get('/pelamar/cetak/{uuid}', 'reportController@pelamar')->name('pelamarCetak');
