@@ -42,10 +42,14 @@
                                                     </td>
                                                     <td>-</td>
                                                     <td>
-                                                        <a href="{{Route('hasilAkhirShow',['uuid' => $d->uuid])}}"
-                                                            class="btn btn-sm btn-outline-light  mb-1"><span
-                                                                class="icon-label"><i class="fa fa-info-circle"></i>
-                                                            </span><span class="btn-text"> </span></a>
+                                                        @if($d->uji_wawancara->isNotEmpty())
+                                                            <a href="{{Route('hasilAkhirShow',['uuid' => $d->uuid])}}"
+                                                                class="btn btn-sm btn-outline-light  mb-1"><span
+                                                                    class="icon-label"><i class="fa fa-info-circle"></i>
+                                                                </span><span class="btn-text"> </span></a>
+                                                        @else
+                                                            Belum sampai pada tahap wawancara
+                                                        @endif
                                                     </td>
                                                 </tr>
                                                 @endforeach

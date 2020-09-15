@@ -105,7 +105,7 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Lowongan</label>
                         <select name="peserta_id" id="" class="form-control" required>
-                            <option value="">-- pilih Pelamar dari lowongan yg dipilih aja --</option>
+                            <option value="">-- pilih Pelamar --</option>
                             @foreach($data as $d)
                             <option value="{{$d->peserta_id}}">{{$d->peserta->user->name}}</option>
                             @endforeach
