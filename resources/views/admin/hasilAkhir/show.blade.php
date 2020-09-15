@@ -11,7 +11,8 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Hasil Akhir Lowongan {{$lowongan->berita->judul}}</h2>
             </div>
             <div class="d-flex">
-            <a href="" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5"> <i class="fa fa-print"></i>Hasil Akhir </a>
+                <a href="" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5"> <i
+                        class="fa fa-print"></i>Hasil Akhir </a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></button>
@@ -28,7 +29,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
-                                    <table id="datable_1" class="table table-hover w-100 display pb-30">
+                                        <table id="datable_1" class="table table-hover w-100 display pb-30">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -41,20 +42,23 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($hasil_akhir as $d)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>3243413</td>
-                                                    <td>Nama Pelamar</td>
-                                                    <td>053615736</td>
-                                                    <td>email@gmail.com</td>
+                                                    <td>{{$loop->iteration}}</td>
+                                                    <td>{{$d->peserta->NIK}}</td>
+                                                    <td>{{$d->peserta->user->name}}</td>
+                                                    <td>{{$d->peserta->no_hp}}</td>
+                                                    <td>{{$d->peserta->email}}</td>
                                                     <td>Lulus</td>
+                                                    {{-- <td>{{$d->peserta->uji_wawancara_peserta->status}}</td> --}}
                                                     <td>
-                                                    <a href="{{Route('hasilAkhirDestroy',['uuid' => 'cahjh'])}}"
+                                                        <a href="{{Route('hasilAkhirDestroy',['uuid' => $d->uuid])}}"
                                                             class="btn btn-sm btn-outline-light  mb-1"><span
                                                                 class="icon-label"><i class="fa fa-trash"></i>
                                                             </span><span class="btn-text"> </span></a>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -96,13 +100,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('ujiKesehatanStore')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{Route('hasilAkhirStore')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Lowongan</label>
-                        <select name="lowongan_id" id="" class="form-control" required>
-                            <option value="">-- pilih Pelamar dari lowongan yg dipilih aja  --</option>
-                        
+                        <select name="peserta_id" id="" class="form-control" required>
+                            <option value="">-- pilih Pelamar dari lowongan yg dipilih aja --</option>
+                            @foreach($data as $d)
+                            <option value="{{$d->peserta_id}}">{{$d->peserta->user->name}}</option>
+                            @endforeach
+
                         </select>
                     </div>
                     <div class="text-right">
