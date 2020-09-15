@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 class ujiKesehatanController extends Controller
 {
     public function index()
-    {
+    { 
         $now = Carbon::now()->format('Ymd');
         $lowongan = Lowongan::latest()->get();
         $data = Uji_kesehatan::latest()->get();

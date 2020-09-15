@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Lowongan;
 use Illuminate\Http\Request;
 
 class hasilAkhirController extends Controller
 {
     public function index()
     {
-        
-        return view('admin.hasilAkhir.index');
+        $lowongan = Lowongan::latest()->get();
+        return view('admin.hasilAkhir.index',compact('lowongan'));
     }
 
     public function store(Request $req)
@@ -37,8 +38,8 @@ class hasilAkhirController extends Controller
 
     public function show($uuid)
     {
-        
-        return view('admin.hasilAkhir.show');
+        $lowongan = Lowongan::where('uuid',$uuid)->first();
+        return view('admin.hasilAkhir.show',compact('lowongan'));
     }
 
     public function pesertaStore(Request $req)
