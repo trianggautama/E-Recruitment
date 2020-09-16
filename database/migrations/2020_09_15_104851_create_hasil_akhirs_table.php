@@ -17,7 +17,9 @@ class CreateHasilAkhirsTable extends Migration
             $table->id();
             $table->string('uuid', 36);
             $table->unsignedBigInteger('peserta_id');
+            $table->unsignedBigInteger('lowongan_id');
             $table->foreign('peserta_id')->references('id')->on('pesertas')->onDelete('cascade');
+            $table->foreign('lowongan_id')->references('id')->on('lowongans')->onDelete('cascade');
             $table->timestamps();
         });
     }

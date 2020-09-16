@@ -17,7 +17,7 @@ class Peserta extends Model
 
     public function setIpkAttribute($value)
     {
-        $this->attributes['ipk'] = preg_replace( '/,/', '.', $value);
+        $this->attributes['ipk'] = preg_replace('/,/', '.', $value);
     }
 
     public function user()
@@ -27,7 +27,7 @@ class Peserta extends Model
 
     public function pendidikan()
     {
-        return $this->hasOne(Pendidikan_terakhir::class,'id','ijazah_terakhir');
+        return $this->hasOne(Pendidikan_terakhir::class, 'id', 'ijazah_terakhir');
     }
 
     public function uji_kompetensi_peserta()
@@ -48,6 +48,11 @@ class Peserta extends Model
     public function lowongan()
     {
         return $this->belongsTo(Lowongan::class);
+    }
+
+    public function hasil_akhir()
+    {
+        return $this->hasOne(Lowongan::class);
     }
 
 }

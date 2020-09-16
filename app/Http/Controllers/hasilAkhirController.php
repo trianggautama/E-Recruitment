@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Hasil_akhir;
 use App\Lowongan;
+use App\Peserta;
 use App\Uji_wawancara;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,7 @@ class hasilAkhirController extends Controller
     {
         $data = new Hasil_akhir;
         $data->peserta_id = $req->peserta_id;
+        $data->lowongan_id = $req->lowongan_id;
         $data->save();
 
         return back()->withSuccess('Data berhasil disimpan');
@@ -37,7 +39,7 @@ class hasilAkhirController extends Controller
 
     public function destroy($uuid)
     {
-
+        $data = Hasil_akhir::where('uuid', $uuid)->first()->delete();
         return back();
 
     }
@@ -46,10 +48,12 @@ class hasilAkhirController extends Controller
     {
         $lowongan = Lowongan::where('uuid', $uuid)->first();
         $uji_wawancara = Uji_wawancara::findOrFail($lowongan->id)->first();
-        $data = $uji_wawancara->uji_wawancara_peserta->where('status', 1);
         $hasil_akhir = Hasil_akhir::get()->sortByDesc(function ($query) {
             return $query->peserta->uji_wawancara_peserta->nilai;
         })->all();
+        $peserta_id = Hasil_akhir::pluck('peserta_id')->all();
+
+        $data = $uji_wawancara->uji_wawancara_peserta->where('status', 1)->whereNotIn('peserta_id', $peserta_id);
         return view('admin.hasilAkhir.show', compact('lowongan', 'data', 'hasil_akhir'));
     }
 

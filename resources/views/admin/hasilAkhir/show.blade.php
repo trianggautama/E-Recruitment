@@ -47,7 +47,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$d->peserta->NIK}}</td>
                                                     <td>{{$d->peserta->user->name}}</td>
-                                                    <td>{{$d->peserta->no_hp}}</td>
+                                                    <td>{{$d->peserta->tlp_hp}}</td>
                                                     <td>{{$d->peserta->email}}</td>
                                                     <td>Lulus</td>
                                                     {{-- <td>{{$d->peserta->uji_wawancara_peserta->status}}</td> --}}
@@ -102,6 +102,7 @@
             <div class="modal-body">
                 <form action="{{Route('hasilAkhirStore')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="lowongan_id" value="{{$lowongan->id}}" id="">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Lowongan</label>
                         <select name="peserta_id" id="" class="form-control" required>
