@@ -52,7 +52,7 @@ class Peserta extends Model
 
     public function hasil_akhir()
     {
-        return $this->hasOne(Lowongan::class);
+        return $this->hasOne(Hasil_akhir::class);
     }
 
 }

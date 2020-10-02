@@ -110,6 +110,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/hasilAkhir/edit/{uuid}', 'hasilAkhirController@edit')->name('hasilAkhirEdit');
     Route::put('/hasilAkhir/edit/{uuid}', 'hasilAkhirController@update')->name('hasilAkhirUpdate');
     Route::get('/hasilAkhir/delete/{uuid}', 'hasilAkhirController@destroy')->name('hasilAkhirDestroy');
+
     //Report
     Route::get('/pelamar/biodata/cetak/{uuid}', 'reportController@biodatapelamar')->name('biodataCetak');
     Route::get('/pelamar/cetak/{uuid}', 'reportController@pelamar')->name('pelamarCetak');
@@ -121,6 +122,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/ujiWawancara/cetak/{uuid}', 'reportController@ujiWawancara')->name('ujiWawancaraCetak');
     Route::post('/ujiWawancara/filter/{uuid}', 'reportController@ujiWawancaraFilter')->name('ujiWawancaraFilterCetak');
     Route::get('/analisis/pelamar/cetak/{uuid}', 'reportController@analisisPelamar')->name('analisisPelamarCetak');
+    Route::get('/hasilAkhir/cetak/{uuid}', 'reportController@hasilAkhir')->name('hasilAkhirCetak');
 
 });
 

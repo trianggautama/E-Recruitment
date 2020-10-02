@@ -319,7 +319,8 @@
 											<p style="margin-top:5px;">Posisi : @foreach(collect($b->lowongan->posisi) as $p)
 												{{$p}},
 												@endforeach</p>
-												<p> Status: @if($now > $b->lowongan->tgl_selesai)
+												<p> 
+													Status: @if($now > $b->lowongan->tgl_selesai)
                                                         <i class="text-danger"> Sudah ditutup</i>
                                                     @elseif($now < $b->lowongan->tgl_mulai)
                                                         <i class="text-info"> Belum Berlangsung</i>

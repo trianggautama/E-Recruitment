@@ -111,30 +111,133 @@
                 </tr>
                 <tr>
                     <td>Status</td>
-                    <td>:   @if($lowongan->status == 1)
-                    <i class="text-success"> Sedang Berlangsung</i>
+                    <td>:  
+                    @php
+                        $now = carbon\carbon::now();
+                    @endphp
+                    @if($now > $lowongan->tgl_selesai)
+                        <i class="text-danger"> Sudah ditutup</i>
+                    @elseif($now < $lowongan->tgl_mulai)
+                        <i class="text-info"> Belum Berlangsung</i>
                     @else
-                    <i class="text-primary">Sudah Selesai</i>
-                    @endif
+                        <i class="text-success"> Sedang Berlangsung</i>
+                    @endif</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>Jumlah Pelamar</td>
-                    <td>: {{$lowongan->peserta->count()}} pelamar</td>
+                    <td> Jumlah Pelamar Pria</td>
+                    <td>: {{$lowongan->peserta->where('jk',1)->count()}} pelamar</td> 
                 </tr>
                 <tr>
-                    <td>Jumlah Pelamar yang lolos</td>
-                    <td>:
-                        @if($lowongan->uji_wawancara->isNotEmpty())
-                            @if($lowongan->uji_wawancara->first()->uji_wawancara_peserta->isNotEmpty())
-                                {{$lowongan->uji_wawancara->first()->uji_wawancara_peserta->where('status',1)->count()}} pelamar
+                    <td> Jumlah Pelamar Wanita</td>
+                    <td>: {{$lowongan->peserta->where('jk',2)->count()}} pelamar</td>
+                </tr>
+            </table>
+            <br>
+            <table style="border:1px solid black">
+                <thead>
+                    <tr>
+                        <th style="border:1px solid black">Tahapan</th>
+                        <th style="border:1px solid black">Jumlah Peserta / Pelamar</th>
+                        <th style="border:1px solid black">Jumlah Peserta yang lolos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border:1px solid black">
+                        <td style="border:1px solid black">Seleksi Berkas</td>
+                        <td style="border:1px solid black">{{$lowongan->peserta->count()}} pelamar</td>
+                        <td style="border:1px solid black">{{$seleksi_berkas->count()}} pelamar</td>
+                    </tr>
+                    <tr style="border:1px solid black">
+                        <td style="border:1px solid black">uji Kompetensi</td>
+                        <td style="border:1px solid black">
+                        @if($lowongan->uji_kompetensi->isNotEmpty()) 
+                            @if($lowongan->uji_kompetensi->first()->uji_kompetensi_peserta->isNotEmpty())
+                                {{$lowongan->uji_kompetensi->first()->uji_kompetensi_peserta->count()}} Pelamar
+                            @else
+                                Belum ada peserta
+                            @endif
+                        @else
+                        Belum ada Jadwal Uji
+                        @endif
+                        </td>
+                        <td style="border:1px solid black">
+                        @if($lowongan->uji_kompetensi->isNotEmpty()) 
+                            @if($lowongan->uji_kompetensi->first()->uji_kompetensi_peserta->isNotEmpty())
+                                {{$lowongan->uji_kompetensi->first()->uji_kompetensi_peserta->where('nilai','>=', 75)->count()}} Pelamar
                             @else
                                 Belum ada peserta yang lolos
                             @endif
-                        @else 
-                            Rekrutmen masih berlangsung
-                        @endif</td>
-                </tr>
+                        @else
+                        -
+                        @endif
+                        </td>
+                    </tr>
+                    <tr style="border:1px solid black">
+                        <td style="border:1px solid black">uji Kesehatan</td>
+                        <td style="border:1px solid black">
+                        @if($lowongan->uji_kesehatan->isNotEmpty()) 
+                            @if($lowongan->uji_kesehatan->first()->uji_kesehatan_peserta->isNotEmpty())
+                                {{$lowongan->uji_kesehatan->first()->uji_kesehatan_peserta->count()}} Pelamar
+                            @else
+                                Belum ada peserta
+                            @endif
+                        @else
+                        Belum ada Jadwal Uji
+                        @endif
+                        </td>
+                        <td style="border:1px solid black">
+                        @if($lowongan->uji_kesehatan->isNotEmpty()) 
+                            @if($lowongan->uji_kesehatan->first()->uji_kesehatan_peserta->isNotEmpty())
+                                {{$lowongan->uji_kesehatan->first()->uji_kesehatan_peserta->where('status', 1)->count()}} Pelamar
+                            @else
+                                Belum ada peserta yang lolos
+                            @endif
+                        @else
+                        -
+                        @endif
+                        </td>
+                    </tr>
+                    <tr style="border:1px solid black">
+                        <td style="border:1px solid black">uji wawancara</td>
+                        <td style="border:1px solid black">
+                        @if($lowongan->uji_wawancara->isNotEmpty()) 
+                            @if($lowongan->uji_wawancara->first()->uji_wawancara_peserta->isNotEmpty())
+                                {{$lowongan->uji_wawancara->first()->uji_wawancara_peserta->count()}} Pelamar
+                            @else
+                                Belum ada peserta
+                            @endif
+                        @else
+                        Belum ada Jadwal Uji
+                        @endif
+                        </td>
+                        <td style="border:1px solid black">
+                        @if($lowongan->uji_wawancara->isNotEmpty()) 
+                            @if($lowongan->uji_wawancara->first()->uji_wawancara_peserta->isNotEmpty())
+                                {{$lowongan->uji_wawancara->first()->uji_wawancara_peserta->where('status', 1)->count()}} Pelamar
+                            @else
+                                Belum ada peserta yang lolos
+                            @endif
+                        @else
+                        -
+                        @endif
+                        </td>
+                    </tr>
+                    <tr style="border:1px solid black">
+                        <td style="border:1px solid black" colspan="2">Hasil Akhir</td>
+                        <td style="border:1px solid black">
+                        @if($lowongan->hasil_akhir->isNotEmpty()) 
+                            @if($lowongan->hasil_akhir->isNotEmpty())
+                                {{$lowongan->hasil_akhir->count()}} Pelamar
+                            @else
+                                Belum ada peserta yang lolos
+                            @endif
+                        @else
+                        -
+                        @endif
+                        </td>
+                    </tr>
+                </tbody>
             </table>       
                     </div>
              </div>

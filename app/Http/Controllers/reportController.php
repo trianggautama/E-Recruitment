@@ -125,11 +125,24 @@ class reportController extends Controller
     public function analisisPelamar($uuid)
     { 
         $lowongan = Lowongan::where('uuid',$uuid)->first();
-        $data     = $lowongan->peserta;
-        $pdf      = PDF::loadView('formCetak.analisisPelamar', ['data'=>$data, 'lowongan'=>$lowongan]);
+        $data = $lowongan->peserta;
+        $seleksi_berkas = Peserta::where('lowongan_id',$lowongan->id)->whereHas('user', function($query){
+            $query->where('status',1);
+        })->with('user')
+        ->get();
+        $pdf      = PDF::loadView('formCetak.analisisPelamar', ['data'=>$data, 'lowongan'=>$lowongan, 'seleksi_berkas'=>$seleksi_berkas]);
         $pdf->setPaper('a4', 'portrait');
 
         return $pdf->stream('Laporan Analsis Pelamar.pdf');
+    }
+
+    public function hasilAkhir($uuid)
+    { 
+        $lowongan = Lowongan::where('uuid',$uuid)->first();
+        $pdf      = PDF::loadView('formCetak.hasilAkhir', [ 'lowongan'=>$lowongan]);
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Hasil Akhir.pdf');
     }
 
 }

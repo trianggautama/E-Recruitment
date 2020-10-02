@@ -11,7 +11,6 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Hasil Akhir Lowongan</h2>
             </div>
             <div class="d-flex">
-            <a href="" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5"> <i class="fa fa-print"></i> analisis Lowongan</a>
             </div>
         </div>
         <div class="row">
@@ -21,7 +20,7 @@
 
                         <section class="hk-sec-wrapper">
                             <h5 class="hk-sec-title">Tabel Data</h5>
-                            <br>
+                            <br> 
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="table-wrap">
@@ -47,6 +46,10 @@
                                                                 class="btn btn-sm btn-outline-light  mb-1"><span
                                                                     class="icon-label"><i class="fa fa-info-circle"></i>
                                                                 </span><span class="btn-text"> </span></a>
+                                                                <a href="{{Route('analisisPelamarCetak',['uuid'=>$d->uuid])}}"
+                                                            class="btn btn-sm btn-outline-light  mb-1" target="_blank"><span
+                                                                class="icon-label"><i class="fa fa-print"></i>
+                                                            </span><span class="btn-text"> </span></a>
                                                         @else
                                                             Belum sampai pada tahap wawancara
                                                         @endif

@@ -9,7 +9,7 @@
         <div class="hk-pg-header align-items-top">
             <div>
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Detail Soal</h2>
-                <p>Waktu mengerjakan soal tersisa <span id="timer"></span></p>
+                <h3>Waktu mengerjakan soal tersisa <span id="timer"></span></h3>
             </div>
         </div>
         <!-- /Title -->

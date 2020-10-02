@@ -11,7 +11,7 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Hasil Akhir Lowongan {{$lowongan->berita->judul}}</h2>
             </div>
             <div class="d-flex">
-                <a href="" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5"> <i
+                <a href="{{Route('hasilAkhirCetak',['uuid'=>$lowongan->uuid])}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15 mr-5" target="_blank"> <i
                         class="fa fa-print"></i>Hasil Akhir </a>
                 <button class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15" id="tambah"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data

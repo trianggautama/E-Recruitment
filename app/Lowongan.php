@@ -61,4 +61,9 @@ class Lowongan extends Model
         return $this->hasMany(Uji_wawancara::class);
     }
 
+    public function hasil_akhir()
+    {
+        return $this->hasMany(Hasil_akhir::class);
+    }
+
 }
