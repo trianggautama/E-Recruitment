@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Lampiran;
 use App\Lowongan;
+use App\Mail\NotifRegister;
 use App\Mail\NotifVerifikasi;
 use App\Peserta;
 use App\User;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class PelamarController extends Controller
 {
@@ -43,11 +45,11 @@ class PelamarController extends Controller
 
             return back()->withInput()->withWarning('NIK kurang dari 14');
         }
-
+        $password = Str::random(8);
         $user = new User;
         $user->name = $req->name;
         $user->username = $req->NIK;
-        $user->password = Hash::make($req->NIK);
+        $user->password = Hash::make($password);
         $user->role = 1;
 
         $user->save();
@@ -99,6 +101,8 @@ class PelamarController extends Controller
         }
 
         $lampiran->save();
+
+        Mail::to($data->email)->send(new NotifRegister($user, $password));
 
         // toast('Terimakasih sudah mendaftar, mohon tunggu max 2 x 24 jam untuk dapat login', 'success');
         return redirect()->route('depan')->withToastSuccess('Terimakasih sudah mendaftar, mohon tunggu max 2 x 24 jam untuk dapat login');

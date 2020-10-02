@@ -107,22 +107,32 @@ class ujiKompetensiController extends Controller
         $data = Uji_kompetensi::findOrFail($req->uji_id);
         $tesPeserta = Uji_kompetensi_peserta::where('peserta_id', $peserta_id)->where('uji_kompetensi_id', $data->id)->first();
         $pilihan = collect($req->pilihan)->filter();
+        // $soal = collect($req->soal_id)->filter();
         $soal = collect($req->soal_id)->take($pilihan->count());
+
         for ($i = 0; $i < count($soal); $i++) {
-            if (isset($soal[$i])) {
-                $jawabanSoal = Soal::findOrFail($soal[$i]);
+            $jawabanSoal = Soal::findOrFail($soal[$i]);
+            if (isset($pilihan[$i])) {
                 if ($jawabanSoal->kunci == $pilihan[$i]) {
                     $bs = 1;
                 } else {
                     $bs = 0;
                 }
-                $jawaban = new Jawaban_peserta();
-                $jawaban->soal_id = $soal[$i];
-                $jawaban->jawaban = $pilihan[$i];
-                $jawaban->bs = $bs;
-                $jawaban->uji_kompetensi_peserta_id = $tesPeserta->id;
-                $jawaban->save();
+            } else {
+                $bs = 0;
             }
+
+            $jawaban = new Jawaban_peserta();
+            $jawaban->soal_id = $soal[$i];
+            if (isset($pilihan[$i])) {
+                $jawaban->jawaban = $pilihan[$i];
+            } else {
+                $jawaban->jawaban = '';
+            }
+            $jawaban->bs = $bs;
+            $jawaban->uji_kompetensi_peserta_id = $tesPeserta->id;
+            $jawaban->save();
+
         }
         $peserta = Jawaban_peserta::where('uji_kompetensi_peserta_id', $tesPeserta->id)->where('bs', 1)->count();
         $tesPeserta->nilai = $peserta * 5;
