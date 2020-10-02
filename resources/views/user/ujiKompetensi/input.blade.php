@@ -123,12 +123,12 @@
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            Swal.fire({
-                    title: 'Waktu telah habis',
-                    text: " Terimakasih telah melakukan ujian " ,
-                    icon: 'warning',
-                    showCancelButton: false,
-                })
+            // Swal.fire({
+            //         title: 'Waktu telah habis',
+            //         text: " Terimakasih telah melakukan ujian " ,
+            //         icon: 'warning',
+            //         showCancelButton: false,
+                // })
             $("#myForm").submit();
             exit();
 
