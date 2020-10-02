@@ -47,7 +47,7 @@ class hasilAkhirController extends Controller
     public function show($uuid)
     {
         $lowongan = Lowongan::where('uuid', $uuid)->first();
-        $uji_wawancara = Uji_wawancara::findOrFail($lowongan->id)->first();
+        $uji_wawancara = Uji_wawancara::where('lowongan_id',$lowongan->id)->first();
         $hasil_akhir = Hasil_akhir::where('lowongan_id', $lowongan->id)->get()->sortByDesc(function ($query) {
             return $query->peserta->uji_wawancara_peserta->nilai;
         })->all();
