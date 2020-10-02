@@ -140,7 +140,7 @@ class PelamarController extends Controller
     public function lulusSeleksiShow($uuid)
     {
         $lowongan = Lowongan::where('uuid', $uuid)->first();
-        $data = Peserta::whereHas('user', function ($query) {
+        $data = Peserta::where('lowongan_id', $lowongan->id)->whereHas('user', function ($query) {
             $query->where('status', 1);
         })->with('user')->get();
         return view('admin.pelamar.seleksiBerkasShow', compact('lowongan', 'data'));
