@@ -47,7 +47,6 @@ class PelamarController extends Controller
             return back()->withInput()->withWarning('NIK kurang dari 14');
         }
         $age = Carbon::parse($req->tgl_lahir)->age;
-        dd($age);
         if ($age < 17) {
             return back()->withInput()->withWarning('Maaf usia anda belum memenuhi syarat, usia pelamar minimal 17 tahun');
         }
