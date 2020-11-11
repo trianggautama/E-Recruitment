@@ -8,6 +8,7 @@ use App\Mail\NotifRegister;
 use App\Mail\NotifVerifikasi;
 use App\Peserta;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -44,6 +45,10 @@ class PelamarController extends Controller
             // toast('Anda sudah terdaftar didalam sistem kami, silahkan login menggunakan username dan password terakhir anda', 'warning');
 
             return back()->withInput()->withWarning('NIK kurang dari 14');
+        }
+        $age = Carbon::parse($req->tgl_lahir)->age;
+        if ($age < 17) {
+            return back()->withInput()->withWarning('Maaf usia anda belum memenuhi syarat, usia pelamar minimal 17 tahun');
         }
         $password = Str::random(8);
         $user = new User;
