@@ -241,5 +241,13 @@
             </table>       
                     </div>
              </div>
+
+             <div class="ttd">
+                <h6>Menyetujui</h6>
+                <h5>HRD Telkom Akses Banjarmasin</h5>
+                <br>
+                <br>
+                <h5 >..................................</h5>
+            </div>
          </body>
 </html>

@@ -167,6 +167,13 @@
                                         </table>
                                         <br>
                                         <h5 style="font-family: DejaVu Sans, sans-serif;"> ✔ = LULUS , <br> x = TIDAK LULUS</h5>
+                                        <div class="ttd">
+                                            <h6>Menyetujui</h6>
+                                            <h5>HRD Telkom Akses Banjarmasin</h5>
+                                            <br>
+                                            <br>
+                                            <h5 >..................................</h5>
+                                        </div>
                     </div>
              </div>
          </body>
