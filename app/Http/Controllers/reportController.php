@@ -10,6 +10,7 @@ use App\Uji_kompetensi;
 use App\Uji_kompetensi_peserta;
 use App\Uji_wawancara;
 use App\Uji_wawancara_peserta;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -143,6 +144,16 @@ class reportController extends Controller
         $pdf->setPaper('a4', 'landscape');
 
         return $pdf->stream('Laporan Hasil Akhir.pdf');
+    }
+
+    public function lowongan()
+    { 
+        $data     = Lowongan::latest()->get();
+        $now      = Carbon::now()->format('Y-m-d');
+        $pdf      = PDF::loadView('formCetak.lowongan', [ 'data'=>$data, 'now'=>$now]);
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Data Lowongan.pdf');
     }
 
 }

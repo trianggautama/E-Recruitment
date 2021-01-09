@@ -11,6 +11,9 @@
                 <h2 class="hk-pg-title font-weight-600 mb-10">Halaman Informasi Pelamar</h2>
             </div>
             <div class="d-flex">
+                <a href="{{Route('lowonganCetak')}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mr-15 mb-15" target="_blank"><span
+                        class="icon-label"><i class="fa fa-print"></i> </span><span class="btn-text">Cetak Data
+                    </span></a>
                 <a href="{{Route('beritaAdd')}}" class="btn btn-sm btn-danger btn-wth-icon icon-wthot-bg mb-15"><span
                         class="icon-label"><i class="fa fa-plus"></i> </span><span class="btn-text">Tambah Data
                     </span></a>

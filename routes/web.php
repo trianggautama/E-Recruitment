@@ -112,6 +112,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/hasilAkhir/delete/{uuid}', 'hasilAkhirController@destroy')->name('hasilAkhirDestroy');
 
     //Report
+    Route::get('/lowongan/cetak', 'reportController@lowongan')->name('lowonganCetak');
     Route::get('/pelamar/biodata/cetak/{uuid}', 'reportController@biodatapelamar')->name('biodataCetak');
     Route::get('/pelamar/cetak/{uuid}', 'reportController@pelamar')->name('pelamarCetak');
     Route::post('/pelamar/filter/{uuid}', 'reportController@filterPelamar')->name('pelamarFilterCetak');
