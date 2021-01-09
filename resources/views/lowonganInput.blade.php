@@ -146,7 +146,7 @@
 								<label for="exampleDropdownFormEmail1">NIK</label>
 								<input type="number" class="form-control" id="NIK" placeholder="NIK"
 									value="{{old('NIK')}}" name="NIK" pattern="/^-?\d+\.?\d*$/"
-									onKeyPress="if(this.value.length==14) return false;" required />
+									onKeyPress="if(this.value.length==16) return false;" required />
 							</div>
 							<div class="form-group">
 								<label for="exampleDropdownFormEmail1">Nama</label>
